@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "rule.schema.json",
+  "title": "PlaybookRule",
+  "description": "A single deterministic rule evaluated by the rules engine. Conditions use JSONLogic; actions specify flags, score modifiers, and checklist items.",
+  "type": "object",
+  "required": ["rule_code", "name", "priority", "halt_on_trigger", "condition", "actions"],
+  "properties": {
+
+    "rule_code": {
+      "type": "string",
+      "description": "Unique identifier within the playbook, e.g. 'RULE-001'",
+      "pattern": "^RULE-[0-9]{3}$"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable rule name, e.g. 'Policy Exclusion Gate'"
+    },
+    "source_section": {
+      "type": "string",
+      "description": "Source playbook section reference, e.g. 'Section 9, Rule 1'"
+    },
+    "priority": {
+      "type": "integer",
+      "description": "Evaluation order. Lower numbers run first. Halt rules must have lowest priority values.",
+      "minimum": 1
+    },
+    "halt_on_trigger": {
+      "type": "boolean",
+      "description": "If true, the entire assessment halts when this rule triggers. Used for exclusion gates."
+    },
+
+    "condition": {
+      "type": "object",
+      "description": "JSONLogic condition evaluated against ClaimState. Returns boolean. Use {\"var\": \"path\"} to reference claim fields.",
+      "examples": [
+        {
+          "in": [{"var": "damage_type"}, ["fence", "gate", "hedge"]]
+        },
+        {
+          "and": [
+            {"==": [{"var": "evidence_present.weather_data"}, false]},
+            {"==": [{"var": "indicators.weather_below_threshold"}, true]}
+          ]
+        },
+        {
+          "or": [
+            {"==": [{"var": "evidence_present.photos"}, false]},
+            {"==": [{"var": "indicators.photos_taken_after_repair"}, true]}
+          ]
+        }
+      ]
+    },
+
+    "actions": {
+      "type": "object",
+      "description": "Actions to apply when the rule triggers",
+      "properties": {
+
+        "flags": {
+          "type": "array",
+          "description": "Flag codes to raise. Must exist in the playbook's flags table.",
+          "items": { "type": "string" },
+          "examples": [["EXCLUDED_CLAIM"], ["HIGH_REJECTION_RISK", "STORM_NOT_PROVEN"]]
+        },
+
+        "checklist_items": {
+          "type": "array",
+          "description": "Checklist instructions added to missing-evidence output",
+          "items": {
+            "type": "object",
+            "required": ["text", "priority"],
+            "properties": {
+              "text": {
+                "type": "string",
+                "description": "Instruction text. May include {postcode} and {date_of_loss} template vars."
+              },
+              "priority": {
+                "type": "string",
+                "enum": ["critical", "high", "medium", "low"]
+              }
+            }
+          }
+        },
+
+        "score_modifiers": {
+          "type": "array",
+          "description": "Adjustments applied to specific scoring dimensions after base scoring",
+          "items": {
+            "type": "object",
+            "required": ["dimension_key", "delta", "reason"],
+            "properties": {
+              "dimension_key": {
+                "type": "string",
+                "description": "Must match a key in the playbook's scoring_dimensions"
+              },
+              "delta": {
+                "type": "integer",
+                "description": "Score adjustment. Positive = boost, negative = penalty. Clamped to [0, max_score]."
+              },
+              "reason": { "type": "string" }
+            }
+          }
+        },
+
+        "classification": {
+          "type": "string",
+          "description": "Optional classification label applied to the claim when the rule triggers",
+          "examples": [
+            "EXCLUDED_CLAIM",
+            "STORM_NOT_PROVEN",
+            "HIGH_DETERIORATION_RISK",
+            "POTENTIALLY_VALID_STORM_CLAIM",
+            "STRUCTURAL_EVIDENCE_REQUIRED"
+          ]
+        },
+
+        "notes": {
+          "type": "array",
+          "description": "Free-text notes added to the assessment when the rule triggers. Drawn from case precedents.",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  },
+
+  "examples": [
+    {
+      "rule_code": "RULE-001",
+      "name": "Policy Exclusion Gate",
+      "source_section": "Section 9, Rule 1",
+      "priority": 1,
+      "halt_on_trigger": true,
+      "condition": {
+        "in": [{"var": "damage_type"}, ["fence", "gate", "hedge"]]
+      },
+      "actions": {
+        "flags": ["EXCLUDED_CLAIM"],
+        "classification": "EXCLUDED_CLAIM",
+        "checklist_items": [
+          {
+            "text": "Obtain full policy wording to confirm fence exclusion applies",
+            "priority": "critical"
+          }
+        ],
+        "notes": [
+          "Damage type is within a commonly excluded category. Assessment halted pending policy wording review."
+        ]
+      }
+    },
+    {
+      "rule_code": "RULE-014",
+      "name": "Lifted Tiles and Weather Data Combination",
+      "source_section": "Section 9, Rule 14",
+      "priority": 14,
+      "halt_on_trigger": false,
+      "condition": {
+        "and": [
+          {"==": [{"var": "indicators.has_lifted_tiles"}, true]},
+          {"==": [{"var": "indicators.water_ingress"}, true]},
+          {"==": [{"var": "evidence_present.weather_data"}, true]}
+        ]
+      },
+      "actions": {
+        "flags": ["POTENTIALLY_VALID_STORM_CLAIM"],
+        "classification": "POTENTIALLY_VALID_STORM_CLAIM",
+        "score_modifiers": [
+          {
+            "dimension_key": "storm_verification",
+            "delta": 2,
+            "reason": "Lifted tiles + weather data combination is a strong positive indicator"
+          },
+          {
+            "dimension_key": "physical_damage_evidence",
+            "delta": 2,
+            "reason": "Lifted tiles are a canonical storm damage indicator"
+          }
+        ],
+        "checklist_items": [
+          {
+            "text": "Commission inspection report to confirm storm causation for lifted tiles",
+            "priority": "high"
+          }
+        ],
+        "notes": [
+          "Lifted tiles + water ingress + confirmed weather data is a strong claim profile. See STORM-022."
+        ]
+      }
+    }
+  ]
+}

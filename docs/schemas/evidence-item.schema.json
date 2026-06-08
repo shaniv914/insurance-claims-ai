@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "evidence-item.schema.json",
+  "title": "EvidenceItem",
+  "description": "A single piece of evidence submitted for a claim assessment. Each item is keyed to a playbook evidence type.",
+  "type": "object",
+  "required": ["evidence_key", "present"],
+  "properties": {
+
+    "evidence_key": {
+      "type": "string",
+      "description": "Key matching a playbook evidence_matrix entry, e.g. 'structural_engineer_report'"
+    },
+    "display_name": {
+      "type": "string",
+      "description": "Human-readable label, copied from playbook evidence matrix"
+    },
+    "weight": {
+      "type": "string",
+      "description": "Evidential weight from playbook, e.g. 'very_high'",
+      "enum": ["very_high", "high", "medium", "low"]
+    },
+    "present": {
+      "type": "boolean",
+      "description": "Whether this evidence has been provided for this claim"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Assessor notes about this evidence item"
+    },
+    "file_ref": {
+      "type": "string",
+      "description": "Path or storage key of the evidence document, if attached"
+    },
+    "date_obtained": {
+      "type": "string",
+      "format": "date",
+      "description": "When this evidence was obtained (not when damage occurred)"
+    },
+    "source": {
+      "type": "string",
+      "description": "Who provided this evidence, e.g. 'customer', 'insurer', 'independent_expert'"
+    },
+    "conflicts_with": {
+      "type": "array",
+      "description": "Keys of other evidence items this item conflicts with. Used to raise EXPERT_CONFLICT flag.",
+      "items": { "type": "string" }
+    }
+  },
+
+  "examples": [
+    {
+      "evidence_key": "photos_post_storm",
+      "display_name": "Photographs of damage taken before repairs",
+      "weight": "high",
+      "present": true,
+      "notes": "Customer provided 12 photos taken day after storm. External damage clearly visible.",
+      "file_ref": "claims/CLM-001/evidence/photos_post_storm.zip",
+      "date_obtained": "2024-01-16",
+      "source": "customer"
+    },
+    {
+      "evidence_key": "structural_engineer_report",
+      "display_name": "Structural engineer report",
+      "weight": "very_high",
+      "present": false,
+      "notes": null,
+      "file_ref": null
+    },
+    {
+      "evidence_key": "weather_data",
+      "display_name": "Weather data for property postcode on date of loss",
+      "weight": "medium",
+      "present": true,
+      "notes": "Met Office data for SW1A 2AA on 2024-01-15. Max gusts 62 mph.",
+      "file_ref": "claims/CLM-001/evidence/weather_data.pdf",
+      "date_obtained": "2024-01-20",
+      "source": "customer"
+    },
+    {
+      "evidence_key": "surveyor_report",
+      "display_name": "Surveyor report",
+      "weight": "very_high",
+      "present": true,
+      "notes": "Insurer surveyor concluded damage from wear and tear, not storm.",
+      "file_ref": "claims/CLM-001/evidence/insurer_survey.pdf",
+      "date_obtained": "2024-02-01",
+      "source": "insurer",
+      "conflicts_with": ["contractor_report"]
+    }
+  ]
+}

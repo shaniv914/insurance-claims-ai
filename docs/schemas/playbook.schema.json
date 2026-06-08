@@ -1,0 +1,257 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "playbook.schema.json",
+  "title": "PlaybookConfig",
+  "description": "Full configuration for one peril playbook. Loaded by PlaybookRegistry at startup.",
+  "type": "object",
+  "required": [
+    "playbook_key", "peril_type", "version", "jurisdiction", "display_name",
+    "definition_framework", "claim_types", "rejection_taxonomy",
+    "evidence_matrix", "scoring_dimensions", "rules", "flags",
+    "input_config", "output_config"
+  ],
+  "properties": {
+
+    "playbook_key": {
+      "type": "string",
+      "description": "Unique key, e.g. 'storm-v1'",
+      "pattern": "^[a-z]+-v[0-9]+$"
+    },
+    "peril_type": {
+      "type": "string",
+      "description": "Peril identifier, e.g. 'storm'",
+      "enum": ["storm", "flood", "fire", "escape_of_water", "subsidence", "theft", "accidental_damage"]
+    },
+    "version": {
+      "type": "string",
+      "description": "Semantic version, e.g. '1.0'"
+    },
+    "jurisdiction": {
+      "type": "string",
+      "description": "Legal jurisdiction, e.g. 'UK'"
+    },
+    "display_name": {
+      "type": "string",
+      "description": "Human-readable name, e.g. 'Storm Damage'"
+    },
+    "source_document": {
+      "type": "string",
+      "description": "Relative path to source document"
+    },
+
+    "definition_framework": {
+      "type": "object",
+      "description": "The primary decision framework (e.g. Ombudsman Three-Question Framework)",
+      "required": ["name", "questions"],
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "questions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "text", "if_no"],
+            "properties": {
+              "id": { "type": "string" },
+              "text": { "type": "string" },
+              "if_no": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+
+    "claim_types": {
+      "type": "array",
+      "description": "Damage types in scope for this peril",
+      "items": {
+        "type": "object",
+        "required": ["key", "display_name", "scrutiny_level"],
+        "properties": {
+          "key": { "type": "string" },
+          "display_name": { "type": "string" },
+          "scrutiny_level": {
+            "type": "string",
+            "enum": ["standard", "high", "very_high"]
+          },
+          "exclusion_check_required": { "type": "boolean" },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+
+    "rejection_taxonomy": {
+      "type": "object",
+      "description": "Rejection category keys mapped to historical frequency counts",
+      "additionalProperties": { "type": "integer" }
+    },
+
+    "evidence_matrix": {
+      "type": "array",
+      "description": "All evidence types the platform tracks for this peril",
+      "items": {
+        "type": "object",
+        "required": ["key", "display_name", "weight"],
+        "properties": {
+          "key": { "type": "string" },
+          "display_name": { "type": "string" },
+          "weight": {
+            "type": "string",
+            "enum": ["very_high", "high", "medium", "low"]
+          },
+          "required": { "type": "boolean" },
+          "recommended": { "type": "boolean" },
+          "gap_risk_level": {
+            "type": "string",
+            "enum": ["critical", "high", "medium", "low"]
+          },
+          "gap_instruction": {
+            "type": "string",
+            "description": "What to do if this evidence is missing"
+          },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+
+    "scoring_dimensions": {
+      "type": "array",
+      "description": "Scoring dimensions. Scores across all dimensions must sum ≤ 100.",
+      "items": {
+        "type": "object",
+        "required": ["key", "display_name", "max_score", "criteria"],
+        "properties": {
+          "key": { "type": "string" },
+          "display_name": { "type": "string" },
+          "max_score": { "type": "integer", "minimum": 1, "maximum": 100 },
+          "sort_order": { "type": "integer" },
+          "criteria": {
+            "type": "array",
+            "description": "Score bands with labels and descriptions",
+            "items": {
+              "type": "object",
+              "required": ["min", "max", "label", "description"],
+              "properties": {
+                "min": { "type": "integer" },
+                "max": { "type": "integer" },
+                "label": { "type": "string" },
+                "description": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "score_bands": {
+      "type": "array",
+      "description": "Total score ranges mapped to claim strength classification",
+      "items": {
+        "type": "object",
+        "required": ["min", "max", "band", "rejection_risk", "action"],
+        "properties": {
+          "min": { "type": "integer" },
+          "max": { "type": "integer" },
+          "band": {
+            "type": "string",
+            "enum": ["very_strong", "strong", "moderate", "weak", "very_weak"]
+          },
+          "rejection_risk": {
+            "type": "string",
+            "enum": ["very_low", "low", "moderate", "high", "very_high"]
+          },
+          "action": { "type": "string" }
+        }
+      }
+    },
+
+    "rules": {
+      "type": "array",
+      "description": "Deterministic rules evaluated by the rules engine. See rule.schema.json.",
+      "items": { "$ref": "rule.schema.json" }
+    },
+
+    "flags": {
+      "type": "object",
+      "description": "All flag codes this playbook can raise, with meaning and severity",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["meaning", "severity"],
+        "properties": {
+          "meaning": { "type": "string" },
+          "severity": {
+            "type": "string",
+            "enum": ["info", "warning", "critical"]
+          }
+        }
+      }
+    },
+
+    "ombudsman_patterns": {
+      "type": "array",
+      "description": "Named reasoning patterns from Ombudsman decisions",
+      "items": {
+        "type": "object",
+        "required": ["number", "title", "description"],
+        "properties": {
+          "number": { "type": "integer" },
+          "title": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    },
+
+    "input_config": {
+      "type": "object",
+      "description": "Categorises evidence types into required / recommended / optional",
+      "required": ["required", "recommended", "optional"],
+      "properties": {
+        "required": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Evidence keys that are mandatory"
+        },
+        "recommended": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "optional": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+
+    "output_config": {
+      "type": "object",
+      "description": "Output types this playbook generates",
+      "required": ["deterministic", "ai_generated"],
+      "properties": {
+        "deterministic": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "rejection_classification",
+              "evidence_gap_analysis",
+              "recommended_actions",
+              "missing_evidence_checklist"
+            ]
+          }
+        },
+        "ai_generated": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "claim_summary",
+              "timeline",
+              "complaint_draft",
+              "fos_draft"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

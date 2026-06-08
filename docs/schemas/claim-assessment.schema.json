@@ -1,0 +1,351 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "claim-assessment.schema.json",
+  "title": "ClaimAssessment",
+  "description": "The complete output of the claim assessment workflow. One object per assessed claim.",
+  "type": "object",
+  "required": [
+    "claim_id", "claim_ref", "playbook_key", "peril_type",
+    "damage_type", "date_of_loss", "property_postcode",
+    "status", "evidence_items", "rules_triggered", "flags",
+    "scores", "missing_evidence", "outputs"
+  ],
+  "properties": {
+
+    "claim_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "claim_ref": {
+      "type": "string",
+      "description": "User-supplied reference for this claim"
+    },
+    "playbook_key": {
+      "type": "string",
+      "description": "Playbook used for this assessment, e.g. 'storm-v1'"
+    },
+    "peril_type": {
+      "type": "string"
+    },
+    "damage_type": {
+      "type": "string",
+      "description": "Primary damage type, matching a claim_types key in the playbook"
+    },
+    "date_of_loss": {
+      "type": "string",
+      "format": "date"
+    },
+    "property_postcode": {
+      "type": "string"
+    },
+    "insurer": {
+      "type": "string"
+    },
+    "policy_ref": {
+      "type": ["string", "null"]
+    },
+    "rejection_reason_raw": {
+      "type": ["string", "null"],
+      "description": "Insurer's stated rejection reason verbatim"
+    },
+    "rejection_category": {
+      "type": ["string", "null"],
+      "description": "Classified rejection category key from playbook rejection taxonomy"
+    },
+
+    "status": {
+      "type": "string",
+      "enum": ["complete", "halted", "in_progress"],
+      "description": "complete = full assessment run; halted = stopped at gate rule"
+    },
+    "halted_by_rule": {
+      "type": ["string", "null"],
+      "description": "Rule code that halted the assessment, if status=halted"
+    },
+
+    "evidence_items": {
+      "type": "array",
+      "description": "All evidence items evaluated. See evidence-item.schema.json.",
+      "items": { "$ref": "evidence-item.schema.json" }
+    },
+
+    "rules_triggered": {
+      "type": "array",
+      "description": "Audit trail of all rules evaluated",
+      "items": {
+        "type": "object",
+        "required": ["rule_code", "name", "triggered"],
+        "properties": {
+          "rule_code": { "type": "string" },
+          "name": { "type": "string" },
+          "triggered": { "type": "boolean" },
+          "trigger_detail": { "type": ["string", "null"] }
+        }
+      }
+    },
+
+    "flags": {
+      "type": "array",
+      "description": "All flags raised during assessment",
+      "items": {
+        "type": "object",
+        "required": ["flag_code", "severity", "raised_by_rule"],
+        "properties": {
+          "flag_code": { "type": "string" },
+          "severity": {
+            "type": "string",
+            "enum": ["info", "warning", "critical"]
+          },
+          "meaning": { "type": "string" },
+          "raised_by_rule": { "type": ["string", "null"] }
+        }
+      }
+    },
+
+    "scores": {
+      "type": "object",
+      "required": ["dimensions", "total", "claim_strength_band", "rejection_risk"],
+      "properties": {
+        "dimensions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["dimension_key", "display_name", "score", "max_score"],
+            "properties": {
+              "dimension_key": { "type": "string" },
+              "display_name": { "type": "string" },
+              "score": { "type": "integer", "minimum": 0 },
+              "max_score": { "type": "integer" },
+              "rationale": { "type": ["string", "null"] },
+              "modifiers_applied": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "rule_code": { "type": "string" },
+                    "delta": { "type": "integer" },
+                    "reason": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "total": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "claim_strength_band": {
+          "type": "string",
+          "enum": ["very_strong", "strong", "moderate", "weak", "very_weak"]
+        },
+        "rejection_risk": {
+          "type": "string",
+          "enum": ["very_low", "low", "moderate", "high", "very_high"]
+        }
+      }
+    },
+
+    "missing_evidence": {
+      "type": "array",
+      "description": "Checklist of missing evidence items, sorted by priority",
+      "items": {
+        "type": "object",
+        "required": ["evidence_key", "checklist_item", "priority"],
+        "properties": {
+          "evidence_key": { "type": "string" },
+          "checklist_item": {
+            "type": "string",
+            "description": "Specific instruction, e.g. 'Obtain Met Office data for SW1A 2AA on 2024-01-15'"
+          },
+          "priority": {
+            "type": "string",
+            "enum": ["critical", "high", "medium", "low"]
+          },
+          "raised_by_rule": { "type": ["string", "null"] }
+        }
+      }
+    },
+
+    "outputs": {
+      "type": "object",
+      "description": "All generated outputs for this assessment",
+      "properties": {
+        "rejection_classification": {
+          "type": "object",
+          "properties": {
+            "category": { "type": "string" },
+            "frequency_context": { "type": "string" },
+            "pattern_match": { "type": ["string", "null"] }
+          }
+        },
+        "evidence_gap_analysis": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "evidence_key": { "type": "string" },
+              "gap_risk_level": { "type": "string" },
+              "instruction": { "type": "string" }
+            }
+          }
+        },
+        "recommended_actions": {
+          "type": "array",
+          "description": "Prioritised action list derived from flags, scores, and missing evidence",
+          "items": {
+            "type": "object",
+            "required": ["action", "priority", "rationale"],
+            "properties": {
+              "action": { "type": "string" },
+              "priority": {
+                "type": "string",
+                "enum": ["immediate", "high", "medium", "low"]
+              },
+              "rationale": { "type": "string" }
+            }
+          }
+        },
+        "claim_summary": {
+          "type": ["string", "null"],
+          "description": "AI-generated concise claim summary"
+        },
+        "timeline": {
+          "type": "array",
+          "description": "AI-generated chronological timeline",
+          "items": {
+            "type": "object",
+            "required": ["date", "event"],
+            "properties": {
+              "date": { "type": "string" },
+              "event": { "type": "string" }
+            }
+          }
+        },
+        "complaint_draft": {
+          "type": ["string", "null"],
+          "description": "AI-generated internal complaint letter draft"
+        },
+        "fos_draft": {
+          "type": ["string", "null"],
+          "description": "AI-generated Financial Ombudsman Service submission draft"
+        }
+      }
+    },
+
+    "assessed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "model_used": {
+      "type": ["string", "null"],
+      "description": "Claude model ID used for AI outputs, e.g. 'claude-sonnet-4-6'"
+    },
+    "relevant_cases": {
+      "type": "array",
+      "description": "Case references retrieved from the case database as precedents",
+      "items": {
+        "type": "object",
+        "required": ["case_ref", "outcome", "key_insight"],
+        "properties": {
+          "case_ref": { "type": "string" },
+          "damage_type": { "type": "string" },
+          "outcome": {
+            "type": "string",
+            "enum": ["rejected", "upheld", "partial", "mixed"]
+          },
+          "key_insight": { "type": "string" },
+          "similarity_score": { "type": "number", "minimum": 0, "maximum": 1 }
+        }
+      }
+    }
+  },
+
+  "examples": [
+    {
+      "claim_id": "550e8400-e29b-41d4-a716-446655440000",
+      "claim_ref": "CLM-2024-001",
+      "playbook_key": "storm-v1",
+      "peril_type": "storm",
+      "damage_type": "roof_tile_damage",
+      "date_of_loss": "2024-01-15",
+      "property_postcode": "SW1A 2AA",
+      "insurer": "Example Insurance Ltd",
+      "rejection_reason_raw": "Damage attributed to gradual wear and tear, not storm damage",
+      "rejection_category": "wear_and_tear_deterioration",
+      "status": "complete",
+      "halted_by_rule": null,
+      "evidence_items": [
+        {
+          "evidence_key": "weather_data",
+          "display_name": "Weather data for property postcode on date of loss",
+          "weight": "medium",
+          "present": true,
+          "notes": "Max gusts 62 mph confirmed"
+        },
+        {
+          "evidence_key": "structural_engineer_report",
+          "display_name": "Structural engineer report",
+          "weight": "very_high",
+          "present": false
+        }
+      ],
+      "rules_triggered": [
+        {
+          "rule_code": "RULE-014",
+          "name": "Lifted Tiles and Weather Data Combination",
+          "triggered": true,
+          "trigger_detail": "Lifted tiles + water ingress + weather data all present"
+        }
+      ],
+      "flags": [
+        {
+          "flag_code": "POTENTIALLY_VALID_STORM_CLAIM",
+          "severity": "info",
+          "meaning": "Core indicators support claim validity",
+          "raised_by_rule": "RULE-014"
+        }
+      ],
+      "scores": {
+        "dimensions": [
+          {
+            "dimension_key": "storm_verification",
+            "display_name": "Storm Verification",
+            "score": 17,
+            "max_score": 20,
+            "rationale": "Weather data confirms 62 mph gusts; single station",
+            "modifiers_applied": [
+              { "rule_code": "RULE-014", "delta": 2, "reason": "Lifted tiles + weather data combination" }
+            ]
+          }
+        ],
+        "total": 64,
+        "claim_strength_band": "strong",
+        "rejection_risk": "low"
+      },
+      "missing_evidence": [
+        {
+          "evidence_key": "structural_engineer_report",
+          "checklist_item": "Commission independent structural engineer report to confirm storm causation",
+          "priority": "high",
+          "raised_by_rule": null
+        }
+      ],
+      "outputs": {
+        "recommended_actions": [
+          {
+            "action": "Commission independent surveyor or structural engineer report",
+            "priority": "high",
+            "rationale": "Expert causation evidence is missing and materially affects claim strength"
+          }
+        ],
+        "claim_summary": null,
+        "complaint_draft": null,
+        "fos_draft": null
+      },
+      "assessed_at": "2024-03-01T14:30:00Z",
+      "model_used": null
+    }
+  ]
+}
