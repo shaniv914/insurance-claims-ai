@@ -1,6 +1,6 @@
 # Insurance Claims AI — Project Status
 
-**Last updated:** 2026-06-09
+**Last updated:** 2026-06-09 (EOW-036 to EOW-057 appended)
 **Branch:** `master`
 **Repository:** https://github.com/shaniv914/insurance-claims-ai
 
@@ -8,8 +8,8 @@
 
 ## Current Focus
 
-Building the Escape of Water (EOW) FOS case database as the primary knowledge source
-for the EOW playbook. Target: all 57 available PDFs processed and classified.
+All 57 Escape of Water (EOW) FOS case PDFs have been processed and classified.
+The EOW case database is complete. EOW playbook authoring may now begin.
 
 ---
 
@@ -17,9 +17,9 @@ for the EOW playbook. Target: all 57 available PDFs processed and classified.
 
 **Path:** `knowledge/case-databases/Escape_of_Water_Case_Database.xlsx`
 **Schema version:** v2 (21 columns)
-**Total cases processed:** 35 (EOW-001 to EOW-035)
+**Total cases processed:** 57 (EOW-001 to EOW-057)
 **Total PDFs in repository:** 57 (`knowledge/raw-cases/escape-of-water/`)
-**Remaining to process:** 22 PDFs
+**Remaining to process:** 0 — all PDFs processed
 
 ### Schema — Column Order (v2)
 
@@ -80,7 +80,7 @@ for the EOW playbook. Target: all 57 available PDFs processed and classified.
 
 ---
 
-## Cases Processed: EOW-001 to EOW-035
+## Cases Processed: EOW-001 to EOW-057 (complete)
 
 | Case ID | FOS ID | Insurer | Outcome Category | Is Core Case |
 |---|---|---|---|---|
@@ -119,31 +119,35 @@ for the EOW playbook. Target: all 57 available PDFs processed and classified.
 | EOW-033 | DRN-4704763 | Covea Insurance plc | Not Upheld | No — Commercial |
 | EOW-034 | DRN-4744346 | AXIS Specialty Europe SE | Not Upheld | No — Commercial |
 | EOW-035 | DRN-4749282 | Aviva Insurance Limited | Not Upheld | Yes |
+| EOW-036 | DRN-5088221 | Accelerant Insurance Europe SA/NV UK Branch | Upheld in Part | No — Commercial |
+| EOW-037 | DRN-5193042 | Allied World Assurance Company (Europe) dac | Not Upheld | Yes |
+| EOW-038 | DRN-5198749 | Accredited Insurance (Europe) Ltd | Upheld | Yes |
+| EOW-039 | DRN-5199107 | Admiral Insurance (Gibraltar) Limited | Not Upheld | No — Handling Dispute |
+| EOW-040 | DRN-5396824 | Aviva Insurance Limited | Upheld in Part | Yes |
+| EOW-041 | DRN5611706 | CIS General Insurance Limited | Upheld | Yes |
+| EOW-042 | DRN-5649220 | Aviva Insurance Limited | Not Upheld | Yes |
+| EOW-043 | DRN5670903 | Insurers at Lloyd's (Society of Lloyd's) | Not Upheld | Yes |
+| EOW-044 | DRN-5805040 | Saga Services Limited | Not Upheld | Yes |
+| EOW-045 | DRN5927839 | Admiral Insurance (Gibraltar) Limited | Not Upheld | Yes |
+| EOW-046 | DRN-5979060 | Ecclesiastical Insurance Office Plc | Not Upheld | Yes |
+| EOW-047 | DRN-5982848 | Protector Insurance UK | Not Upheld | No — Commercial |
+| EOW-048 | DRN-6004362 | Aviva Insurance Limited | Upheld in Part | No — Handling Dispute |
+| EOW-049 | DRN-6046762 | INTACT INSURANCE UK LIMITED | Not Upheld | No — Handling Dispute |
+| EOW-050 | DRN6187392 | St Andrew's Insurance Plc | Upheld in Part | Yes |
+| EOW-051 | DRN-6263959 | Tesco Underwriting Limited | Upheld | Yes |
+| EOW-052 | DRN6739737 | Royal & Sun Alliance Insurance Plc | Not Upheld | Yes |
+| EOW-053 | DRN7090448 | UK Insurance Limited | Upheld | Yes |
+| EOW-054 | DRN7112734 | Hiscox Insurance Company Limited | Not Upheld | No — Administrative |
+| EOW-055 | DRN7147115 | Legal & General Insurance Limited | Upheld | Yes |
+| EOW-056 | DRN7411842 | Ageas Insurance Limited | Not Upheld | Yes |
+| EOW-057 | DRN9891691 | UK Insurance Limited | Not Upheld | Yes |
 
 ---
 
-## Next Batch: EOW-036 to EOW-045
+## Next Batch
 
-Process these 10 PDFs in order from `knowledge/raw-cases/escape-of-water/`:
-
-| Case ID | Source PDF |
-|---|---|
-| EOW-036 | DRN-5088221.pdf |
-| EOW-037 | DRN-5193042.pdf |
-| EOW-038 | DRN-5198749.pdf |
-| EOW-039 | DRN-5199107.pdf |
-| EOW-040 | DRN-5396824.pdf |
-| EOW-041 | DRN5611706.pdf |
-| EOW-042 | DRN-5649220.pdf |
-| EOW-043 | DRN5670903.pdf |
-| EOW-044 | DRN-5805040.pdf |
-| EOW-045 | DRN5927839.pdf |
-
-**Script to use:** `scripts/append_eow_v2.py`
-Populate `NEW_CASES` with all 10 cases, then run:
-```
-py scripts/append_eow_v2.py
-```
+**None — all 57 PDFs have been processed.** The EOW case database is complete.
+EOW playbook authoring may begin.
 
 ---
 
