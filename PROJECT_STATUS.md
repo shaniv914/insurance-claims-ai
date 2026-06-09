@@ -1,6 +1,6 @@
 # Insurance Claims AI — Project Status
 
-**Last updated:** 2026-06-09 (EOW-036 to EOW-057 appended)
+**Last updated:** 2026-06-09 (STORM-001 to STORM-005 appended)
 **Branch:** `master`
 **Repository:** https://github.com/shaniv914/insurance-claims-ai
 
@@ -144,7 +144,39 @@ The EOW case database is complete. EOW playbook authoring may now begin.
 
 ---
 
-## Next Batch
+## Database: Storm_Case_Database.xlsx
+
+**Path:** `knowledge/case-databases/Storm_Case_Database.xlsx`
+**Schema version:** v1 (21 columns — same schema as EOW v2)
+**Total cases processed:** 5 (STORM-001 to STORM-005)
+**Total PDFs in repository:** 38 (`knowledge/raw-cases/`)
+**Remaining to process:** 33 (STORM-006 to STORM-038)
+
+### Cases Processed: STORM-001 to STORM-005 (Batch 1 partial)
+
+| Case ID | FOS ID | Insurer | Outcome Category | Is Core Case |
+|---|---|---|---|---|
+| STORM-001 | DRN-1207086 | Aviva Insurance Limited | Not Upheld | Yes |
+| STORM-002 | DRN-1223113 | Ageas Insurance Limited | Upheld | Yes |
+| STORM-003 | DRN-1586732 | esure Insurance Limited | Not Upheld | Yes |
+| STORM-004 | DRN-2053943 | Lloyds Bank General Insurance Limited | Not Upheld | Yes |
+| STORM-005 | DRN-2556262 | Lloyds Bank General Insurance Limited | Not Upheld | Yes |
+
+### Next Batch
+
+**Batch 1 continuation — STORM-006 to STORM-010:**
+
+| STORM-ID | PDF |
+|---|---|
+| STORM-006 | DRN-2560515.pdf |
+| STORM-007 | DRN-2737383.pdf |
+| STORM-008 | DRN-2788212.pdf |
+| STORM-009 | DRN-2877529.pdf |
+| STORM-010 | DRN-2926734.pdf |
+
+---
+
+## EOW Next Batch
 
 **None — all 57 PDFs have been processed.** The EOW case database is complete.
 EOW playbook authoring may begin.
@@ -155,7 +187,9 @@ EOW playbook authoring may begin.
 
 | Script | Status | Purpose |
 |---|---|---|
-| `scripts/append_eow_v2.py` | **Active — use this** | Standard append for all future EOW batches (schema v2, 21 columns, controlled-vocab validation) |
+| `scripts/append_eow_v2.py` | **Active** | Standard append for all future EOW batches (schema v2, 21 columns, controlled-vocab validation) |
+| `scripts/append_storm_v1.py` | **Active — use this for Storm** | Standard append for all Storm batches (schema v1, 21 columns, controlled-vocab validation) |
+| `scripts/create_storm_case_db.py` | Superseded — do not re-run | Created the empty Storm_Case_Database.xlsx header row; re-running will overwrite data |
 | `scripts/migrate_schema_v2.py` | Reference only | One-time migration that added 7 columns and backfilled EOW-001–015; do not re-run |
 | `scripts/append_eow_006_015.py` | Superseded | 14-column schema; historical record of first batch only |
 | `scripts/create_eow_case_db.py` | Superseded | Original 14-column seeder; do not re-run (will overwrite with old schema) |
@@ -186,13 +220,13 @@ When processing future PDFs, apply `Is Core Case = No` if **any** of the followi
 
 | Hash | Message |
 |---|---|
+| TBD | Add STORM-001 to STORM-005 to Storm Case Database |
+| `03333d8` | Add EOW-036 to EOW-057 to Escape of Water Case Database |
 | `2161a62` | Add EOW-026 to EOW-035 to Escape of Water Case Database |
 | `e8bd4f7` | Add EOW-016 through EOW-025 to Escape of Water Case Database |
 | `19e90a8` | Add schema v2 append script for Escape of Water cases |
 | `5bd8477` | Add append_eow_v2.py — standard append script for schema v2 (21 columns) |
 | `0d350d5` | Schema v2: add 7 new columns and backfill EOW-001 to EOW-015 |
-| `bd9a5cb` | Add raw Escape of Water FOS decision PDFs |
-| `c4fd2d1` | Add EOW-006 through EOW-015 to Escape of Water Case Database |
 
 ---
 
