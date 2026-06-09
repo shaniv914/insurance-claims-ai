@@ -17,9 +17,9 @@ for the EOW playbook. Target: all 57 available PDFs processed and classified.
 
 **Path:** `knowledge/case-databases/Escape_of_Water_Case_Database.xlsx`
 **Schema version:** v2 (21 columns)
-**Total cases processed:** 15 (EOW-001 to EOW-015)
+**Total cases processed:** 25 (EOW-001 to EOW-025)
 **Total PDFs in repository:** 57 (`knowledge/raw-cases/escape-of-water/`)
-**Remaining to process:** 42 PDFs
+**Remaining to process:** 32 PDFs
 
 ### Schema — Column Order (v2)
 
@@ -80,7 +80,7 @@ for the EOW playbook. Target: all 57 available PDFs processed and classified.
 
 ---
 
-## Cases Processed: EOW-001 to EOW-015
+## Cases Processed: EOW-001 to EOW-025
 
 | Case ID | FOS ID | Insurer | Outcome Category | Is Core Case |
 |---|---|---|---|---|
@@ -99,25 +99,35 @@ for the EOW playbook. Target: all 57 available PDFs processed and classified.
 | EOW-013 | DRN-2749125 | Covea Insurance Plc | Compensation Only | Yes |
 | EOW-014 | DRN-2771304 | AXA Insurance UK Plc | Upheld | No — Commercial |
 | EOW-015 | DRN-2806638 | Endsleigh Insurance Services Ltd | Not Upheld | No — Broker Dispute |
+| EOW-016 | DRN-3022853 | Admiral Insurance (Gibraltar) Limited | Not Upheld | Yes |
+| EOW-017 | DRN-3053156 | Aviva Insurance Limited | Upheld | Yes |
+| EOW-018 | DRN-3078337 | QIC Europe Ltd | Upheld | Yes |
+| EOW-019 | DRN-3121008 | AXA Insurance UK Plc | Upheld | Yes |
+| EOW-020 | DRN-3517894 | AA Underwriting Insurance Company Limited | Upheld | Yes |
+| EOW-021 | DRN-3606995 | Ageas Insurance Limited | Not Upheld | Yes |
+| EOW-022 | DRN-3860121 | Tesco Underwriting Limited | Upheld | Yes |
+| EOW-023 | DRN-4205492 | QIC Europe Limited | Upheld | Yes |
+| EOW-024 | DRN-4223988 | HDI Global Speciality SE | Upheld | Yes |
+| EOW-025 | DRN-4227214 | Saga Services Limited | Not Upheld | Yes |
 
 ---
 
-## Next Batch: EOW-016 to EOW-025
+## Next Batch: EOW-026 to EOW-035
 
 Process these 10 PDFs in order from `knowledge/raw-cases/escape-of-water/`:
 
 | Case ID | Source PDF |
 |---|---|
-| EOW-016 | DRN-3022853.pdf |
-| EOW-017 | DRN-3053156.pdf |
-| EOW-018 | DRN-3078337.pdf |
-| EOW-019 | DRN-3121008.pdf |
-| EOW-020 | DRN-3517894.pdf |
-| EOW-021 | DRN-3606995.pdf |
-| EOW-022 | DRN-3860121.pdf |
-| EOW-023 | DRN-4205492.pdf |
-| EOW-024 | DRN-4223988.pdf |
-| EOW-025 | DRN-4227214.pdf |
+| EOW-026 | DRN3376494.pdf |
+| EOW-027 | DRN3405029.pdf |
+| EOW-028 | DRN4208888.pdf |
+| EOW-029 | DRN-4307523.pdf |
+| EOW-030 | DRN-4368751.pdf |
+| EOW-031 | DRN4464315.pdf |
+| EOW-032 | DRN-4521660.pdf |
+| EOW-033 | DRN-4704763.pdf |
+| EOW-034 | DRN-4744346.pdf |
+| EOW-035 | DRN-4749282.pdf |
 
 **Script to use:** `scripts/append_eow_v2.py`
 Populate `NEW_CASES` with all 10 cases, then run:
@@ -162,6 +172,7 @@ When processing future PDFs, apply `Is Core Case = No` if **any** of the followi
 
 | Hash | Message |
 |---|---|
+| `19e90a8` | Add schema v2 append script for Escape of Water cases |
 | `5bd8477` | Add append_eow_v2.py — standard append script for schema v2 (21 columns) |
 | `0d350d5` | Schema v2: add 7 new columns and backfill EOW-001 to EOW-015 |
 | `bd9a5cb` | Add raw Escape of Water FOS decision PDFs |
