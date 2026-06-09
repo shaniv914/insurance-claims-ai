@@ -182,13 +182,13 @@ When processing future PDFs, apply `Is Core Case = No` if **any** of the followi
 
 | Hash | Message |
 |---|---|
+| `2161a62` | Add EOW-026 to EOW-035 to Escape of Water Case Database |
+| `e8bd4f7` | Add EOW-016 through EOW-025 to Escape of Water Case Database |
 | `19e90a8` | Add schema v2 append script for Escape of Water cases |
 | `5bd8477` | Add append_eow_v2.py — standard append script for schema v2 (21 columns) |
 | `0d350d5` | Schema v2: add 7 new columns and backfill EOW-001 to EOW-015 |
 | `bd9a5cb` | Add raw Escape of Water FOS decision PDFs |
 | `c4fd2d1` | Add EOW-006 through EOW-015 to Escape of Water Case Database |
-| `b0bc4da` | Add Escape of Water knowledge folder structure |
-| `9ecb2e5` | Add Storm playbook knowledge base and platform architecture design |
 
 ---
 
