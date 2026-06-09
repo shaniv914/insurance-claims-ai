@@ -17,9 +17,9 @@ for the EOW playbook. Target: all 57 available PDFs processed and classified.
 
 **Path:** `knowledge/case-databases/Escape_of_Water_Case_Database.xlsx`
 **Schema version:** v2 (21 columns)
-**Total cases processed:** 25 (EOW-001 to EOW-025)
+**Total cases processed:** 35 (EOW-001 to EOW-035)
 **Total PDFs in repository:** 57 (`knowledge/raw-cases/escape-of-water/`)
-**Remaining to process:** 32 PDFs
+**Remaining to process:** 22 PDFs
 
 ### Schema — Column Order (v2)
 
@@ -80,7 +80,7 @@ for the EOW playbook. Target: all 57 available PDFs processed and classified.
 
 ---
 
-## Cases Processed: EOW-001 to EOW-025
+## Cases Processed: EOW-001 to EOW-035
 
 | Case ID | FOS ID | Insurer | Outcome Category | Is Core Case |
 |---|---|---|---|---|
@@ -109,25 +109,35 @@ for the EOW playbook. Target: all 57 available PDFs processed and classified.
 | EOW-023 | DRN-4205492 | QIC Europe Limited | Upheld | Yes |
 | EOW-024 | DRN-4223988 | HDI Global Speciality SE | Upheld | Yes |
 | EOW-025 | DRN-4227214 | Saga Services Limited | Not Upheld | Yes |
+| EOW-026 | DRN3376494 | Covea Insurance plc | Not Upheld | Yes |
+| EOW-027 | DRN3405029 | Aviva Insurance Limited | Upheld | Yes |
+| EOW-028 | DRN4208888 | Millennium Insurance Company Limited | Upheld | Yes |
+| EOW-029 | DRN-4307523 | QIC Europe Ltd | Upheld | Yes |
+| EOW-030 | DRN-4368751 | AXA Insurance Limited | Not Upheld | Yes |
+| EOW-031 | DRN4464315 | Fairmead Insurance Limited | Not Upheld | Yes |
+| EOW-032 | DRN-4521660 | esure Insurance Limited | Not Upheld | Yes |
+| EOW-033 | DRN-4704763 | Covea Insurance plc | Not Upheld | No — Commercial |
+| EOW-034 | DRN-4744346 | AXIS Specialty Europe SE | Not Upheld | No — Commercial |
+| EOW-035 | DRN-4749282 | Aviva Insurance Limited | Not Upheld | Yes |
 
 ---
 
-## Next Batch: EOW-026 to EOW-035
+## Next Batch: EOW-036 to EOW-045
 
 Process these 10 PDFs in order from `knowledge/raw-cases/escape-of-water/`:
 
 | Case ID | Source PDF |
 |---|---|
-| EOW-026 | DRN3376494.pdf |
-| EOW-027 | DRN3405029.pdf |
-| EOW-028 | DRN4208888.pdf |
-| EOW-029 | DRN-4307523.pdf |
-| EOW-030 | DRN-4368751.pdf |
-| EOW-031 | DRN4464315.pdf |
-| EOW-032 | DRN-4521660.pdf |
-| EOW-033 | DRN-4704763.pdf |
-| EOW-034 | DRN-4744346.pdf |
-| EOW-035 | DRN-4749282.pdf |
+| EOW-036 | DRN-5088221.pdf |
+| EOW-037 | DRN-5193042.pdf |
+| EOW-038 | DRN-5198749.pdf |
+| EOW-039 | DRN-5199107.pdf |
+| EOW-040 | DRN-5396824.pdf |
+| EOW-041 | DRN5611706.pdf |
+| EOW-042 | DRN-5649220.pdf |
+| EOW-043 | DRN5670903.pdf |
+| EOW-044 | DRN-5805040.pdf |
+| EOW-045 | DRN5927839.pdf |
 
 **Script to use:** `scripts/append_eow_v2.py`
 Populate `NEW_CASES` with all 10 cases, then run:
