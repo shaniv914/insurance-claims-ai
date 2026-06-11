@@ -230,7 +230,7 @@ When processing future PDFs, apply `Is Core Case = No` if **any** of the followi
 
 | Hash | Message |
 |---|---|
-| `PENDING` | Add STORM-011 to STORM-015 to Storm Case Database |
+| `3ca74df` | Add STORM-011 to STORM-015 to Storm Case Database |
 | `fdb38e6` | Add STORM-006 to STORM-010 to Storm Case Database |
 | `2492d77` | Add STORM-001 to STORM-005 to Storm Case Database |
 | `03333d8` | Add EOW-036 to EOW-057 to Escape of Water Case Database |
