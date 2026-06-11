@@ -1,6 +1,6 @@
 # Insurance Claims AI — Project Status
 
-**Last updated:** 2026-06-11 (STORM-006 to STORM-010 appended)
+**Last updated:** 2026-06-11 (STORM-011 to STORM-015 appended)
 **Branch:** `master`
 **Repository:** https://github.com/shaniv914/insurance-claims-ai
 
@@ -148,11 +148,11 @@ The EOW case database is complete. EOW playbook authoring may now begin.
 
 **Path:** `knowledge/case-databases/Storm_Case_Database.xlsx`
 **Schema version:** v1 (21 columns — same schema as EOW v2)
-**Total cases processed:** 10 (STORM-001 to STORM-010)
+**Total cases processed:** 15 (STORM-001 to STORM-015)
 **Total PDFs in repository:** 38 (`knowledge/raw-cases/`)
-**Remaining to process:** 28 (STORM-011 to STORM-038)
+**Remaining to process:** 23 (STORM-016 to STORM-038)
 
-### Cases Processed: STORM-001 to STORM-010 (Batch 1 complete)
+### Cases Processed: STORM-001 to STORM-015
 
 | Case ID | FOS ID | Insurer | Outcome Category | Is Core Case |
 |---|---|---|---|---|
@@ -166,18 +166,23 @@ The EOW case database is complete. EOW playbook authoring may now begin.
 | STORM-008 | DRN-2788212 | Lloyds Bank General Insurance Limited | Not Upheld | Yes |
 | STORM-009 | DRN-2877529 | Lloyds Bank General Insurance Limited | Not Upheld | Yes |
 | STORM-010 | DRN-2926734 | Fairmead Insurance Limited | Upheld | Yes |
+| STORM-011 | DRN-2926772 | National Farmers' Union Mutual Insurance Society Limited | Not Upheld | Yes |
+| STORM-012 | DRN-3173328 | Aviva Insurance Limited | Not Upheld | Yes |
+| STORM-013 | DRN-3211590 | Aviva Insurance Limited | Not Upheld | Yes |
+| STORM-014 | DRN-3295758 | Aviva Insurance Limited | Not Upheld | Yes |
+| STORM-015 | DRN-3574617 | Lloyds Bank General Insurance Limited | Not Upheld | Yes |
 
 ### Next Batch
 
-**Batch 2 — STORM-011 to STORM-015:**
+**Batch 3 — STORM-016 to STORM-020:**
 
 | STORM-ID | PDF |
 |---|---|
-| STORM-011 | DRN-2926772.pdf |
-| STORM-012 | DRN-3173328.pdf |
-| STORM-013 | DRN-3211590.pdf |
-| STORM-014 | DRN-3295758.pdf |
-| STORM-015 | DRN-3574617.pdf |
+| STORM-016 | DRN-3638410.pdf |
+| STORM-017 | DRN-3643634.pdf |
+| STORM-018 | DRN-3819182.pdf |
+| STORM-019 | DRN-3829618.pdf |
+| STORM-020 | DRN-4293834.pdf |
 
 ---
 
@@ -225,6 +230,7 @@ When processing future PDFs, apply `Is Core Case = No` if **any** of the followi
 
 | Hash | Message |
 |---|---|
+| `PENDING` | Add STORM-011 to STORM-015 to Storm Case Database |
 | `fdb38e6` | Add STORM-006 to STORM-010 to Storm Case Database |
 | `2492d77` | Add STORM-001 to STORM-005 to Storm Case Database |
 | `03333d8` | Add EOW-036 to EOW-057 to Escape of Water Case Database |
