@@ -1,6 +1,6 @@
 # Insurance Claims AI — Project Status
 
-**Last updated:** 2026-06-11 (STORM-011 to STORM-015 appended)
+**Last updated:** 2026-06-11 (STORM-016 to STORM-020 appended)
 **Branch:** `master`
 **Repository:** https://github.com/shaniv914/insurance-claims-ai
 
@@ -148,11 +148,11 @@ The EOW case database is complete. EOW playbook authoring may now begin.
 
 **Path:** `knowledge/case-databases/Storm_Case_Database.xlsx`
 **Schema version:** v1 (21 columns — same schema as EOW v2)
-**Total cases processed:** 15 (STORM-001 to STORM-015)
+**Total cases processed:** 20 (STORM-001 to STORM-020)
 **Total PDFs in repository:** 38 (`knowledge/raw-cases/`)
-**Remaining to process:** 23 (STORM-016 to STORM-038)
+**Remaining to process:** 18 (STORM-021 to STORM-038)
 
-### Cases Processed: STORM-001 to STORM-015
+### Cases Processed: STORM-001 to STORM-020
 
 | Case ID | FOS ID | Insurer | Outcome Category | Is Core Case |
 |---|---|---|---|---|
@@ -171,18 +171,23 @@ The EOW case database is complete. EOW playbook authoring may now begin.
 | STORM-013 | DRN-3211590 | Aviva Insurance Limited | Not Upheld | Yes |
 | STORM-014 | DRN-3295758 | Aviva Insurance Limited | Not Upheld | Yes |
 | STORM-015 | DRN-3574617 | Lloyds Bank General Insurance Limited | Not Upheld | Yes |
+| STORM-016 | DRN-3638410 | AA Underwriting Insurance Company Limited | Upheld | Yes |
+| STORM-017 | DRN-3643634 | UK Insurance Limited | Not Upheld | No — Handling Dispute |
+| STORM-018 | DRN-3819182 | Covea Insurance plc | Not Upheld | Yes |
+| STORM-019 | DRN-3829618 | Royal & Sun Alliance Insurance Plc | Not Upheld | Yes |
+| STORM-020 | DRN-4293834 | AXA Insurance UK Plc | Not Upheld | Yes |
 
 ### Next Batch
 
-**Batch 3 — STORM-016 to STORM-020:**
+**Batch 4 — STORM-021 to STORM-025:**
 
 | STORM-ID | PDF |
 |---|---|
-| STORM-016 | DRN-3638410.pdf |
-| STORM-017 | DRN-3643634.pdf |
-| STORM-018 | DRN-3819182.pdf |
-| STORM-019 | DRN-3829618.pdf |
-| STORM-020 | DRN-4293834.pdf |
+| STORM-021 | TBD — next 5 PDFs in sorted order from `knowledge/raw-cases/` |
+| STORM-022 | TBD |
+| STORM-023 | TBD |
+| STORM-024 | TBD |
+| STORM-025 | TBD |
 
 ---
 
@@ -230,6 +235,7 @@ When processing future PDFs, apply `Is Core Case = No` if **any** of the followi
 
 | Hash | Message |
 |---|---|
+| `PENDING` | Add STORM-016 to STORM-020 to Storm Case Database |
 | `3ca74df` | Add STORM-011 to STORM-015 to Storm Case Database |
 | `fdb38e6` | Add STORM-006 to STORM-010 to Storm Case Database |
 | `2492d77` | Add STORM-001 to STORM-005 to Storm Case Database |
