@@ -1,6 +1,6 @@
 # Insurance Claims AI — Project Status
 
-**Last updated:** 2026-06-13 (STORM-036 to STORM-038 appended — Storm database complete)
+**Last updated:** 2026-06-13 (Flood Batch 1 processed — FLOOD-001 to FLOOD-010 appended)
 **Branch:** `master`
 **Repository:** https://github.com/shaniv914/insurance-claims-ai
 
@@ -8,8 +8,124 @@
 
 ## Current Focus
 
-All 57 Escape of Water (EOW) FOS case PDFs have been processed and classified.
-The EOW case database is complete. EOW playbook authoring may now begin.
+Flood Batch 1 complete (FLOOD-001 to FLOOD-010). 10 cases appended to Flood_Case_Database.xlsx.
+Next: Flood Batch 2 — FLOOD-011 to FLOOD-020.
+
+EOW and Storm databases are complete. EOW and Storm playbook authoring may begin.
+
+---
+
+## Database: Flood_Case_Database.xlsx
+
+**Path:** `knowledge/case-databases/Flood_Case_Database.xlsx`
+**Schema version:** v1 (21 columns — same schema as EOW v2 / Storm v1)
+**Total flood PDFs:** 56 (`knowledge/raw-cases/flood/`)
+**Total flood cases processed:** 10
+**Remaining to process:** 46
+
+### Processing Schedule (batch size = 10)
+
+| Batch | Case IDs | PDFs | Status |
+|---|---|---|---|
+| 1 | FLOOD-001 – FLOOD-010 | DRN0070249 → DRN-2339494 | **Complete** |
+| 2 | FLOOD-011 – FLOOD-020 | DRN2341674 → DRN-2882609 | Pending |
+| 3 | FLOOD-021 – FLOOD-030 | DRN-2922192 → DRN-3370157 | Pending |
+| 4 | FLOOD-031 – FLOOD-040 | DRN-3709658 → DRN-5186962 | Pending |
+| 5 | FLOOD-041 – FLOOD-050 | DRN-5267073 → DRN6619758 | Pending |
+| 6 | FLOOD-051 – FLOOD-056 | DRN7363961 → DRN9771710 | Pending |
+
+### Next Batch
+
+**Batch 2 — FLOOD-011 to FLOOD-020**
+
+| Case ID | Source PDF |
+|---|---|
+| FLOOD-011 | DRN2341674.pdf |
+| FLOOD-012 | DRN2449131.pdf |
+| FLOOD-013 | DRN-2482936.pdf |
+| FLOOD-014 | DRN2512341.pdf |
+| FLOOD-015 | DRN-2541699.pdf |
+| FLOOD-016 | DRN-2632381.pdf |
+| FLOOD-017 | DRN-2785967.pdf |
+| FLOOD-018 | DRN-2787998.pdf |
+| FLOOD-019 | DRN-2800821.pdf |
+| FLOOD-020 | DRN-2882609.pdf |
+
+### Full PDF → Case ID Assignment
+
+| Case ID | Source PDF | Batch |
+|---|---|---|
+| FLOOD-001 | DRN0070249.pdf | 1 |
+| FLOOD-002 | DRN0420936.pdf | 1 |
+| FLOOD-003 | DRN1043965.pdf | 1 |
+| FLOOD-004 | DRN-1611818.pdf | 1 |
+| FLOOD-005 | DRN-1846883.pdf | 1 |
+| FLOOD-006 | DRN-2024904.pdf | 1 |
+| FLOOD-007 | DRN-2075105.pdf | 1 |
+| FLOOD-008 | DRN-2101511.pdf | 1 |
+| FLOOD-009 | DRN2337599.pdf | 1 |
+| FLOOD-010 | DRN-2339494.pdf | 1 |
+| FLOOD-011 | DRN2341674.pdf | 2 |
+| FLOOD-012 | DRN2449131.pdf | 2 |
+| FLOOD-013 | DRN-2482936.pdf | 2 |
+| FLOOD-014 | DRN2512341.pdf | 2 |
+| FLOOD-015 | DRN-2541699.pdf | 2 |
+| FLOOD-016 | DRN-2632381.pdf | 2 |
+| FLOOD-017 | DRN-2785967.pdf | 2 |
+| FLOOD-018 | DRN-2787998.pdf | 2 |
+| FLOOD-019 | DRN-2800821.pdf | 2 |
+| FLOOD-020 | DRN-2882609.pdf | 2 |
+| FLOOD-021 | DRN-2922192.pdf | 3 |
+| FLOOD-022 | DRN-2928961.pdf | 3 |
+| FLOOD-023 | DRN2955063.pdf | 3 |
+| FLOOD-024 | DRN-2965648.pdf | 3 |
+| FLOOD-025 | DRN-3121807.pdf | 3 |
+| FLOOD-026 | DRN-3219788.pdf | 3 |
+| FLOOD-027 | DRN3290959.pdf | 3 |
+| FLOOD-028 | DRN-3295916.pdf | 3 |
+| FLOOD-029 | DRN3348419.pdf | 3 |
+| FLOOD-030 | DRN-3370157.pdf | 3 |
+| FLOOD-031 | DRN-3709658.pdf | 4 |
+| FLOOD-032 | DRN-3710798.pdf | 4 |
+| FLOOD-033 | DRN4280012.pdf | 4 |
+| FLOOD-034 | DRN4396587.pdf | 4 |
+| FLOOD-035 | DRN-4415847.pdf | 4 |
+| FLOOD-036 | DRN-4895575.pdf | 4 |
+| FLOOD-037 | DRN-4901901.pdf | 4 |
+| FLOOD-038 | DRN-4948332.pdf | 4 |
+| FLOOD-039 | DRN-5057225.pdf | 4 |
+| FLOOD-040 | DRN-5186962.pdf | 4 |
+| FLOOD-041 | DRN-5267073.pdf | 5 |
+| FLOOD-042 | DRN-5285327.pdf | 5 |
+| FLOOD-043 | DRN-5349922.pdf | 5 |
+| FLOOD-044 | DRN-5387216.pdf | 5 |
+| FLOOD-045 | DRN-5601561.pdf | 5 |
+| FLOOD-046 | DRN5640983.pdf | 5 |
+| FLOOD-047 | DRN-5827621.pdf | 5 |
+| FLOOD-048 | DRN-6051732.pdf | 5 |
+| FLOOD-049 | DRN6137899.pdf | 5 |
+| FLOOD-050 | DRN6619758.pdf | 5 |
+| FLOOD-051 | DRN7363961.pdf | 6 |
+| FLOOD-052 | DRN7937294.pdf | 6 |
+| FLOOD-053 | DRN7939869.pdf | 6 |
+| FLOOD-054 | DRN8469463.pdf | 6 |
+| FLOOD-055 | DRN9152389.pdf | 6 |
+| FLOOD-056 | DRN9771710.pdf | 6 |
+
+### Cases Processed: FLOOD-001 to FLOOD-010 (Batch 1 complete)
+
+| Case ID | FOS ID | Insurer | Outcome Category | Is Core Case |
+|---|---|---|---|---|
+| FLOOD-001 | DRN0070249 | Royal & Sun Alliance Insurance Plc | Upheld | Yes |
+| FLOOD-002 | DRN0420936 | U K Insurance Limited | Upheld | Yes |
+| FLOOD-003 | DRN1043965 | AXA Insurance UK Plc | Upheld | Yes |
+| FLOOD-004 | DRN-1611818 | Fairmead Insurance Limited | Not Upheld | Yes |
+| FLOOD-005 | DRN-1846883 | U K Insurance Limited | Not Upheld | Yes |
+| FLOOD-006 | DRN-2024904 | Ageas Insurance Limited | Not Upheld | Yes |
+| FLOOD-007 | DRN-2075105 | The Salvation Army General Insurance Corporation Ltd | Not Upheld | No — Administrative |
+| FLOOD-008 | DRN-2101511 | Accredited Insurance (Europe) Ltd | Not Upheld | Yes |
+| FLOOD-009 | DRN2337599 | UK Insurance Limited | Upheld in Part | Yes |
+| FLOOD-010 | DRN-2339494 | Aviva Insurance Limited | Upheld | Yes |
 
 ---
 
@@ -215,6 +331,8 @@ EOW playbook authoring may begin.
 |---|---|---|
 | `scripts/append_eow_v2.py` | **Active** | Standard append for all future EOW batches (schema v2, 21 columns, controlled-vocab validation) |
 | `scripts/append_storm_v1.py` | **Active — use this for Storm** | Standard append for all Storm batches (schema v1, 21 columns, controlled-vocab validation) |
+| `scripts/append_flood_v1.py` | **Active — use this for Flood** | Standard append for all Flood batches (schema v1, 21 columns, controlled-vocab validation) |
+| `scripts/create_flood_case_db.py` | Superseded — do not re-run | Created the empty Flood_Case_Database.xlsx header row; re-running will overwrite data |
 | `scripts/create_storm_case_db.py` | Superseded — do not re-run | Created the empty Storm_Case_Database.xlsx header row; re-running will overwrite data |
 | `scripts/migrate_schema_v2.py` | Reference only | One-time migration that added 7 columns and backfilled EOW-001–015; do not re-run |
 | `scripts/append_eow_006_015.py` | Superseded | 14-column schema; historical record of first batch only |
@@ -246,6 +364,7 @@ When processing future PDFs, apply `Is Core Case = No` if **any** of the followi
 
 | Hash | Message |
 |---|---|
+| _(pending)_ | Add FLOOD-001 to FLOOD-010 to Flood Case Database — Batch 1 complete |
 | `1c9acfc` | Add STORM-036 to STORM-038 to Storm Case Database — complete |
 | `6b8340b` | Add STORM-031 to STORM-035 to Storm Case Database |
 | `62934d4` | Add STORM-026 to STORM-030 to Storm Case Database |
