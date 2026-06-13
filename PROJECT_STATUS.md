@@ -1,6 +1,6 @@
 # Insurance Claims AI — Project Status
 
-**Last updated:** 2026-06-13 (STORM-031 to STORM-035 appended)
+**Last updated:** 2026-06-13 (STORM-036 to STORM-038 appended — Storm database complete)
 **Branch:** `master`
 **Repository:** https://github.com/shaniv914/insurance-claims-ai
 
@@ -148,11 +148,11 @@ The EOW case database is complete. EOW playbook authoring may now begin.
 
 **Path:** `knowledge/case-databases/Storm_Case_Database.xlsx`
 **Schema version:** v1 (21 columns — same schema as EOW v2)
-**Total cases processed:** 35 (STORM-001 to STORM-035)
+**Total cases processed:** 38 (STORM-001 to STORM-038)
 **Total PDFs in repository:** 38 (`knowledge/raw-cases/`)
-**Remaining to process:** 3 (STORM-036 to STORM-038)
+**Remaining to process:** 0 — all PDFs processed
 
-### Cases Processed: STORM-001 to STORM-035
+### Cases Processed: STORM-001 to STORM-038 (complete)
 
 | Case ID | FOS ID | Insurer | Outcome Category | Is Core Case |
 |---|---|---|---|---|
@@ -191,16 +191,14 @@ The EOW case database is complete. EOW playbook authoring may now begin.
 | STORM-033 | DRN5397298 | U K Insurance Limited | Upheld | Yes |
 | STORM-034 | DRN7021460 | Liverpool Victoria Insurance Company Limited | Not Upheld | Yes |
 | STORM-035 | DRN7244667 | Liverpool Victoria Insurance Company Limited | Not Upheld | Yes |
+| STORM-036 | DRN8247030 | Royal & Sun Alliance Insurance Plc | Not Upheld | Yes |
+| STORM-037 | DRN8636254 | Aviva Insurance Limited | Not Upheld | Yes |
+| STORM-038 | DRN8660161 | Zurich Insurance PLC | Not Upheld | Yes |
 
 ### Next Batch
 
-**Batch 7 — STORM-036 to STORM-038 (final batch):**
-
-| STORM-ID | PDF |
-|---|---|
-| STORM-036 | DRN8247030.pdf |
-| STORM-037 | DRN8636254.pdf |
-| STORM-038 | DRN8660161.pdf |
+**None — all 38 PDFs have been processed.** The Storm case database is complete.
+Storm playbook authoring may begin.
 
 ---
 
@@ -248,6 +246,7 @@ When processing future PDFs, apply `Is Core Case = No` if **any** of the followi
 
 | Hash | Message |
 |---|---|
+| `TBD` | Add STORM-036 to STORM-038 to Storm Case Database — complete |
 | `6b8340b` | Add STORM-031 to STORM-035 to Storm Case Database |
 | `62934d4` | Add STORM-026 to STORM-030 to Storm Case Database |
 | `ef9a197` | Add STORM-021 to STORM-025 to Storm Case Database |
