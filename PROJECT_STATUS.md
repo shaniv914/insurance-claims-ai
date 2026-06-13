@@ -1,6 +1,6 @@
 # Insurance Claims AI — Project Status
 
-**Last updated:** 2026-06-11 (STORM-016 to STORM-020 appended)
+**Last updated:** 2026-06-13 (STORM-021 to STORM-025 appended)
 **Branch:** `master`
 **Repository:** https://github.com/shaniv914/insurance-claims-ai
 
@@ -148,11 +148,11 @@ The EOW case database is complete. EOW playbook authoring may now begin.
 
 **Path:** `knowledge/case-databases/Storm_Case_Database.xlsx`
 **Schema version:** v1 (21 columns — same schema as EOW v2)
-**Total cases processed:** 20 (STORM-001 to STORM-020)
+**Total cases processed:** 25 (STORM-001 to STORM-025)
 **Total PDFs in repository:** 38 (`knowledge/raw-cases/`)
-**Remaining to process:** 18 (STORM-021 to STORM-038)
+**Remaining to process:** 13 (STORM-026 to STORM-038)
 
-### Cases Processed: STORM-001 to STORM-020
+### Cases Processed: STORM-001 to STORM-025
 
 | Case ID | FOS ID | Insurer | Outcome Category | Is Core Case |
 |---|---|---|---|---|
@@ -176,18 +176,23 @@ The EOW case database is complete. EOW playbook authoring may now begin.
 | STORM-018 | DRN-3819182 | Covea Insurance plc | Not Upheld | Yes |
 | STORM-019 | DRN-3829618 | Royal & Sun Alliance Insurance Plc | Not Upheld | Yes |
 | STORM-020 | DRN-4293834 | AXA Insurance UK Plc | Not Upheld | Yes |
+| STORM-021 | DRN-4517146 | AXA XL Insurance Company UK Limited | Not Upheld | Yes |
+| STORM-022 | DRN-4757581 | Accredited Insurance (Europe) Ltd | Not Upheld | Yes |
+| STORM-023 | DRN-4899211 | U K Insurance Limited | Not Upheld | Yes |
+| STORM-024 | DRN-5647934 | AXIS Specialty Europe SE | Not Upheld | Yes |
+| STORM-025 | DRN-6075693 | AXA Insurance UK Plc | Not Upheld | Yes |
 
 ### Next Batch
 
-**Batch 4 — STORM-021 to STORM-025:**
+**Batch 5 — STORM-026 to STORM-030:**
 
 | STORM-ID | PDF |
 |---|---|
-| STORM-021 | TBD — next 5 PDFs in sorted order from `knowledge/raw-cases/` |
-| STORM-022 | TBD |
-| STORM-023 | TBD |
-| STORM-024 | TBD |
-| STORM-025 | TBD |
+| STORM-026 | DRN0445901.pdf |
+| STORM-027 | DRN1086734.pdf |
+| STORM-028 | DRN1681509.pdf |
+| STORM-029 | DRN2201217.pdf |
+| STORM-030 | DRN2738252.pdf |
 
 ---
 
@@ -235,6 +240,7 @@ When processing future PDFs, apply `Is Core Case = No` if **any** of the followi
 
 | Hash | Message |
 |---|---|
+| TBD | Add STORM-021 to STORM-025 to Storm Case Database |
 | `420499f` | Add STORM-016 to STORM-020 to Storm Case Database |
 | `3ca74df` | Add STORM-011 to STORM-015 to Storm Case Database |
 | `fdb38e6` | Add STORM-006 to STORM-010 to Storm Case Database |
