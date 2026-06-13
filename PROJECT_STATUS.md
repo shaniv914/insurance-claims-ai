@@ -1,6 +1,6 @@
 # Insurance Claims AI — Project Status
 
-**Last updated:** 2026-06-13 (Flood Batch 2 processed — FLOOD-011 to FLOOD-020 appended)
+**Last updated:** 2026-06-13 (Flood Batch 3 processed — FLOOD-021 to FLOOD-030 appended)
 **Branch:** `master`
 **Repository:** https://github.com/shaniv914/insurance-claims-ai
 
@@ -8,8 +8,8 @@
 
 ## Current Focus
 
-Flood Batch 2 complete (FLOOD-011 to FLOOD-020). 20 cases now in Flood_Case_Database.xlsx.
-Next: Flood Batch 3 — FLOOD-021 to FLOOD-030.
+Flood Batch 3 complete (FLOOD-021 to FLOOD-030). 30 cases now in Flood_Case_Database.xlsx.
+Next: Flood Batch 4 — FLOOD-031 to FLOOD-040.
 
 EOW and Storm databases are complete. EOW and Storm playbook authoring may begin.
 
@@ -20,8 +20,8 @@ EOW and Storm databases are complete. EOW and Storm playbook authoring may begin
 **Path:** `knowledge/case-databases/Flood_Case_Database.xlsx`
 **Schema version:** v1 (21 columns — same schema as EOW v2 / Storm v1)
 **Total flood PDFs:** 56 (`knowledge/raw-cases/flood/`)
-**Total flood cases processed:** 20
-**Remaining to process:** 36
+**Total flood cases processed:** 30
+**Remaining to process:** 26
 
 ### Processing Schedule (batch size = 10)
 
@@ -29,27 +29,27 @@ EOW and Storm databases are complete. EOW and Storm playbook authoring may begin
 |---|---|---|---|
 | 1 | FLOOD-001 – FLOOD-010 | DRN0070249 → DRN-2339494 | **Complete** |
 | 2 | FLOOD-011 – FLOOD-020 | DRN2341674 → DRN-2882609 | **Complete** |
-| 3 | FLOOD-021 – FLOOD-030 | DRN-2922192 → DRN-3370157 | Pending |
+| 3 | FLOOD-021 – FLOOD-030 | DRN-2922192 → DRN-3370157 | **Complete** |
 | 4 | FLOOD-031 – FLOOD-040 | DRN-3709658 → DRN-5186962 | Pending |
 | 5 | FLOOD-041 – FLOOD-050 | DRN-5267073 → DRN6619758 | Pending |
 | 6 | FLOOD-051 – FLOOD-056 | DRN7363961 → DRN9771710 | Pending |
 
 ### Next Batch
 
-**Batch 3 — FLOOD-021 to FLOOD-030**
+**Batch 4 — FLOOD-031 to FLOOD-040**
 
 | Case ID | Source PDF |
 |---|---|
-| FLOOD-021 | DRN-2922192.pdf |
-| FLOOD-022 | DRN-2928961.pdf |
-| FLOOD-023 | DRN2955063.pdf |
-| FLOOD-024 | DRN-2965648.pdf |
-| FLOOD-025 | DRN-3121807.pdf |
-| FLOOD-026 | DRN-3219788.pdf |
-| FLOOD-027 | DRN3290959.pdf |
-| FLOOD-028 | DRN-3295916.pdf |
-| FLOOD-029 | DRN3348419.pdf |
-| FLOOD-030 | DRN-3370157.pdf |
+| FLOOD-031 | DRN-3709658.pdf |
+| FLOOD-032 | DRN-3710798.pdf |
+| FLOOD-033 | DRN4280012.pdf |
+| FLOOD-034 | DRN4396587.pdf |
+| FLOOD-035 | DRN-4415847.pdf |
+| FLOOD-036 | DRN-4895575.pdf |
+| FLOOD-037 | DRN-4901901.pdf |
+| FLOOD-038 | DRN-4948332.pdf |
+| FLOOD-039 | DRN-5057225.pdf |
+| FLOOD-040 | DRN-5186962.pdf |
 
 ### Full PDF → Case ID Assignment
 
@@ -112,7 +112,7 @@ EOW and Storm databases are complete. EOW and Storm playbook authoring may begin
 | FLOOD-055 | DRN9152389.pdf | 6 |
 | FLOOD-056 | DRN9771710.pdf | 6 |
 
-### Cases Processed: FLOOD-001 to FLOOD-020 (Batches 1–2 complete)
+### Cases Processed: FLOOD-001 to FLOOD-030 (Batches 1–3 complete)
 
 | Case ID | FOS ID | Insurer | Outcome Category | Is Core Case |
 |---|---|---|---|---|
@@ -136,6 +136,16 @@ EOW and Storm databases are complete. EOW and Storm playbook authoring may begin
 | FLOOD-018 | DRN-2787998 | Ocaso SA, Compania de Seguros y Reaseguros | Not Upheld | Yes |
 | FLOOD-019 | DRN-2800821 | Aviva Insurance Limited | Upheld in Part | No — Administrative |
 | FLOOD-020 | DRN-2882609 | Aviva Insurance Limited | Upheld | Yes |
+| FLOOD-021 | DRN-2922192 | St Andrew's Insurance Plc | Not Upheld | No — Administrative |
+| FLOOD-022 | DRN-2928961 | AXA Insurance UK Plc | Not Upheld | Yes |
+| FLOOD-023 | DRN2955063 | Millennium Insurance Company Limited | Upheld | Yes |
+| FLOOD-024 | DRN-2965648 | Ocaso SA, Compania de Seguros y Reaseguros | Not Upheld | Yes |
+| FLOOD-025 | DRN-3121807 | Ocaso SA, Compania de Seguros y Reaseguros | Not Upheld | Yes |
+| FLOOD-026 | DRN-3219788 | QIC Europe Limited | Not Upheld | Yes |
+| FLOOD-027 | DRN3290959 | Ageas Insurance Limited | Not Upheld | Yes |
+| FLOOD-028 | DRN-3295916 | QIC Europe Ltd | Upheld | Yes |
+| FLOOD-029 | DRN3348419 | Royal & Sun Alliance Insurance Plc | Upheld in Part | Yes |
+| FLOOD-030 | DRN-3370157 | Fairmead Insurance Limited | Not Upheld | No — Administrative |
 
 ---
 
@@ -341,7 +351,8 @@ EOW playbook authoring may begin.
 |---|---|---|
 | `scripts/append_eow_v2.py` | **Active** | Standard append for all future EOW batches (schema v2, 21 columns, controlled-vocab validation) |
 | `scripts/append_storm_v1.py` | **Active — use this for Storm** | Standard append for all Storm batches (schema v1, 21 columns, controlled-vocab validation) |
-| `scripts/append_flood_v2.py` | **Active — use this for Flood** | Standard append for all Flood batches (schema v1, 21 columns, controlled-vocab validation) |
+| `scripts/append_flood_v3.py` | **Active — use this for Flood** | Standard append for all Flood batches from Batch 3 onwards (schema v1, 21 columns, controlled-vocab validation) |
+| `scripts/append_flood_v2.py` | Superseded by v3 — do not reuse | Batch 2 append script (FLOOD-011 to FLOOD-020); historical record only |
 | `scripts/append_flood_v1.py` | Superseded by v2 — do not reuse | Batch 1 append script (FLOOD-001 to FLOOD-010); historical record only |
 | `scripts/create_flood_case_db.py` | Superseded — do not re-run | Created the empty Flood_Case_Database.xlsx header row; re-running will overwrite data |
 | `scripts/create_storm_case_db.py` | Superseded — do not re-run | Created the empty Storm_Case_Database.xlsx header row; re-running will overwrite data |
