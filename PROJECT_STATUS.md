@@ -1,6 +1,6 @@
 # Insurance Claims AI — Project Status
 
-**Last updated:** 2026-06-13 (Flood Batch 4 processed — FLOOD-032 to FLOOD-040 appended; FLOOD-031 excluded)
+**Last updated:** 2026-06-19 (Flood Batch 5 processed — FLOOD-041 to FLOOD-050 appended)
 **Branch:** `master`
 **Repository:** https://github.com/shaniv914/insurance-claims-ai
 
@@ -8,8 +8,8 @@
 
 ## Current Focus
 
-Flood Batch 4 complete (FLOOD-032 to FLOOD-040 appended; FLOOD-031 DRN-3709658 excluded — home emergency contractor liability, not flood insurance). 39 cases now in Flood_Case_Database.xlsx.
-Next: Flood Batch 5 — FLOOD-041 to FLOOD-050.
+Flood Batch 5 complete (FLOOD-041 to FLOOD-050 appended). 49 cases now in Flood_Case_Database.xlsx.
+Next: Flood Batch 6 — FLOOD-051 to FLOOD-056 (final batch).
 
 EOW and Storm databases are complete. EOW and Storm playbook authoring may begin.
 Flood Playbook note written: `knowledge/playbooks/flood/flood-source-of-water-interpretation.md` (FLOOD-035 vs FLOOD-038 "such as" language analysis).
@@ -21,8 +21,8 @@ Flood Playbook note written: `knowledge/playbooks/flood/flood-source-of-water-in
 **Path:** `knowledge/case-databases/Flood_Case_Database.xlsx`
 **Schema version:** v1 (21 columns — same schema as EOW v2 / Storm v1)
 **Total flood PDFs:** 56 (`knowledge/raw-cases/flood/`)
-**Total flood cases processed:** 39
-**Remaining to process:** 17
+**Total flood cases processed:** 49
+**Remaining to process:** 7
 
 ### Processing Schedule (batch size = 10)
 
@@ -32,25 +32,21 @@ Flood Playbook note written: `knowledge/playbooks/flood/flood-source-of-water-in
 | 2 | FLOOD-011 – FLOOD-020 | DRN2341674 → DRN-2882609 | **Complete** |
 | 3 | FLOOD-021 – FLOOD-030 | DRN-2922192 → DRN-3370157 | **Complete** |
 | 4 | FLOOD-031 – FLOOD-040 | DRN-3709658 → DRN-5186962 | **Complete** (9 appended; FLOOD-031 excluded) |
-| 5 | FLOOD-041 – FLOOD-050 | DRN-5267073 → DRN6619758 | Pending |
+| 5 | FLOOD-041 – FLOOD-050 | DRN-5267073 → DRN6619758 | **Complete** |
 | 6 | FLOOD-051 – FLOOD-056 | DRN7363961 → DRN9771710 | Pending |
 
 ### Next Batch
 
-**Batch 5 — FLOOD-041 to FLOOD-050**
+**Batch 6 — FLOOD-051 to FLOOD-056 (Final)**
 
 | Case ID | Source PDF |
 |---|---|
-| FLOOD-041 | DRN-5267073.pdf |
-| FLOOD-042 | DRN-5285327.pdf |
-| FLOOD-043 | DRN-5349922.pdf |
-| FLOOD-044 | DRN-5387216.pdf |
-| FLOOD-045 | DRN-5601561.pdf |
-| FLOOD-046 | DRN5640983.pdf |
-| FLOOD-047 | DRN-5827621.pdf |
-| FLOOD-048 | DRN-6051732.pdf |
-| FLOOD-049 | DRN6137899.pdf |
-| FLOOD-050 | DRN6619758.pdf |
+| FLOOD-051 | DRN7363961.pdf |
+| FLOOD-052 | DRN7937294.pdf |
+| FLOOD-053 | DRN7939869.pdf |
+| FLOOD-054 | DRN8469463.pdf |
+| FLOOD-055 | DRN9152389.pdf |
+| FLOOD-056 | DRN9771710.pdf |
 
 ### Full PDF → Case ID Assignment
 
@@ -113,7 +109,7 @@ Flood Playbook note written: `knowledge/playbooks/flood/flood-source-of-water-in
 | FLOOD-055 | DRN9152389.pdf | 6 |
 | FLOOD-056 | DRN9771710.pdf | 6 |
 
-### Cases Processed: FLOOD-001 to FLOOD-040 (Batches 1–4 complete)
+### Cases Processed: FLOOD-001 to FLOOD-050 (Batches 1–5 complete)
 
 | Case ID | FOS ID | Insurer | Outcome Category | Is Core Case |
 |---|---|---|---|---|
@@ -157,6 +153,16 @@ Flood Playbook note written: `knowledge/playbooks/flood/flood-source-of-water-in
 | FLOOD-038 | DRN-4948332 | Aviva Insurance Limited | Not Upheld | Yes |
 | FLOOD-039 | DRN-5057225 | Royal & Sun Alliance Insurance Limited | Upheld | No — Handling Dispute |
 | FLOOD-040 | DRN-5186962 | Society of Lloyd's | Upheld | Yes |
+| FLOOD-041 | DRN-5267073 | The National Farmers' Union Mutual Insurance Society Limited | Not Upheld | Yes |
+| FLOOD-042 | DRN-5285327 | U K Insurance Limited | Upheld | Yes |
+| FLOOD-043 | DRN-5349922 | Covea Insurance plc | Upheld in Part | No — Administrative |
+| FLOOD-044 | DRN-5387216 | Covea Insurance plc | Upheld | Yes |
+| FLOOD-045 | DRN-5601561 | Advantage Insurance Company Limited | Not Upheld | Yes |
+| FLOOD-046 | DRN5640983 | Royal & Sun Alliance Insurance Plc | Upheld | Yes |
+| FLOOD-047 | DRN-5827621 | Aviva Insurance Limited | Upheld | No — Handling Dispute |
+| FLOOD-048 | DRN-6051732 | Allianz Global Corporate & Specialty SE | Compensation Only | No — Commercial |
+| FLOOD-049 | DRN6137899 | UK General Insurance (Ireland) Limited | Upheld in Part | No — Commercial |
+| FLOOD-050 | DRN6619758 | International Insurance Company of Hannover SE | Not Upheld | Yes |
 
 ---
 
@@ -362,7 +368,8 @@ EOW playbook authoring may begin.
 |---|---|---|
 | `scripts/append_eow_v2.py` | **Active** | Standard append for all future EOW batches (schema v2, 21 columns, controlled-vocab validation) |
 | `scripts/append_storm_v1.py` | **Active — use this for Storm** | Standard append for all Storm batches (schema v1, 21 columns, controlled-vocab validation) |
-| `scripts/append_flood_v4.py` | **Active — use this for Flood** | Standard append for all Flood batches from Batch 4 onwards (schema v1, 21 columns, controlled-vocab validation) |
+| `scripts/append_flood_v5.py` | **Active — use this for Flood** | Standard append for Flood Batch 5 (FLOOD-041 to FLOOD-050); schema v1, 21 columns, controlled-vocab validation |
+| `scripts/append_flood_v4.py` | Superseded by v5 — do not reuse | Batch 4 append script (FLOOD-032 to FLOOD-040); historical record only |
 | `scripts/append_flood_v3.py` | Superseded by v4 — do not reuse | Batch 3 append script (FLOOD-021 to FLOOD-030); historical record only |
 | `scripts/append_flood_v2.py` | Superseded by v3 — do not reuse | Batch 2 append script (FLOOD-011 to FLOOD-020); historical record only |
 | `scripts/append_flood_v1.py` | Superseded by v2 — do not reuse | Batch 1 append script (FLOOD-001 to FLOOD-010); historical record only |
@@ -398,6 +405,7 @@ When processing future PDFs, apply `Is Core Case = No` if **any** of the followi
 
 | Hash | Message |
 |---|---|
+| (pending) | Add FLOOD-041 to FLOOD-050 to Flood Case Database - Batch 5 complete |
 | `f7d5ba0` | Add FLOOD-032 to FLOOD-040 to Flood Case Database - Batch 4 complete |
 | `b7537ff` | Add FLOOD-021 to FLOOD-030 to Flood Case Database - Batch 3 complete |
 | `0772c95` | Add FLOOD-011 to FLOOD-020 to Flood Case Database - Batch 2 complete |
