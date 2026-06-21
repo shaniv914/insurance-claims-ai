@@ -1,6 +1,6 @@
 # Insurance Claims AI — Project Status
 
-**Last updated:** 2026-06-21 (Flood Batch 6 processed — FLOOD-051 to FLOOD-056 appended — Flood database complete)
+**Last updated:** 2026-06-21 (Subsidence raw PDF library committed — 32 PDFs; extraction not yet started)
 **Branch:** `master`
 **Repository:** https://github.com/shaniv914/insurance-claims-ai
 
@@ -8,11 +8,12 @@
 
 ## Current Focus
 
-All three case databases are complete. EOW, Storm, and Flood playbook authoring may begin.
+EOW, Storm, and Flood case databases are complete. Subsidence raw PDF library committed (32 PDFs). Next: Subsidence case extraction (SUBS-001 onwards).
 
 - EOW: 57 cases (EOW-001 to EOW-057) — complete
 - Storm: 38 cases (STORM-001 to STORM-038) — complete
 - Flood: 55 database rows (56 PDFs reviewed; FLOOD-031 excluded) — complete
+- Subsidence: 32 PDFs in library — extraction not yet started
 
 Flood Playbook note written: `knowledge/playbooks/flood/flood-source-of-water-interpretation.md` (FLOOD-035 vs FLOOD-038 "such as" language analysis).
 
@@ -362,6 +363,68 @@ EOW playbook authoring may begin.
 
 ---
 
+## Database: Subsidence_Case_Database.xlsx
+
+**Path:** `knowledge/case-databases/Subsidence_Case_Database.xlsx` *(not yet created — extraction not started)*
+**Schema version:** v1 (21 columns — same schema as EOW v2 / Storm v1 / Flood v1)
+**Total subsidence PDFs:** 32 (`knowledge/raw-cases/subsidence/`)
+**Total subsidence cases processed:** 0
+**Remaining to process:** 32
+
+### Processing Schedule (batch size = 10)
+
+| Batch | Case IDs | PDFs | Status |
+|---|---|---|---|
+| 1 | SUBS-001 – SUBS-010 | TBD at extraction | Pending |
+| 2 | SUBS-011 – SUBS-020 | TBD at extraction | Pending |
+| 3 | SUBS-021 – SUBS-030 | TBD at extraction | Pending |
+| 4 | SUBS-031 – SUBS-032 | TBD at extraction | Pending |
+
+### Full PDF List (32 files — sorted by DRN)
+
+| # | Source PDF |
+|---|---|
+| 1 | DRN0001741.pdf |
+| 2 | DRN0017653.pdf |
+| 3 | DRN0618226.pdf |
+| 4 | DRN1210158.pdf |
+| 5 | DRN1933952.pdf |
+| 6 | DRN2093738.pdf |
+| 7 | DRN-2213774.pdf |
+| 8 | DRN2337317.pdf |
+| 9 | DRN2707923.pdf |
+| 10 | DRN-2807339.pdf |
+| 11 | DRN2951368.pdf |
+| 12 | DRN-3258437.pdf |
+| 13 | DRN-3387540.pdf |
+| 14 | DRN-3427348.pdf |
+| 15 | DRN-3581769.pdf |
+| 16 | DRN-3682901.pdf |
+| 17 | DRN-3929594.pdf |
+| 18 | DRN-4190935.pdf |
+| 19 | DRN-4813489.pdf |
+| 20 | DRN-4883553.pdf |
+| 21 | DRN-4950435.pdf |
+| 22 | DRN5217766.pdf |
+| 23 | DRN-5220010.pdf |
+| 24 | DRN-5315100.pdf |
+| 25 | DRN-5375880.pdf |
+| 26 | DRN-5643066.pdf |
+| 27 | DRN-5656370.pdf |
+| 28 | DRN-5718419.pdf |
+| 29 | DRN-5755602.pdf |
+| 30 | DRN-6019596.pdf |
+| 31 | DRN8130715.pdf |
+| 32 | DRN8561608.pdf |
+
+### Next Batch
+
+**Batch 1 — SUBS-001 to SUBS-010**
+
+PDF → Case ID assignment and structured extraction not yet started.
+
+---
+
 ## Scripts
 
 | Script | Status | Purpose |
@@ -406,6 +469,8 @@ When processing future PDFs, apply `Is Core Case = No` if **any** of the followi
 
 | Hash | Message |
 |---|---|
+| (pending) | Update PROJECT_STATUS.md — Subsidence peril added, PDF library committed |
+| `e2c18a5` | Add Subsidence raw PDF library — 32 PDFs (knowledge/raw-cases/subsidence/) |
 | `2902a59` | Add FLOOD-051 to FLOOD-056 to Flood Case Database — Batch 6 complete (Flood database final) |
 | `aa506db` | Add FLOOD-041 to FLOOD-050 to Flood Case Database - Batch 5 complete |
 | `f7d5ba0` | Add FLOOD-032 to FLOOD-040 to Flood Case Database - Batch 4 complete |
