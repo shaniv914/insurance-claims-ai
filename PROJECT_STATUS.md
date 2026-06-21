@@ -469,7 +469,7 @@ When processing future PDFs, apply `Is Core Case = No` if **any** of the followi
 
 | Hash | Message |
 |---|---|
-| (pending) | Update PROJECT_STATUS.md — Subsidence peril added, PDF library committed |
+| `a0c11c0` | Update PROJECT_STATUS.md — Subsidence peril added, PDF library committed |
 | `e2c18a5` | Add Subsidence raw PDF library — 32 PDFs (knowledge/raw-cases/subsidence/) |
 | `2902a59` | Add FLOOD-051 to FLOOD-056 to Flood Case Database — Batch 6 complete (Flood database final) |
 | `aa506db` | Add FLOOD-041 to FLOOD-050 to Flood Case Database - Batch 5 complete |
