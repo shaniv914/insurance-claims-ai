@@ -1,6 +1,6 @@
 # Insurance Claims AI — Project Status
 
-**Last updated:** 2026-06-19 (Flood Batch 5 processed — FLOOD-041 to FLOOD-050 appended)
+**Last updated:** 2026-06-21 (Flood Batch 6 processed — FLOOD-051 to FLOOD-056 appended — Flood database complete)
 **Branch:** `master`
 **Repository:** https://github.com/shaniv914/insurance-claims-ai
 
@@ -8,10 +8,12 @@
 
 ## Current Focus
 
-Flood Batch 5 complete (FLOOD-041 to FLOOD-050 appended). 49 cases now in Flood_Case_Database.xlsx.
-Next: Flood Batch 6 — FLOOD-051 to FLOOD-056 (final batch).
+All three case databases are complete. EOW, Storm, and Flood playbook authoring may begin.
 
-EOW and Storm databases are complete. EOW and Storm playbook authoring may begin.
+- EOW: 57 cases (EOW-001 to EOW-057) — complete
+- Storm: 38 cases (STORM-001 to STORM-038) — complete
+- Flood: 55 database rows (56 PDFs reviewed; FLOOD-031 excluded) — complete
+
 Flood Playbook note written: `knowledge/playbooks/flood/flood-source-of-water-interpretation.md` (FLOOD-035 vs FLOOD-038 "such as" language analysis).
 
 ---
@@ -21,8 +23,8 @@ Flood Playbook note written: `knowledge/playbooks/flood/flood-source-of-water-in
 **Path:** `knowledge/case-databases/Flood_Case_Database.xlsx`
 **Schema version:** v1 (21 columns — same schema as EOW v2 / Storm v1)
 **Total flood PDFs:** 56 (`knowledge/raw-cases/flood/`)
-**Total flood cases processed:** 49
-**Remaining to process:** 7
+**Total flood cases processed:** 55 (FLOOD-031 excluded — 56 PDFs reviewed)
+**Remaining to process:** 0 — all PDFs processed
 
 ### Processing Schedule (batch size = 10)
 
@@ -33,20 +35,12 @@ Flood Playbook note written: `knowledge/playbooks/flood/flood-source-of-water-in
 | 3 | FLOOD-021 – FLOOD-030 | DRN-2922192 → DRN-3370157 | **Complete** |
 | 4 | FLOOD-031 – FLOOD-040 | DRN-3709658 → DRN-5186962 | **Complete** (9 appended; FLOOD-031 excluded) |
 | 5 | FLOOD-041 – FLOOD-050 | DRN-5267073 → DRN6619758 | **Complete** |
-| 6 | FLOOD-051 – FLOOD-056 | DRN7363961 → DRN9771710 | Pending |
+| 6 | FLOOD-051 – FLOOD-056 | DRN7363961 → DRN9771710 | **Complete** |
 
 ### Next Batch
 
-**Batch 6 — FLOOD-051 to FLOOD-056 (Final)**
-
-| Case ID | Source PDF |
-|---|---|
-| FLOOD-051 | DRN7363961.pdf |
-| FLOOD-052 | DRN7937294.pdf |
-| FLOOD-053 | DRN7939869.pdf |
-| FLOOD-054 | DRN8469463.pdf |
-| FLOOD-055 | DRN9152389.pdf |
-| FLOOD-056 | DRN9771710.pdf |
+**None — all 56 PDFs have been processed.** The Flood case database is complete (55 database rows; FLOOD-031 excluded).
+Flood playbook authoring may begin.
 
 ### Full PDF → Case ID Assignment
 
@@ -109,7 +103,7 @@ Flood Playbook note written: `knowledge/playbooks/flood/flood-source-of-water-in
 | FLOOD-055 | DRN9152389.pdf | 6 |
 | FLOOD-056 | DRN9771710.pdf | 6 |
 
-### Cases Processed: FLOOD-001 to FLOOD-050 (Batches 1–5 complete)
+### Cases Processed: FLOOD-001 to FLOOD-056 (Batches 1–6 complete — 55 database rows; FLOOD-031 excluded)
 
 | Case ID | FOS ID | Insurer | Outcome Category | Is Core Case |
 |---|---|---|---|---|
@@ -163,6 +157,12 @@ Flood Playbook note written: `knowledge/playbooks/flood/flood-source-of-water-in
 | FLOOD-048 | DRN-6051732 | Allianz Global Corporate & Specialty SE | Compensation Only | No — Commercial |
 | FLOOD-049 | DRN6137899 | UK General Insurance (Ireland) Limited | Upheld in Part | No — Commercial |
 | FLOOD-050 | DRN6619758 | International Insurance Company of Hannover SE | Not Upheld | Yes |
+| FLOOD-051 | DRN7363961 | Lloyds Bank General Insurance Limited | Upheld | No — Administrative |
+| FLOOD-052 | DRN7937294 | UK General Insurance (Ireland) Limited | Compensation Only | Yes |
+| FLOOD-053 | DRN7939869 | Royal & Sun Alliance Insurance Plc | Upheld in Part | No — Handling Dispute |
+| FLOOD-054 | DRN8469463 | TBO Services Limited | Upheld | No — Broker Dispute |
+| FLOOD-055 | DRN9152389 | WR Berkley Insurance (Europe) Limited | Not Upheld | Yes |
+| FLOOD-056 | DRN9771710 | Society of Lloyd's | Not Upheld | Yes |
 
 ---
 
@@ -368,7 +368,8 @@ EOW playbook authoring may begin.
 |---|---|---|
 | `scripts/append_eow_v2.py` | **Active** | Standard append for all future EOW batches (schema v2, 21 columns, controlled-vocab validation) |
 | `scripts/append_storm_v1.py` | **Active — use this for Storm** | Standard append for all Storm batches (schema v1, 21 columns, controlled-vocab validation) |
-| `scripts/append_flood_v5.py` | **Active — use this for Flood** | Standard append for Flood Batch 5 (FLOOD-041 to FLOOD-050); schema v1, 21 columns, controlled-vocab validation |
+| `scripts/append_flood_v6.py` | Final batch complete — do not reuse | Batch 6 append script (FLOOD-051 to FLOOD-056); Flood database complete |
+| `scripts/append_flood_v5.py` | Superseded by v6 — do not reuse | Batch 5 append script (FLOOD-041 to FLOOD-050); historical record only |
 | `scripts/append_flood_v4.py` | Superseded by v5 — do not reuse | Batch 4 append script (FLOOD-032 to FLOOD-040); historical record only |
 | `scripts/append_flood_v3.py` | Superseded by v4 — do not reuse | Batch 3 append script (FLOOD-021 to FLOOD-030); historical record only |
 | `scripts/append_flood_v2.py` | Superseded by v3 — do not reuse | Batch 2 append script (FLOOD-011 to FLOOD-020); historical record only |
@@ -405,7 +406,8 @@ When processing future PDFs, apply `Is Core Case = No` if **any** of the followi
 
 | Hash | Message |
 |---|---|
-| (pending) | Add FLOOD-041 to FLOOD-050 to Flood Case Database - Batch 5 complete |
+| (pending) | Add FLOOD-051 to FLOOD-056 to Flood Case Database — Batch 6 complete (Flood database final) |
+| `aa506db` | Add FLOOD-041 to FLOOD-050 to Flood Case Database - Batch 5 complete |
 | `f7d5ba0` | Add FLOOD-032 to FLOOD-040 to Flood Case Database - Batch 4 complete |
 | `b7537ff` | Add FLOOD-021 to FLOOD-030 to Flood Case Database - Batch 3 complete |
 | `0772c95` | Add FLOOD-011 to FLOOD-020 to Flood Case Database - Batch 2 complete |
