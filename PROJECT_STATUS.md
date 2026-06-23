@@ -1,6 +1,6 @@
 # Insurance Claims AI — Project Status
 
-**Last updated:** 2026-06-21 (Subsidence Batch 1 complete — SUBS-001 to SUBS-010; 10 cases processed)
+**Last updated:** 2026-06-22 (Subsidence Batch 2 complete — SUBS-011 to SUBS-020; 20 cases processed)
 **Branch:** `master`
 **Repository:** https://github.com/shaniv914/insurance-claims-ai
 
@@ -8,12 +8,12 @@
 
 ## Current Focus
 
-EOW, Storm, and Flood case databases are complete. Subsidence Batch 1 complete (SUBS-001 to SUBS-010). Next: Subsidence Batch 2 (SUBS-011 to SUBS-020).
+EOW, Storm, and Flood case databases are complete. Subsidence Batch 2 complete (SUBS-001 to SUBS-020). Next: Subsidence Batch 3 (SUBS-021 to SUBS-030).
 
 - EOW: 57 cases (EOW-001 to EOW-057) — complete
 - Storm: 38 cases (STORM-001 to STORM-038) — complete
 - Flood: 55 database rows (56 PDFs reviewed; FLOOD-031 excluded) — complete
-- Subsidence: 10 cases processed (SUBS-001 to SUBS-010) — 22 remaining
+- Subsidence: 20 cases processed (SUBS-001 to SUBS-020) — 12 remaining
 
 Flood Playbook note written: `knowledge/playbooks/flood/flood-source-of-water-interpretation.md` (FLOOD-035 vs FLOOD-038 "such as" language analysis).
 
@@ -368,16 +368,16 @@ EOW playbook authoring may begin.
 **Path:** `knowledge/case-databases/Subsidence_Case_Database.xlsx`
 **Schema version:** v1 (21 columns — same as EOW v2 / Storm v1 / Flood v1; column 6 renamed "Movement Cause")
 **Total subsidence PDFs:** 32 (`knowledge/raw-cases/subsidence/`)
-**Total subsidence cases processed:** 10 (SUBS-001 to SUBS-010)
-**Remaining to process:** 22
+**Total subsidence cases processed:** 20 (SUBS-001 to SUBS-020)
+**Remaining to process:** 12
 
 ### Processing Schedule (batch size = 10)
 
 | Batch | Case IDs | PDFs | Status |
 |---|---|---|---|
 | 1 | SUBS-001 – SUBS-010 | DRN0001741 → DRN-2807339 | **Complete** |
-| 2 | SUBS-011 – SUBS-020 | DRN2951368 → DRN-5220010 | Pending |
-| 3 | SUBS-021 – SUBS-030 | DRN-5315100 → DRN-6019596 | Pending |
+| 2 | SUBS-011 – SUBS-020 | DRN2951368 → DRN-4883553 | **Complete** |
+| 3 | SUBS-021 – SUBS-030 | DRN-4950435 → DRN-6019596 | Pending |
 | 4 | SUBS-031 – SUBS-032 | DRN8130715 → DRN8561608 | Pending |
 
 ### Full PDF List (32 files — sorted by DRN)
@@ -417,7 +417,7 @@ EOW playbook authoring may begin.
 | 31 | DRN8130715.pdf |
 | 32 | DRN8561608.pdf |
 
-### Cases Processed: SUBS-001 to SUBS-010 (Batch 1 complete)
+### Cases Processed: SUBS-001 to SUBS-020 (Batches 1–2 complete)
 
 | Case ID | FOS ID | Insurer | Outcome Category | Is Core Case |
 |---|---|---|---|---|
@@ -431,12 +431,22 @@ EOW playbook authoring may begin.
 | SUBS-008 | DRN2337317 | Royal & Sun Alliance Insurance Plc | Upheld | Yes |
 | SUBS-009 | DRN2707923 | AXA Insurance UK Plc | Upheld | Yes |
 | SUBS-010 | DRN-2807339 | Aviva Insurance Limited | Upheld | Yes |
+| SUBS-011 | DRN2951368 | Covea Insurance Plc | Upheld | Yes |
+| SUBS-012 | DRN-3258437 | Red Sands Insurance Company (Europe) Limited | Upheld | Yes |
+| SUBS-013 | DRN-3387540 | Accredited Insurance (Europe) Limited | Upheld | Yes |
+| SUBS-014 | DRN-3427348 | Amtrust Europe Limited | Upheld in Part | Yes |
+| SUBS-015 | DRN-3581769 | Fairmead Insurance Limited | Upheld in Part | Yes |
+| SUBS-016 | DRN-3682901 | Society of Lloyd's | Upheld | Yes |
+| SUBS-017 | DRN-3929594 | AXA Insurance UK Plc | Upheld | Yes |
+| SUBS-018 | DRN-4190935 | Society of Lloyd's | Upheld | Yes |
+| SUBS-019 | DRN-4813489 | Kennett Insurance Brokers Limited | Upheld | No — Broker Dispute |
+| SUBS-020 | DRN-4883553 | AXA Insurance UK Plc | Upheld | Yes |
 
 ### Next Batch
 
-**Batch 2 — SUBS-011 to SUBS-020**
+**Batch 3 — SUBS-021 to SUBS-030**
 
-PDFs: DRN2951368.pdf → DRN-5220010.pdf (PDFs #11–20 from the full list below).
+PDFs: DRN-4950435.pdf → DRN-6019596.pdf (PDFs #21–30 from the full list below).
 
 ---
 
@@ -486,6 +496,7 @@ When processing future PDFs, apply `Is Core Case = No` if **any** of the followi
 
 | Hash | Message |
 |---|---|
+| *(latest)* | Add SUBS-011 to SUBS-020 to Subsidence Case Database — Batch 2 complete |
 | `790486e` | Add SUBS-001 to SUBS-010 to Subsidence Case Database — Batch 1 complete |
 | `a0c11c0` | Update PROJECT_STATUS.md — Subsidence peril added, PDF library committed |
 | `e2c18a5` | Add Subsidence raw PDF library — 32 PDFs (knowledge/raw-cases/subsidence/) |
