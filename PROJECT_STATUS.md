@@ -1,6 +1,6 @@
 # Insurance Claims AI — Project Status
 
-**Last updated:** 2026-06-22 (Subsidence Batch 2 complete — SUBS-011 to SUBS-020; 20 cases processed)
+**Last updated:** 2026-06-23 (Subsidence Batch 3 complete — SUBS-021 to SUBS-030; 30 cases processed)
 **Branch:** `master`
 **Repository:** https://github.com/shaniv914/insurance-claims-ai
 
@@ -8,12 +8,12 @@
 
 ## Current Focus
 
-EOW, Storm, and Flood case databases are complete. Subsidence Batch 2 complete (SUBS-001 to SUBS-020). Next: Subsidence Batch 3 (SUBS-021 to SUBS-030).
+EOW, Storm, and Flood case databases are complete. Subsidence Batch 3 complete (SUBS-001 to SUBS-030). Next: Subsidence Batch 4 (SUBS-031 to SUBS-032).
 
 - EOW: 57 cases (EOW-001 to EOW-057) — complete
 - Storm: 38 cases (STORM-001 to STORM-038) — complete
 - Flood: 55 database rows (56 PDFs reviewed; FLOOD-031 excluded) — complete
-- Subsidence: 20 cases processed (SUBS-001 to SUBS-020) — 12 remaining
+- Subsidence: 30 cases processed (SUBS-001 to SUBS-030) — 2 remaining
 
 Flood Playbook note written: `knowledge/playbooks/flood/flood-source-of-water-interpretation.md` (FLOOD-035 vs FLOOD-038 "such as" language analysis).
 
@@ -368,8 +368,8 @@ EOW playbook authoring may begin.
 **Path:** `knowledge/case-databases/Subsidence_Case_Database.xlsx`
 **Schema version:** v1 (21 columns — same as EOW v2 / Storm v1 / Flood v1; column 6 renamed "Movement Cause")
 **Total subsidence PDFs:** 32 (`knowledge/raw-cases/subsidence/`)
-**Total subsidence cases processed:** 20 (SUBS-001 to SUBS-020)
-**Remaining to process:** 12
+**Total subsidence cases processed:** 30 (SUBS-001 to SUBS-030)
+**Remaining to process:** 2
 
 ### Processing Schedule (batch size = 10)
 
@@ -377,7 +377,7 @@ EOW playbook authoring may begin.
 |---|---|---|---|
 | 1 | SUBS-001 – SUBS-010 | DRN0001741 → DRN-2807339 | **Complete** |
 | 2 | SUBS-011 – SUBS-020 | DRN2951368 → DRN-4883553 | **Complete** |
-| 3 | SUBS-021 – SUBS-030 | DRN-4950435 → DRN-6019596 | Pending |
+| 3 | SUBS-021 – SUBS-030 | DRN-4950435 → DRN-6019596 | **Complete** |
 | 4 | SUBS-031 – SUBS-032 | DRN8130715 → DRN8561608 | Pending |
 
 ### Full PDF List (32 files — sorted by DRN)
@@ -417,7 +417,7 @@ EOW playbook authoring may begin.
 | 31 | DRN8130715.pdf |
 | 32 | DRN8561608.pdf |
 
-### Cases Processed: SUBS-001 to SUBS-020 (Batches 1–2 complete)
+### Cases Processed: SUBS-001 to SUBS-030 (Batches 1–3 complete)
 
 | Case ID | FOS ID | Insurer | Outcome Category | Is Core Case |
 |---|---|---|---|---|
@@ -441,12 +441,22 @@ EOW playbook authoring may begin.
 | SUBS-018 | DRN-4190935 | Society of Lloyd's | Upheld | Yes |
 | SUBS-019 | DRN-4813489 | Kennett Insurance Brokers Limited | Upheld | No — Broker Dispute |
 | SUBS-020 | DRN-4883553 | AXA Insurance UK Plc | Upheld | Yes |
+| SUBS-021 | DRN-4950435 | AXA Insurance UK Plc | Upheld | Yes |
+| SUBS-022 | DRN5217766 | St Andrew's Insurance Plc | Upheld | Yes |
+| SUBS-023 | DRN-5220010 | U K Insurance Limited | Upheld | Yes |
+| SUBS-024 | DRN-5315100 | AXA Insurance UK Plc | Upheld | Yes |
+| SUBS-025 | DRN-5375880 | Highway Insurance Company Limited | Upheld | Yes |
+| SUBS-026 | DRN-5643066 | Ageas Insurance Limited | Upheld | Yes |
+| SUBS-027 | DRN-5656370 | AXA Insurance UK Plc | Upheld | Yes |
+| SUBS-028 | DRN-5718419 | West Bay Insurance Plc | Upheld | Yes |
+| SUBS-029 | DRN-5755602 | Saga Services Limited | Upheld | No — Broker Dispute |
+| SUBS-030 | DRN-6019596 | AXA Insurance UK Plc | Upheld | No — Handling Dispute |
 
 ### Next Batch
 
-**Batch 3 — SUBS-021 to SUBS-030**
+**Batch 4 — SUBS-031 to SUBS-032**
 
-PDFs: DRN-4950435.pdf → DRN-6019596.pdf (PDFs #21–30 from the full list below).
+PDFs: DRN8130715.pdf → DRN8561608.pdf (PDFs #31–32 from the full list — final batch).
 
 ---
 
@@ -454,7 +464,7 @@ PDFs: DRN-4950435.pdf → DRN-6019596.pdf (PDFs #21–30 from the full list belo
 
 | Script | Status | Purpose |
 |---|---|---|
-| `scripts/append_subsidence_v1.py` | **Active — use for Subsidence Batch 2+** | Batch 1 append script (SUBS-001 to SUBS-010); reuse for future batches by updating NEW_CASES |
+| `scripts/append_subsidence_v1.py` | **Active — use for Subsidence Batch 4** | Append script for all Subsidence batches; reuse for Batch 4 by updating NEW_CASES |
 | `scripts/create_subsidence_case_db.py` | Superseded — do not re-run | Created the empty Subsidence_Case_Database.xlsx header row; re-running will overwrite data |
 | `scripts/append_eow_v2.py` | **Active** | Standard append for all future EOW batches (schema v2, 21 columns, controlled-vocab validation) |
 | `scripts/append_storm_v1.py` | **Active — use this for Storm** | Standard append for all Storm batches (schema v1, 21 columns, controlled-vocab validation) |
