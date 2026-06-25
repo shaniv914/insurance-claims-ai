@@ -1,6 +1,6 @@
 # Insurance Claims AI — Project Status
 
-**Last updated:** 2026-06-26 (Theft raw PDF library committed — 39 unique PDFs; cases processing not yet started)
+**Last updated:** 2026-06-26 (Theft Batch 1 complete — THEFT-001 to THEFT-010; 10 cases processed; 29 remaining)
 **Branch:** `master`
 **Repository:** https://github.com/shaniv914/insurance-claims-ai
 
@@ -8,13 +8,15 @@
 
 ## Current Focus
 
-Theft raw case library committed. Ready to begin Theft case extraction (Batch 1).
+Theft Batch 1 complete. Awaiting approval to begin Batch 2 (THEFT-011 to THEFT-020).
+
+Note: Batch 1 revealed that the Theft Claims folder contains a mix of product lines (motor, travel, gadget and commercial van insurance, in addition to home/contents). Only 3 of 10 Batch 1 cases are home/contents insurance (THEFT-002, THEFT-003, THEFT-004 — flagged `Is Core Case = Yes`). Remaining 7 are flagged `No — Commercial` or `No — Broker Dispute`.
 
 - EOW: 57 cases (EOW-001 to EOW-057) — **complete**
 - Storm: 38 cases (STORM-001 to STORM-038) — **complete**
 - Flood: 55 database rows (56 PDFs reviewed; FLOOD-031 excluded) — **complete**
 - Subsidence: 32 cases (SUBS-001 to SUBS-032) — **complete**
-- Theft: 39 unique PDFs committed (41 source PDFs; 2 exact duplicates excluded) — **extraction pending**
+- Theft: 10 of 39 cases processed (THEFT-001 to THEFT-010 — Batch 1 complete) — **Batch 2 pending approval**
 
 Flood Playbook note written: `knowledge/playbooks/flood/flood-source-of-water-interpretation.md` (FLOOD-035 vs FLOOD-038 "such as" language analysis).
 
@@ -464,11 +466,13 @@ Subsidence playbook authoring may begin.
 
 ## Database: Theft_Case_Database.xlsx
 
-**Path:** `knowledge/case-databases/Theft_Case_Database.xlsx` *(not yet created)*
-**Schema version:** v1 (21 columns — same schema as EOW v2 / Storm v1 / Flood v1 / Subsidence v1)
+**Path:** `knowledge/case-databases/Theft_Case_Database.xlsx`
+**Schema version:** v1 (21 columns — same schema as EOW v2 / Storm v1 / Flood v1 / Subsidence v1; column 6 renamed "Entry / Theft Method")
 **Total theft PDFs:** 39 (`knowledge/raw-cases/theft/`) — 41 source PDFs; 2 exact duplicates excluded
-**Total theft cases processed:** 0
-**Remaining to process:** 39
+**Total theft cases processed:** 10 (THEFT-001 to THEFT-010)
+**Remaining to process:** 29
+
+**Product line note:** The Theft Claims folder contains a mix of product lines. Batch 1 found 3 home/contents cases (THEFT-002, THEFT-003, THEFT-004) and 7 non-home cases (motor, travel, gadget, commercial van). All are retained and correctly flagged.
 
 ### Duplicate PDFs Excluded
 
@@ -481,10 +485,10 @@ Subsidence playbook authoring may begin.
 
 | Batch | Case IDs | PDFs | Status |
 |---|---|---|---|
-| 1 | THEFT-001 – THEFT-010 | DRN0600921 → DRN2886197 | Pending |
-| 2 | THEFT-011 – THEFT-020 | DRN-3028208 → DRN-4621255 | Pending |
-| 3 | THEFT-021 – THEFT-030 | DRN-4800291 → DRN-5954307 | Pending |
-| 4 | THEFT-031 – THEFT-039 | DRN6242378 → DRN8838516 | Pending |
+| 1 | THEFT-001 – THEFT-010 | DRN0600921 → DRN2794102 | **Complete** |
+| 2 | THEFT-011 – THEFT-020 | DRN2801347 → DRN-3764842 | Pending approval |
+| 3 | THEFT-021 – THEFT-030 | DRN4331324 → DRN-5901721 | Pending |
+| 4 | THEFT-031 – THEFT-039 | DRN5939533 → DRN8838516 | Pending |
 
 ### Full PDF List (39 files — sorted by DRN)
 
@@ -530,7 +534,20 @@ Subsidence playbook authoring may begin.
 | 38 | DRN8409372.pdf |
 | 39 | DRN8838516.pdf |
 
-### Cases Processed: None — Batch 1 pending
+### Cases Processed: THEFT-001 to THEFT-010 (Batch 1 complete)
+
+| Case ID | FOS ID | Insurer | Outcome Category | Is Core Case |
+|---|---|---|---|---|
+| THEFT-001 | DRN0600921 | Zenith Insurance plc | Not Upheld | No — Commercial |
+| THEFT-002 | DRN0709326 | Legal & General Insurance Limited | Not Upheld | Yes |
+| THEFT-003 | DRN0999356 | Legal and General Insurance Limited | Not Upheld | Yes |
+| THEFT-004 | DRN-1313333 | Lloyds Bank General Insurance Limited | Not Upheld | Yes |
+| THEFT-005 | DRN-1447440 | Assurant General Insurance Limited | Upheld in Part | No — Commercial |
+| THEFT-006 | DRN-1744488 | Vitality Health Limited | Not Upheld | No — Commercial |
+| THEFT-007 | DRN-2188041 | Royal & Sun Alliance Insurance Plc | Not Upheld | No — Commercial |
+| THEFT-008 | DRN2547216 | AXA Insurance UK Plc | Not Upheld | No — Commercial |
+| THEFT-009 | DRN2725005 | BISL Limited | Upheld | No — Broker Dispute |
+| THEFT-010 | DRN2794102 | Markerstudy Insurance Company Limited | Upheld | No — Commercial |
 
 ---
 
@@ -538,6 +555,8 @@ Subsidence playbook authoring may begin.
 
 | Script | Status | Purpose |
 |---|---|---|
+| `scripts/create_theft_case_db.py` | Superseded — do not re-run | Created the empty Theft_Case_Database.xlsx header row; re-running will overwrite data |
+| `scripts/append_theft_v1.py` | **Active — use this for Theft** | Standard append for all Theft batches (schema v1, 21 columns, column 6 = "Entry / Theft Method") |
 | `scripts/append_subsidence_v1.py` | Final batch complete — do not reuse | Batch 4 append script (SUBS-031 to SUBS-032); Subsidence database complete |
 | `scripts/create_subsidence_case_db.py` | Superseded — do not re-run | Created the empty Subsidence_Case_Database.xlsx header row; re-running will overwrite data |
 | `scripts/append_eow_v2.py` | **Active** | Standard append for all future EOW batches (schema v2, 21 columns, controlled-vocab validation) |
@@ -580,7 +599,8 @@ When processing future PDFs, apply `Is Core Case = No` if **any** of the followi
 
 | Hash | Message |
 |---|---|
-| *(latest)* | Add Theft raw PDF library — 39 unique PDFs (knowledge/raw-cases/theft/) |
+| *(latest)* | Add THEFT-001 to THEFT-010 to Theft Case Database — Batch 1 complete |
+| `6d75f3b` | Add Theft raw PDF library — 39 unique PDFs (knowledge/raw-cases/theft/) |
 | `790486e` | Add SUBS-001 to SUBS-010 to Subsidence Case Database — Batch 1 complete |
 | `a0c11c0` | Update PROJECT_STATUS.md — Subsidence peril added, PDF library committed |
 | `e2c18a5` | Add Subsidence raw PDF library — 32 PDFs (knowledge/raw-cases/subsidence/) |
