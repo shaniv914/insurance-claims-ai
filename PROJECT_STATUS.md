@@ -1,6 +1,6 @@
 # Insurance Claims AI — Project Status
 
-**Last updated:** 2026-06-23 (Subsidence Batch 4 complete — SUBS-031 to SUBS-032; 32 cases processed — Subsidence peril complete)
+**Last updated:** 2026-06-26 (Theft raw PDF library committed — 39 unique PDFs; cases processing not yet started)
 **Branch:** `master`
 **Repository:** https://github.com/shaniv914/insurance-claims-ai
 
@@ -8,12 +8,13 @@
 
 ## Current Focus
 
-All four peril case databases are now complete. EOW, Storm, Flood, and Subsidence processing is finished.
+Theft raw case library committed. Ready to begin Theft case extraction (Batch 1).
 
 - EOW: 57 cases (EOW-001 to EOW-057) — **complete**
 - Storm: 38 cases (STORM-001 to STORM-038) — **complete**
 - Flood: 55 database rows (56 PDFs reviewed; FLOOD-031 excluded) — **complete**
 - Subsidence: 32 cases (SUBS-001 to SUBS-032) — **complete**
+- Theft: 39 unique PDFs committed (41 source PDFs; 2 exact duplicates excluded) — **extraction pending**
 
 Flood Playbook note written: `knowledge/playbooks/flood/flood-source-of-water-interpretation.md` (FLOOD-035 vs FLOOD-038 "such as" language analysis).
 
@@ -461,6 +462,78 @@ Subsidence playbook authoring may begin.
 
 ---
 
+## Database: Theft_Case_Database.xlsx
+
+**Path:** `knowledge/case-databases/Theft_Case_Database.xlsx` *(not yet created)*
+**Schema version:** v1 (21 columns — same schema as EOW v2 / Storm v1 / Flood v1 / Subsidence v1)
+**Total theft PDFs:** 39 (`knowledge/raw-cases/theft/`) — 41 source PDFs; 2 exact duplicates excluded
+**Total theft cases processed:** 0
+**Remaining to process:** 39
+
+### Duplicate PDFs Excluded
+
+| Excluded File | Reason |
+|---|---|
+| `DRN3099586 (1).pdf` | Exact duplicate of `DRN3099586.pdf` (SHA256 match) |
+| `DRN-5275985 (1).pdf` | Exact duplicate of `DRN-5275985.pdf` (SHA256 match) |
+
+### Processing Schedule (batch size = 10)
+
+| Batch | Case IDs | PDFs | Status |
+|---|---|---|---|
+| 1 | THEFT-001 – THEFT-010 | DRN0600921 → DRN2886197 | Pending |
+| 2 | THEFT-011 – THEFT-020 | DRN-3028208 → DRN-4621255 | Pending |
+| 3 | THEFT-021 – THEFT-030 | DRN-4800291 → DRN-5954307 | Pending |
+| 4 | THEFT-031 – THEFT-039 | DRN6242378 → DRN8838516 | Pending |
+
+### Full PDF List (39 files — sorted by DRN)
+
+| # | Source PDF |
+|---|---|
+| 1 | DRN0600921.pdf |
+| 2 | DRN0709326.pdf |
+| 3 | DRN0999356.pdf |
+| 4 | DRN-1313333.pdf |
+| 5 | DRN-1447440.pdf |
+| 6 | DRN-1744488.pdf |
+| 7 | DRN-2188041.pdf |
+| 8 | DRN2547216.pdf |
+| 9 | DRN2725005.pdf |
+| 10 | DRN2794102.pdf |
+| 11 | DRN2801347.pdf |
+| 12 | DRN2886197.pdf |
+| 13 | DRN-3028208.pdf |
+| 14 | DRN3072290.pdf |
+| 15 | DRN3099586.pdf |
+| 16 | DRN3125088.pdf |
+| 17 | DRN-3197736.pdf |
+| 18 | DRN3351038.pdf |
+| 19 | DRN-3711750.pdf |
+| 20 | DRN-3764842.pdf |
+| 21 | DRN4331324.pdf |
+| 22 | DRN4423879.pdf |
+| 23 | DRN-4621255.pdf |
+| 24 | DRN-4800291.pdf |
+| 25 | DRN-4979740.pdf |
+| 26 | DRN-5011646.pdf |
+| 27 | DRN-5275985.pdf |
+| 28 | DRN5412255.pdf |
+| 29 | DRN-5704833.pdf |
+| 30 | DRN-5852242.pdf |
+| 31 | DRN-5901721.pdf |
+| 32 | DRN5939533.pdf |
+| 33 | DRN-5954307.pdf |
+| 34 | DRN6242378.pdf |
+| 35 | DRN6596319.pdf |
+| 36 | DRN6785039.pdf |
+| 37 | DRN7287812.pdf |
+| 38 | DRN8409372.pdf |
+| 39 | DRN8838516.pdf |
+
+### Cases Processed: None — Batch 1 pending
+
+---
+
 ## Scripts
 
 | Script | Status | Purpose |
@@ -507,7 +580,7 @@ When processing future PDFs, apply `Is Core Case = No` if **any** of the followi
 
 | Hash | Message |
 |---|---|
-| *(latest)* | Add SUBS-011 to SUBS-020 to Subsidence Case Database — Batch 2 complete |
+| *(latest)* | Add Theft raw PDF library — 39 unique PDFs (knowledge/raw-cases/theft/) |
 | `790486e` | Add SUBS-001 to SUBS-010 to Subsidence Case Database — Batch 1 complete |
 | `a0c11c0` | Update PROJECT_STATUS.md — Subsidence peril added, PDF library committed |
 | `e2c18a5` | Add Subsidence raw PDF library — 32 PDFs (knowledge/raw-cases/subsidence/) |
