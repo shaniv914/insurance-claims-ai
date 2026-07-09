@@ -7,7 +7,7 @@ Active — reuse this script for every future batch: replace NEW_CASES below
 with the next batch's cases and run again. Appends only — never modifies
 existing rows in knowledge/case-databases/Unoccupied_Property_Case_Database.xlsx.
 
-Current contents: Batch 2 (UNOC-011 to UNOC-020).
+Current contents: Batch 3 (UNOC-021 to UNOC-030).
 """
 
 import os
@@ -82,1011 +82,1152 @@ ROW_BORDER    = Border(
 
 NEW_CASES = [
     {
-        "Case ID": "UNOC-011",
-        "FOS Decision ID": "DRN-1623377",
-        "Insurer Name": "Society of Lloyd's",
-        "FOS Decision Date": "6 May 2020",
+        "Case ID": "UNOC-021",
+        "FOS Decision ID": "DRN3308022",
+        "Insurer Name": "Ageas Insurance Limited",
+        "FOS Decision Date": "4 Nov 2018",
         "Claim Type": (
-            "Unoccupied property insurance (undergoing refurbishment) — escape of water "
-            "from attic pipe declined under Structural Works Clause endorsement; insurer "
-            "maintained the clause excluded EOW/Trace and Access cover from the moment the "
-            "endorsement was added, regardless of whether structural work had actually begun"
+            "Home insurance (rental property let to family) — escape of water discovered "
+            "~1 month after policy inception; insurer declined citing numerous "
+            "inconsistencies in the policyholders' account of occupancy and compliance "
+            "with policy conditions, without conclusively establishing the property had "
+            "actually been unoccupied or unfurnished for the qualifying period"
         ),
         "Unoccupied Period / Circumstance": (
-            "Property unoccupied from November 2018 policy inception pending refurbishment; "
-            "structural work disclosed at inception but had not yet started when the "
-            "February 2019 escape of water occurred"
+            "Property let to family; policy incepted only about a month before the escape "
+            "of water was discovered; insurer suspected the property was not genuinely "
+            "occupied as claimed (citing a friend's inconsistent account of how often he "
+            "stayed, and the property being under renovation) but could not show "
+            "unoccupancy or lack of furnishing had lasted more than 90 consecutive days, "
+            "since the policy itself had only been in force for about a month"
         ),
-        "Property Type": "Residential unoccupied property (pre-refurbishment)",
+        "Property Type": "Residential rental property (let to family)",
         "Dispute Type": "Endorsement / Exclusion Challenge",
         "Coverage Decision": "Declined — Full",
         "Rejection Reason": (
-            "Structural Works Clause endorsement excluded Escape of Water and Trace and "
-            "Access cover 'until all the structural work, as disclosed to us, has been "
-            "fully completed'; insurer applied this from the date the endorsement was "
-            "added, not from the date work actually started"
+            "Insurer said there were too many inconsistencies in the claim and it hadn't "
+            "been shown the property was occupied as described or that policy conditions "
+            "had been complied with — including doubts over the intended letting to "
+            "family, a friend's account of overnight stays, renovation works in progress, "
+            "and a three-month historical gap in insurance cover"
         ),
         "Evidence Dispute": (
-            "Mr and Mrs S (via loss adjuster): endorsement should not bite until structural "
-            "work had actually commenced; no work had started when the leak occurred. "
-            "Lloyd's: endorsement applies 'at all times' from inception once disclosed, "
-            "irrespective of whether work had started. FOS: Schedule of Cover endorsements "
-            "section read as a whole is clear — EOW cover suspended 'at all times' and "
-            "'until all structural work has been completed'; the loss adjuster's on-site "
-            "report did not confirm heating clause compliance and had not completed its "
-            "assessment; insurer retained final decision-making authority over the loss "
-            "adjuster's report"
+            "Mr and Mrs H: property was going to be let to family, doubts raised by the "
+            "insurer were misunderstandings or explicable (e.g. quoting the plumber a "
+            "repair estimate as an experienced builder wanting an accurate figure); gap in "
+            "insurance history was inadvertent given Mr H's serious health issues. Ageas: "
+            "multiple inconsistencies (letting intentions, friend's stay frequency, "
+            "ongoing renovation, plumber quote conversation, insurance history) meant it "
+            "hadn't been shown the property was occupied as claimed or that conditions "
+            "were met. FOS: the 90-day unoccupied/unfurnished exclusion operates as an "
+            "exclusion, so the burden is on the insurer to show, on the balance of "
+            "probabilities, that the property was unoccupied or unfurnished for more than "
+            "90 days — since the policy had only started about a month before the loss, "
+            "that could not have been the case regardless of the other inconsistencies; "
+            "inconsistencies alone are not usually sufficient grounds to refuse a claim "
+            "absent strong grounds that doing so is fair and reasonable"
         ),
-        "Outcome Category": "Not Upheld",
+        "Outcome Category": "Upheld",
         "Outcome": (
-            "Complaint not upheld — Lloyd's correctly declined the escape of water claim "
-            "under the terms of the Structural Works Clause endorsement"
+            "Ageas required to settle Mr and Mrs H's claim in accordance with the "
+            "remaining policy terms and conditions"
         ),
         "Compensation Awarded (£)": 0,
         "Is Core Case": "Yes",
         "Key Policy Clause": (
-            "A Structural Works Clause endorsement that suspends Escape of Water and Trace "
-            "and Access cover 'until all the structural work, as disclosed to us, has been "
-            "fully completed' operates from the point the endorsement is added to the "
-            "policy — it is not conditional on the disclosed works having actually started; "
-            "reading the endorsements section as a whole (including the 'at all times' "
-            "wording), a policyholder's honesty about future intended works does not "
-            "prevent the exclusion applying immediately upon disclosure"
+            "Where an unoccupied/unfurnished exclusion requires the property to have been "
+            "unoccupied or unfurnished for more than a specified number of consecutive "
+            "days (here 90), that condition operates as an exclusion rather than a "
+            "coverage precondition, meaning the burden of proof lies with the insurer to "
+            "show, on the balance of probabilities, that the qualifying period was met — "
+            "where the policy itself has only been in force for a shorter period than the "
+            "qualifying threshold, the insurer cannot discharge that burden regardless of "
+            "how many other inconsistencies exist in the policyholder's account; general "
+            "inconsistencies in a policyholder's evidence, without more, do not meet this "
+            "service's threshold of 'strong grounds' required to justify refusing an "
+            "otherwise valid claim"
         ),
         "Missing Evidence": (
-            "A completed loss adjuster assessment confirming compliance with the Heating "
-            "Clause (Unoccupied Property) — the adjuster's report did not resolve this "
-            "point and instead awaited a plumber's report on causation, but this was "
-            "ultimately immaterial once the Structural Works Clause was found to apply"
+            "Evidence that the property had actually been unoccupied or unfurnished for "
+            "more than 90 consecutive days — could not exist given the policy had only "
+            "been in force for about a month before the loss was discovered"
         ),
         "Ombudsman Reasoning": (
-            "Schedule of Cover stated endorsements apply 'at all times'; EOW/Trace and "
-            "Access excluded until structural work fully completed, reinstated thereafter "
-            "subject to the Heating Clause; no work had started but exclusion still applied "
-            "per plain wording; loss adjuster's incomplete assessment was only one input "
-            "into the insurer's overall decision, which properly considered the "
-            "endorsement; claim correctly declined"
+            "Policy covered EOW unless the property had been left unfurnished or "
+            "unoccupied for more than 90 consecutive days; this operates as an exclusion, "
+            "so it fell to Ageas to prove the qualifying period on the balance of "
+            "probabilities; since the policy had only incepted about a month earlier, this "
+            "was structurally impossible regardless of the unresolved inconsistencies "
+            "about furnishing, letting intentions, or the plumber conversation; the "
+            "insurance-history gap was more likely an oversight given Mr H's health issues "
+            "than a deliberate misrepresentation; overall, inconsistencies are not "
+            "themselves strong grounds to decline a claim"
         ),
         "Workflow Insight": (
-            "When a Structural Works Clause or similar endorsement is added upon disclosure "
-            "of intended future works, claims handlers must apply the exclusion from the "
-            "endorsement's effective date, not from the date works commence — "
-            "policyholders should be warned at point of disclosure that cover for related "
-            "perils (EOW, Trace and Access) is suspended immediately, not only once work "
-            "begins; an incomplete or inconclusive loss adjuster report does not prevent "
-            "the insurer relying on a clear policy exclusion when it makes its final "
-            "coverage decision"
+            "Where an unoccupied/unfurnished exclusion is time-qualified (e.g. 90 "
+            "consecutive days), claims handlers must first check whether the policy has "
+            "even been in force long enough for the qualifying period to have elapsed "
+            "before investigating disputed factual inconsistencies about occupancy — if "
+            "the policy is younger than the qualifying period, the exclusion cannot apply "
+            "regardless of what is eventually established about the property's actual "
+            "use; unresolved inconsistencies in a policyholder's account should be weighed "
+            "against this service's 'strong grounds' threshold rather than treated as "
+            "automatically fatal to a claim"
         ),
         "AI Rule Candidate": (
-            "IF structural_works_clause_endorsement_added_on_disclosure_of_future_works "
-            "AND policy_states_endorsements_apply_at_all_times "
-            "THEN eow_and_trace_and_access_cover_excluded_from_endorsement_effective_date_regardless_of_whether_works_have_started; "
-            "loss_adjuster_incomplete_assessment_does_not_override_clear_policy_exclusion_relied_upon_by_insurer_in_final_decision"
+            "IF unoccupied_or_unfurnished_exclusion_requires_qualifying_period_of_N_consecutive_days "
+            "AND policy_has_been_in_force_for_fewer_than_N_days_since_inception "
+            "THEN exclusion_cannot_apply_regardless_of_disputed_occupancy_evidence; "
+            "unoccupied_unfurnished_exclusion_operates_as_an_exclusion_so_burden_of_proof_is_on_insurer_not_policyholder; "
+            "general_unresolved_inconsistencies_in_policyholder_account_do_not_alone_meet_strong_grounds_threshold_to_decline_a_claim"
         ),
-        "Source PDF": "DRN-1623377.pdf",
+        "Source PDF": "DRN3308022.pdf",
     },
     {
-        "Case ID": "UNOC-012",
-        "FOS Decision ID": "DRN-1719844",
-        "Insurer Name": "Internet Insurance Services UK Ltd",
-        "FOS Decision Date": "7 Jan 2021",
+        "Case ID": "UNOC-022",
+        "FOS Decision ID": "DRN3390381",
+        "Insurer Name": "Swinton Group Ltd",
+        "FOS Decision Date": "7 Sep 2019",
         "Claim Type": (
-            "Broker mis-sale complaint — advised sale of buildings insurance policy "
-            "(branded 'Residential Let Property Scheme') for a property that would be "
-            "unoccupied during renovation; consumer alleged policy name implied it covered "
-            "let properties and was therefore unsuitable/misleading, and that reduced cover "
-            "(fire, lightning, explosion, aircraft only) for unoccupied periods wasn't "
-            "adequately explained"
+            "Broker complaint (not a declined claim) — policyholder alleged Swinton "
+            "misled her into believing unoccupied buildings cover was only available "
+            "through it and overcharged her for short-term (3/6-month) unoccupied "
+            "property policies compared to a cheaper annual policy she later obtained "
+            "from another provider"
         ),
         "Unoccupied Period / Circumstance": (
-            "Property unoccupied during a renovation/extension project from April 2010; "
-            "policy provided reduced unoccupied-property cover for the works period, "
-            "reverting to full cover once the consumer moved back in; policy itself lapsed "
-            "in 2011"
+            "Property insured on a rolling 6-month then 3-month unoccupied buildings "
+            "basis from April 2015 until Swinton would no longer renew short-term cover "
+            "from January 2017 (requiring a 12-month term instead), at which point she "
+            "obtained a cheaper annual policy elsewhere"
         ),
-        "Property Type": "Residential property under renovation (unoccupied during works)",
+        "Property Type": "Unoccupied property (type not further specified in decision)",
         "Dispute Type": "Broker Conduct Dispute",
         "Coverage Decision": "Not Applicable",
         "Rejection Reason": (
-            "Not applicable to a coverage decline — dispute concerned suitability of the "
-            "policy sold in 2010, discovered when a 2019 roof claim (caused by builder "
-            "workmanship, not an insured peril) was declined as outside the "
-            "fire/lightning/explosion/aircraft cover for unoccupied periods"
+            "Not applicable to a coverage decline — dispute concerned whether Swinton "
+            "misrepresented itself as the sole provider of unoccupied buildings cover and "
+            "whether its short-term premiums were unfairly high compared to annual cover "
+            "available elsewhere"
         ),
         "Evidence Dispute": (
-            "Ms S: policy name ('Residential Let Property Scheme') implied it was for let "
-            "properties, which caused confusion and made her doubt suitability; wanted "
-            "broader cover. IIS: call recordings show advisor clearly explained the reduced "
-            "level of cover available during the unoccupied works period ('all this policy "
-            "will cover... is fire, lightning, earthquake, explosion and property owners' "
-            "liability... won't cover theft, malicious damage, escape of water or storm "
-            "damage'); policy provided exactly the cover Ms S asked for (buildings cover "
-            "while unoccupied and under renovation). FOS: advisor's explanation of scope of "
-            "cover was clear; policy name may have been confusing but the substance of "
-            "cover (not the name) is what matters for suitability; no requirement the "
-            "property be let for the policy to apply; no evidence of detriment from the "
-            "policy name in the ten years since sale"
+            "Miss G: was told she could only get unoccupied buildings cover through "
+            "Swinton, and it had overcharged her (over £1,200/year for short-term cover "
+            "vs £170/year annual cover elsewhere). Swinton: found no evidence it told her "
+            "it was the sole provider; it could only advise on its own panel prices, not "
+            "the wider market; premium was accurately calculated to reflect risk plus a "
+            "reasonable profit margin, and short-term policies generate more "
+            "administrative work reflected in price; she had a 14-day cooling-off period "
+            "each renewal to shop around. FOS: no recording existed of the original call, "
+            "but it was more likely Swinton said only one insurer on its panel offered the "
+            "product, not that it was the only provider in the market; premium "
+            "calculation checked and found accurate and fair; even had Swinton flagged "
+            "that an annual policy would be cheaper, Miss G was hoping to sell the "
+            "property before each policy expired and had chosen short-term cover "
+            "deliberately, so she would likely not have acted differently — this was "
+            "confirmed when, even after Swinton stopped offering short-term cover, she "
+            "sought another short-term provider rather than take a 12-month policy "
+            "through Swinton"
         ),
         "Outcome Category": "Not Upheld",
         "Outcome": (
-            "Complaint not upheld — the policy sold was suitable for Ms S's stated need "
-            "(buildings cover for an unoccupied property undergoing renovation); the level "
-            "of cover was clearly explained on the calls even though the policy's product "
-            "name may have caused some confusion"
+            "Complaint not upheld — no evidence Swinton misrepresented itself as the sole "
+            "provider, its premiums were fairly calculated, and Miss G would not have "
+            "acted differently even with fuller information about annual pricing"
         ),
         "Compensation Awarded (£)": 0,
         "Is Core Case": "No — Broker Dispute",
         "Key Policy Clause": (
-            "For an advised sale of unoccupied-property buildings cover, the broker must "
-            "clearly explain the reduced scope of cover applicable during the unoccupied "
-            "period (e.g. fire/lightning/explosion/aircraft only, excluding theft, "
-            "malicious damage, escape of water and storm) — recorded confirmation of this "
-            "explanation on the sales call is strong evidence of suitability; a confusing "
-            "or unconventional product name (e.g. one associated with let properties) does "
-            "not by itself render an unoccupied-property policy unsuitable where the "
-            "substantive cover matches the consumer's stated needs and there is no "
-            "requirement that the property actually be let"
+            "A broker is entitled to price short-term (e.g. 3 or 6-month) unoccupied "
+            "property cover higher on a pro-rata basis than an equivalent annual policy, "
+            "reflecting the additional administrative burden of more frequent renewals, "
+            "provided the pricing methodology is shown to be applied consistently and "
+            "fairly; a broker is not obliged to advise on whether a competitor or an "
+            "alternative policy term would offer better value, only to price its own "
+            "panel accurately — where a consumer's own stated circumstances (e.g. an "
+            "intention to sell the property imminently) make it unlikely she would have "
+            "chosen a different term even with fuller comparative information, a failure "
+            "to proactively highlight cheaper alternatives does not cause a compensable "
+            "loss"
         ),
         "Missing Evidence": (
-            "Evidence that Ms S specifically requested cover for the builder's workmanship "
-            "or latent defects — absent; the extensively recorded pre-sale calls did not "
-            "include this requirement"
+            "A recording of the original 2015 sales call — absent, requiring the "
+            "ombudsman to decide on the balance of probabilities what was most likely "
+            "said"
         ),
         "Ombudsman Reasoning": (
-            "Two recorded calls showed IIS's advisor explained the unoccupied-period cover "
-            "was limited to fire, lightning, earthquake, explosion and property owners' "
-            "liability, excluding EOW/theft/storm; Ms S provided rebuild estimates and "
-            "confirmed she'd return once works completed; policy matched her stated needs; "
-            "the 'Residential Let Property Scheme' name was potentially confusing but its "
-            "substance, not its name, governs suitability; no evidence of financial "
-            "detriment from the name over ten years; not mis-sold"
+            "No call recording existed for the initial 2015 contact; more likely Swinton "
+            "said only one panel insurer offered the product rather than claiming market "
+            "exclusivity, since a simple check would have disproved a false exclusivity "
+            "claim; premium calculation reviewed confidentially and found accurate, "
+            "reflecting risk plus profit and short-term administrative costs; Miss G "
+            "renewed on a short-term basis each time because she hoped to sell soon, and "
+            "even after Swinton withdrew short-term cover she sought another short-term "
+            "provider rather than accept a cheaper annual Swinton policy — demonstrating "
+            "she valued the short-term flexibility over price and would not have acted "
+            "differently with better information"
         ),
         "Workflow Insight": (
-            "Brokers selling unoccupied-property cover under a product name that could "
-            "imply a different purpose (e.g. a let-property scheme) should proactively "
-            "clarify the name's origin at the point of sale, even where the substantive "
-            "cover matches the consumer's needs, to avoid downstream confusion; "
-            "suitability assessments for unoccupied-property add-ons should focus on "
-            "whether the explained scope of cover (not the product branding) matches what "
-            "the consumer told the broker they needed"
+            "Where a broker complaint alleges a misleading claim of market exclusivity "
+            "but no call recording exists, assess plausibility against what a reasonable "
+            "broker would say and what a quick market check would reveal — an "
+            "exclusivity claim that could be trivially disproved is inherently less "
+            "likely to have been made; when assessing detriment from an alleged pricing "
+            "non-disclosure, look at what the consumer's subsequent actual choices reveal "
+            "about what she would have done with fuller information, not just her stated "
+            "hindsight preference"
         ),
         "AI Rule Candidate": (
-            "IF broker_clearly_explains_reduced_unoccupied_period_cover_on_recorded_call "
-            "AND cover_matches_consumers_stated_need "
-            "THEN advised_sale_of_unoccupied_property_policy_is_suitable_regardless_of_potentially_confusing_product_name; "
-            "policy_name_alone_does_not_establish_mis_sale_absent_evidence_the_substantive_cover_did_not_match_consumer_requirements"
+            "IF broker_prices_short_term_unoccupied_property_cover_higher_per_month_than_equivalent_annual_cover "
+            "AND pricing_methodology_is_shown_to_be_accurate_and_consistently_applied "
+            "THEN higher_short_term_pricing_is_not_unfair_even_without_proactive_comparison_to_annual_cover; "
+            "IF consumers_subsequent_choices_show_she_continued_to_prefer_short_term_cover_even_after_being_offered_a_cheaper_annual_alternative "
+            "THEN broker_failure_to_earlier_highlight_annual_cover_savings_did_not_cause_a_compensable_loss"
         ),
-        "Source PDF": "DRN-1719844.pdf",
+        "Source PDF": "DRN3390381.pdf",
     },
     {
-        "Case ID": "UNOC-013",
-        "FOS Decision ID": "DRN1874552",
-        "Insurer Name": "Ageas Insurance Limited",
-        "FOS Decision Date": "19 Feb 2015",
-        "Claim Type": (
-            "Commercial property owners insurance (two self-contained units) — escape of "
-            "water from multiple burst pipes over Christmas period in a unit undergoing "
-            "renovation after tenants vacated; heating not switched on due to works; "
-            "insurer declined claim citing unoccupied-property exclusion and drain-down "
-            "condition breach"
-        ),
-        "Unoccupied Period / Circumstance": (
-            "One of two self-contained units vacated by tenants and unoccupied for more "
-            "than 30 consecutive days while undergoing building works; director visited at "
-            "least daily during the Christmas holiday period when works paused; other unit "
-            "remained tenanted and unaffected"
-        ),
-        "Property Type": "Commercial property (two self-contained units; one unoccupied during renovation)",
-        "Dispute Type": "Endorsement / Exclusion Challenge",
-        "Coverage Decision": "Declined — Full",
-        "Rejection Reason": (
-            "Policy excluded escape of water/freezing damage to premises unoccupied, "
-            "untenanted, or not in active use for 30+ consecutive days; company was also "
-            "in breach of the condition requiring water systems to be drained in "
-            "unoccupied properties"
-        ),
-        "Evidence Dispute": (
-            "B (via advisers): had been in occupation during building works and a director "
-            "visited at least daily over Christmas, so the unit wasn't 'unoccupied'; "
-            "exclusion/condition not market standard and not properly drawn to attention "
-            "at inception; loss adjusters gave inconsistent reasons for declining. Ageas: "
-            "unit was untenanted and had not been in active use in connection with the "
-            "property-owner business for 30+ days; frequent visits for building-site "
-            "purposes are not equivalent to occupation. FOS: policy's 'unoccupied' "
-            "definition is disjunctive — meeting any one of unoccupied/untenanted/not in "
-            "active use for 30+ days triggers the exclusion; the unit was untenanted "
-            "regardless of the other tenanted unit; daily inspection visits to what was "
-            "'essentially a building site' do not amount to occupation; exclusion not "
-            "unusual and broker (not insurer) was responsible for explaining standard "
-            "policy terms"
-        ),
-        "Outcome Category": "Not Upheld",
-        "Outcome": (
-            "Complaint not upheld — Ageas was entitled to decline the claim; the unit was "
-            "unoccupied under the policy's disjunctive definition and the exclusion applied"
-        ),
-        "Compensation Awarded (£)": 0,
-        "Is Core Case": "Yes",
-        "Key Policy Clause": (
-            "A disjunctive definition of 'unoccupied' (unoccupied OR untenanted OR not in "
-            "active use for the relevant business for 30+ consecutive days) is satisfied "
-            "if any single limb is met — a property does not need to be literally empty of "
-            "all activity to be classed as unoccupied where it has been untenanted for the "
-            "qualifying period, even if other visits (e.g. by a director carrying out or "
-            "overseeing building works) occur frequently; frequent inspection visits to "
-            "premises that are 'essentially a building site' do not constitute occupation; "
-            "where only one part of a multi-unit building is untenanted, the unoccupied "
-            "exclusion can apply to that part alone regardless of continued occupation "
-            "elsewhere in the building; standard, non-unusual unoccupied-property "
-            "exclusions and conditions sold via a broker do not need to be separately "
-            "highlighted by the insurer"
-        ),
-        "Missing Evidence": (
-            "Evidence that active occupation-level use (rather than periodic inspection "
-            "during renovation) continued in the untenanted unit — absent; B accepted the "
-            "unit had been vacated by tenants more than 30 days before the loss"
-        ),
-        "Ombudsman Reasoning": (
-            "Definition applies if 'any…part of the building' is unoccupied/untenanted/not "
-            "in active use for 30+ days; the vacated unit was untenanted for the qualifying "
-            "period; building-works activity and daily director visits over Christmas did "
-            "not equate to normal commercial occupation; loss adjusters' inconsistent "
-            "explanations did not prejudice B given it had expert advisers; exclusion and "
-            "drain-down condition were standard and did not require specific insurer "
-            "highlighting when sold through a broker; claim properly declined"
-        ),
-        "Workflow Insight": (
-            "Multi-unit or multi-tenant commercial property policies should be assessed "
-            "unit-by-unit for unoccupancy purposes — continued occupation of one unit does "
-            "not preserve cover for a vacated unit under a disjunctive 'unoccupied' "
-            "definition; claims handlers should distinguish between genuine occupation-"
-            "level activity and periodic building-site inspection visits when assessing "
-            "whether the unoccupancy threshold has been met; loss adjusters should give "
-            "consistent, clearly-referenced reasons for declining a claim even where the "
-            "policyholder has expert representation"
-        ),
-        "AI Rule Candidate": (
-            "IF policy_defines_unoccupied_disjunctively_as_unoccupied_OR_untenanted_OR_not_in_active_use_for_30_plus_days "
-            "THEN any_single_limb_being_met_triggers_the_unoccupied_exclusion; "
-            "IF only_activity_at_property_is_periodic_inspection_during_building_works "
-            "THEN this_does_not_constitute_occupation_or_active_use; "
-            "IF one_unit_of_multi_unit_property_is_untenanted_for_qualifying_period "
-            "THEN unoccupied_exclusion_applies_to_that_unit_regardless_of_occupation_status_of_other_units"
-        ),
-        "Source PDF": "DRN1874552.pdf",
-    },
-    {
-        "Case ID": "UNOC-014",
-        "FOS Decision ID": "DRN2281195",
+        "Case ID": "UNOC-023",
+        "FOS Decision ID": "DRN-3516774",
         "Insurer Name": "Society of Lloyd's",
-        "FOS Decision Date": "18 Jul 2019",
+        "FOS Decision Date": "4 Jul 2022",
         "Claim Type": (
-            "Unoccupied property insurance (converted from a tenanted policy at renewal "
-            "after Lloyd's discovered extended unoccupancy) — arson fire started by "
-            "intruders/vandals; insurer declined citing breach of conditions requiring "
-            "removal of refuse/waste materials and notification of illegal occupiers"
+            "Unoccupied Property insurance — escape of water from a loft leak discovered "
+            "by policyholder's daughter during a routine check; insurer avoided the "
+            "policy from inception (and separately from renewal) for misrepresentation "
+            "about intended occupancy, and identified alternative grounds (Water Turn "
+            "Off Clause breach, 30-day inspection condition breach) that would likely "
+            "also have defeated the claim"
         ),
         "Unoccupied Period / Circumstance": (
-            "Property unoccupied since November 2016 (previously let); renewed under a "
-            "tenanted policy in May 2017 without Lloyd's being told of the unoccupancy; "
-            "Lloyd's treated the claim as if an unoccupied-property policy had applied, "
-            "since it would not have offered a tenanted policy had it known"
+            "Policyholder took out Unoccupied Property insurance in December 2019 while "
+            "working abroad for about a year; Statement of Fact recorded the property "
+            "would become occupied in 9-12 months and was not occupied from inception; "
+            "at the December 2020 renewal, the Statement of Fact recorded the property "
+            "had been unoccupied for 'more than 1 year', but the policyholder was in fact "
+            "staying at the property around that renewal date (returned to the UK "
+            "November 2020, remained until 5 February 2021) — contrary to the "
+            "Unoccupied Property policy's definition of 'occupied' as lived in for more "
+            "than 7 consecutive days"
         ),
-        "Property Type": "Residential unoccupied property (previously let; undergoing refurbishment at time of fire)",
-        "Dispute Type": "Endorsement / Exclusion Challenge",
+        "Property Type": "Residential property intended to be unoccupied while owner worked abroad",
+        "Dispute Type": "Coverage Dispute",
         "Coverage Decision": "Declined — Full",
         "Rejection Reason": (
-            "Breach of unoccupied-property policy condition requiring all refuse and "
-            "waste materials to be removed from the interior; photographs showed a large "
-            "quantity of burnt rubbish, discarded timber, waste products, plastic buckets "
-            "and ripped-out kitchen carcasses; fire brigade report found the fire started "
-            "with paper/cardboard, which contributed to the fire's spread"
+            "Lloyd's avoided the policy from inception, concluding Mr M hadn't disclosed "
+            "at the 2019 inception that he intended to occupy the property every 3-4 "
+            "months for more than 7 days at a time, and separately that the 2020 renewal "
+            "Statement of Fact incorrectly recorded the property as unoccupied for 'more "
+            "than 1 year' when he was in fact living there around the renewal date; "
+            "Lloyd's said it would only have offered a Holiday Home Policy (which "
+            "excludes escape of water) had accurate information been given"
         ),
         "Evidence Dispute": (
-            "Mr G: unaware of the unoccupied-property conditions since he hadn't been told "
-            "the property was being treated as unoccupied; items were retained for "
-            "refurbishment (kitchen units to be fitted) and books/comics intended for "
-            "charity, not waste; fire was started deliberately by third parties regardless "
-            "of the property's contents. Lloyd's: would only have offered an unoccupied-"
-            "property policy on renewal had it known of the unoccupancy, and did not offer "
-            "a tenanted policy for empty properties; photographic evidence showed "
-            "materials consistent with waste, not solely refurbishment items. FOS "
-            "(provisional and final): fair to treat the claim as if under an unoccupied-"
-            "property policy since the alternative was no cover at all; volume of debris "
-            "exceeded what would reasonably be expected from refurbishment alone; breach "
-            "of the waste-removal condition was materially connected to the fire loss "
-            "since waste paper was the ignition source and fed the fire's spread; only one "
-            "breached condition is needed to justify declining a claim"
+            "Mr M: told his broker at inception he'd be working abroad for a year; told "
+            "the broker at the 2020 renewal he was temporarily occupying the house but "
+            "was renewing on the basis he was about to leave the UK again; renewed in "
+            "good faith and the leak occurred while the property was genuinely "
+            "unoccupied. Lloyd's: no recording exists of either the 2019 inception or "
+            "2020 renewal calls; the written Statement of Fact for each year is the best "
+            "contemporaneous record and recorded (2019) occupation expected in 9-12 "
+            "months and (2020) unoccupied for 'more than 1 year' — both materially "
+            "inaccurate given the policy's 7-consecutive-day 'occupied' definition and "
+            "Mr M's own account of returning every 3-4 months and being present around "
+            "the 2020 renewal date; an internal business-file note appearing to support "
+            "Mr M was subsequently clarified by Lloyd's as a typographical error. FOS "
+            "(provisional and final): without a recording, the Statement of Fact — which "
+            "Mr M confirmed reading, understanding and agreeing to a disclosure "
+            "declaration on — is the more reliable record; on that record Mr M did not "
+            "disclose an intention to occupy for more than 7 days at a time at either "
+            "inception or renewal, and the 2020 Statement was objectively wrong since his "
+            "own account showed he was living in the property around the renewal date; "
+            "this was a careless misrepresentation entitling Lloyd's to avoid the policy "
+            "under CIDRA; even had the policy been valid, a screen report found the stop "
+            "cock may not have been fully closed (Water Turn Off Clause breach) and "
+            "there was no record of the required 30-day inspections, either of which "
+            "would likely also have defeated the claim"
         ),
         "Outcome Category": "Not Upheld",
         "Outcome": (
-            "Complaint not upheld — Lloyd's fairly treated the claim under the terms "
-            "applicable to an unoccupied property and was entitled to decline it for "
-            "breach of the waste-removal condition, which was materially connected to the "
-            "fire loss"
+            "Complaint not upheld — Lloyd's fairly avoided the policy from inception for "
+            "careless misrepresentation about intended and actual occupancy, and "
+            "correctly declined the claim; premiums for both policy years were refunded, "
+            "which was fair"
         ),
         "Compensation Awarded (£)": 0,
         "Is Core Case": "Yes",
         "Key Policy Clause": (
-            "Where an insurer discovers after a loss that a property was unoccupied when "
-            "a tenanted (not unoccupied) policy was in force, and it would only have "
-            "offered unoccupied-property cover (with its own conditions) had it known, it "
-            "is reasonable to assess the claim as though the unoccupied-property policy "
-            "terms applied — the policyholder's unawareness of those specific conditions "
-            "does not excuse compliance, since notifying the insurer of the true occupancy "
-            "status was the policyholder's own responsibility; a condition requiring "
-            "removal of refuse and waste materials from an unoccupied property is a "
-            "risk-control measure specifically aimed at reducing arson risk, and a breach "
-            "of it will bar a claim for fire damage where the ignition source and its "
-            "spread are materially connected to the retained waste — this differs from "
-            "breach of an unrelated condition (e.g. a burglar alarm requirement) in a "
-            "flood claim, which would not be materially connected"
+            "An Unoccupied Property policy defining 'occupied' as lived in for more than "
+            "7 consecutive days is designed specifically to exclude anyone who intends, "
+            "or turns out, to stay at the property for extended periods — a "
+            "policyholder's own evidence that they intended to return every 3-4 months "
+            "for stays exceeding 7 days, or that they were actually staying at the "
+            "property around a renewal date, is itself sufficient to show the Unoccupied "
+            "Property policy was unsuitable and that a misrepresentation as to occupancy "
+            "occurred; where no recording exists of a sales or renewal call, a written "
+            "Statement of Fact that the policyholder has confirmed reading, understanding "
+            "and agreeing to (as part of a CIDRA-compliant disclosure declaration) is the "
+            "more reliable contemporaneous record of what was disclosed, and will "
+            "generally be preferred over a policyholder's later recollection where the "
+            "two conflict; for a misrepresentation to justify avoidance under CIDRA, the "
+            "insurer must show it is a qualifying misrepresentation — i.e., that accurate "
+            "disclosure would have changed whether or on what terms cover was offered — "
+            "and an insurer's evidence that it would only have offered a different "
+            "product (here, a Holiday Home Policy excluding escape of water) satisfies "
+            "this"
         ),
         "Missing Evidence": (
-            "Clear itemised inventory distinguishing genuine refurbishment materials from "
-            "discarded waste at the time of the fire — absent; the photographic evidence "
-            "was relied upon instead and showed volumes inconsistent with refurbishment "
-            "alone"
+            "Recordings of the 2019 inception call and the 2020 renewal call — neither "
+            "was available, requiring reliance on the Statements of Fact as the best "
+            "contemporaneous written record"
         ),
         "Ombudsman Reasoning": (
-            "Property unoccupied since November 2016; renewed as tenanted May 2017 without "
-            "notification; Lloyd's would not have offered a tenanted policy for an empty "
-            "property, so treating the claim under unoccupied-property terms was "
-            "reasonable; photographs showed 'heavily loaded' debris, rubbish and loose "
-            "combustible materials disproportionate to refurbishment needs; fire brigade "
-            "confirmed paper/cardboard ignition; breach of the waste-removal condition "
-            "materially connected to the fire since it fed the blaze; only one condition "
-            "breach needed to support declining the claim; insured's lack of connection to "
-            "the arson itself is irrelevant where a separate condition breach applies"
+            "2019 Statement of Fact recorded the property not occupied from inception and "
+            "expected to become occupied in 9-12 months; this is inconsistent with Mr M's "
+            "claimed intention (later stated) to return every 3-4 months for over 7 days "
+            "at a time; 2020 renewal Statement of Fact recorded unoccupied for 'more than "
+            "1 year', but Mr M's own account confirmed he was staying at the property "
+            "from November 2020 until 5 February 2021, spanning the December 2020 "
+            "renewal date — objectively incorrect; Lloyd's underwriters confirmed they "
+            "would not have offered the Unoccupied Property product (or would have "
+            "offered a Holiday Home Policy instead) had accurate information been given, "
+            "satisfying the qualifying misrepresentation test under CIDRA; fair for "
+            "Lloyd's to avoid the policy at both inception and renewal and decline the "
+            "claim, while returning all premiums paid; additionally, the stop cock may "
+            "not have been fully closed and 30-day inspection records were unavailable, "
+            "either of which would likely have independently defeated the claim even "
+            "absent misrepresentation"
         ),
         "Workflow Insight": (
-            "When an insurer discovers post-loss that a tenanted policy was incorrectly in "
-            "force over what was actually an unoccupied property, it is fair to assess the "
-            "claim against the unoccupied-property terms it would have offered, rather "
-            "than refusing cover outright — but this means the policyholder is held to "
-            "conditions (e.g. waste removal, illegal-occupier notification) they were "
-            "never told about, so materiality of any breach to the specific loss becomes "
-            "the key fairness test; claims handlers must show a breach of a risk-control "
-            "condition (like waste removal) is causally connected to the peril claimed for "
-            "(fire) before relying on it to decline"
+            "When assessing a suspected misrepresentation about intended occupancy for an "
+            "Unoccupied Property policy, compare the policyholder's own account of their "
+            "actual movements (dates present at the property) against the policy's "
+            "numeric 'occupied' definition (e.g. more than 7 consecutive days) — a "
+            "policyholder's own narrative can itself supply the evidence of "
+            "misrepresentation without need for a call recording; renewal Statements of "
+            "Fact should be checked against events the policyholder has independently "
+            "confirmed (e.g. return travel dates) since a renewal declaration can become "
+            "inaccurate due to intervening circumstances (such as pandemic travel "
+            "restrictions) even if accurate at a prior renewal; where alternative "
+            "independent grounds for declining a claim exist (e.g. a specific safety "
+            "condition breach), documenting these strengthens the fairness of an "
+            "avoidance decision even where the primary ground is misrepresentation"
         ),
         "AI Rule Candidate": (
-            "IF insurer_discovers_post_loss_that_tenanted_policy_was_in_force_over_actually_unoccupied_property "
-            "AND insurer_would_only_have_offered_unoccupied_property_terms_if_notified "
-            "THEN claim_may_fairly_be_assessed_against_unoccupied_property_policy_conditions_even_though_policyholder_was_unaware_of_them; "
-            "IF waste_removal_condition_breached_AND_waste_materials_were_ignition_source_or_fuel_for_the_fire "
-            "THEN breach_is_materially_connected_to_fire_loss_and_insurer_may_decline_claim; "
-            "only_one_materially_connected_condition_breach_is_required_to_justify_declining_a_claim"
+            "IF unoccupied_property_policy_defines_occupied_as_lived_in_for_more_than_N_consecutive_days "
+            "AND policyholders_own_account_shows_they_were_present_at_the_property_for_periods_exceeding_N_days_around_inception_or_renewal "
+            "THEN this_is_evidence_of_a_qualifying_misrepresentation_about_intended_or_actual_occupancy_justifying_avoidance; "
+            "IF no_call_recording_exists_for_inception_or_renewal "
+            "THEN a_statement_of_fact_the_policyholder_confirmed_reading_and_agreeing_to_is_the_preferred_contemporaneous_record_over_later_recollection; "
+            "insurer_avoiding_policy_for_misrepresentation_must_show_it_would_have_offered_different_terms_or_a_different_product_if_accurately_informed_to_satisfy_the_qualifying_misrepresentation_test"
         ),
-        "Source PDF": "DRN2281195.pdf",
+        "Source PDF": "DRN-3516774.pdf",
     },
     {
-        "Case ID": "UNOC-015",
-        "FOS Decision ID": "DRN2912517",
-        "Insurer Name": "UK Insurance Limited",
-        "FOS Decision Date": "7 Aug 2017",
+        "Case ID": "UNOC-024",
+        "FOS Decision ID": "DRN3646077",
+        "Insurer Name": "Adrian Flux Insurance Services Group",
+        "FOS Decision Date": "3 Nov 2019",
         "Claim Type": (
-            "Commercial property insurance — escape of sewage from a tenanted shop/"
-            "basement discovered by local authority after buildup over two-three months; "
-            "insurer declined citing breach of unoccupied-property notification, "
-            "inspection and reasonable-precautions conditions after determining the "
-            "property had in fact been unoccupied"
+            "Broker mis-sale complaint — buildings insurance for an inherited unoccupied "
+            "property; escape of water from a burst loft pipe in March 2018 declined "
+            "because the property wasn't kept heated above 15°C (or mains drained) "
+            "during the winter exclusion period; executors/solicitor-representative said "
+            "they were unaware of this requirement"
         ),
         "Unoccupied Period / Circumstance": (
-            "Property unoccupied for an extended period (tenant hadn't paid rent since "
-            "February 2014; some evidence of a year or more of unoccupancy) but the "
-            "policyholder (landlord) says it only became aware of the unoccupancy when "
-            "the local authority contacted it in January 2016; tenant later explained he "
-            "had been abroad in India due to a family medical emergency"
+            "Property inherited January 2017, stood empty while the estate was "
+            "administered; unoccupied buildings cover arranged through the broker, "
+            "renewed January 2018; water supply remained connected but heating was "
+            "turned off during the relevant winter period"
         ),
-        "Property Type": "Commercial let property (shop with basement)",
+        "Property Type": "Residential property, unoccupied pending estate administration",
+        "Dispute Type": "Broker Conduct Dispute",
+        "Coverage Decision": "Not Applicable",
+        "Rejection Reason": (
+            "Not applicable to a coverage decline — dispute concerned whether the broker "
+            "adequately notified the policyholders' representative (AL) of the winter "
+            "heating/mains-drain condition, not whether the insurer correctly applied it"
+        ),
+        "Evidence Dispute": (
+            "AL (executors' solicitor): unaware of the 15°C heating/mains-drain "
+            "requirement at inception or renewal; would have kept the heating on had "
+            "they known. Flux: the requirement was clearly set out as an 'Additional "
+            "Notes' item in the January 2017 quotation ('Important Information' section) "
+            "sent the day before AL phoned to accept the policy, and repeated in the "
+            "same location in the January 2018 renewal documentation; AL confirmed on "
+            "the renewal call that he was happy with the terms and conditions. FOS: the "
+            "clause itself is not unusual for an unoccupied property policy (it "
+            "mitigates a well-known frost-damage risk) but the requirement to maintain "
+            "constant heating for five winter months is onerous, so it needed to be "
+            "clearly notified — it was clearly highlighted, in the same place, at both "
+            "the original quotation stage and the renewal stage, and AL confirmed "
+            "acceptance of terms and conditions on the renewal call; Flux was entitled to "
+            "assume the policy was purchased after AL read and agreed to that "
+            "information"
+        ),
+        "Outcome Category": "Not Upheld",
+        "Outcome": (
+            "Complaint not upheld — Flux did enough to clearly highlight the onerous "
+            "winter heating/mains-drain condition at both inception and renewal; it was "
+            "not responsible for the reduced property sale price"
+        ),
+        "Compensation Awarded (£)": 0,
+        "Is Core Case": "No — Broker Dispute",
+        "Key Policy Clause": (
+            "A winter escape-of-water exclusion for unoccupied properties, requiring "
+            "either mains water to be turned off and drained or the property to be kept "
+            "heated at a minimum temperature (e.g. 15°C) throughout a defined winter "
+            "period, is not itself an unusual clause for this type of policy since it "
+            "mitigates a well-recognised frost-damage risk — but the heating-maintenance "
+            "option is an onerous condition (given the potential cost of five months' "
+            "continuous heating) and so must be clearly notified to the policyholder or "
+            "their representative; specifically highlighting the requirement in an "
+            "'Important Information' or equivalent section of both the original "
+            "quotation and each renewal document, in the same consistent location, is "
+            "sufficient to discharge the broker's duty to notify — even where the same "
+            "wording is not repeated in every subsequent communication (e.g. the policy "
+            "schedule itself)"
+        ),
+        "Missing Evidence": (
+            "Evidence that AL specifically read the 'Additional Notes' section of the "
+            "quotation and renewal documents — not directly available, but AL's "
+            "acceptance of the policy the day after receiving the quotation, and his "
+            "confirmation of being happy with 'terms and conditions' on the renewal "
+            "call, supported an inference that the notification had been received and "
+            "accepted"
+        ),
+        "Ombudsman Reasoning": (
+            "Clause required mains off/drained or heating maintained at 15°C from 1 "
+            "November to 31 March; turning mains off is not onerous but constant heating "
+            "for five months is; clause was set out clearly under 'Additional "
+            "Notes'/'Important Information' at both the January 2017 quotation (a day "
+            "before AL accepted the policy by phone) and the January 2018 renewal "
+            "documentation (in the 'Excesses, endorsements and conditions' section); AL "
+            "confirmed on the renewal call he was happy with the terms and conditions; "
+            "taken together this was sufficient to discharge Flux's duty to notify AL of "
+            "the condition at both inception and renewal; Flux therefore not responsible "
+            "for the declined claim or the reduced property sale price"
+        ),
+        "Workflow Insight": (
+            "For onerous winter heating/mains-drain conditions on unoccupied property "
+            "policies, brokers should highlight the condition in a consistently-located "
+            "'Important Information' or 'Additional Notes' section at both initial "
+            "quotation and every renewal — doing so in the same place each time, "
+            "combined with a policyholder's acceptance of 'terms and conditions' on a "
+            "renewal call, is generally sufficient evidence of adequate notification "
+            "even without the condition being separately repeated in every other "
+            "communication (e.g. the policy schedule or a covering email)"
+        ),
+        "AI Rule Candidate": (
+            "IF onerous_winter_heating_or_mains_drain_condition_is_clearly_set_out_in_a_consistently_located_important_information_section_at_both_quotation_and_each_renewal "
+            "AND policyholder_or_representative_confirms_acceptance_of_terms_and_conditions_on_the_renewal_call "
+            "THEN broker_has_discharged_its_duty_to_notify_the_condition_even_if_not_repeated_in_every_other_document; "
+            "unoccupied_property_winter_escape_of_water_conditions_requiring_mains_off_or_maintained_heating_are_not_unusual_but_the_heating_maintenance_option_is_onerous_and_must_be_clearly_highlighted"
+        ),
+        "Source PDF": "DRN3646077.pdf",
+    },
+    {
+        "Case ID": "UNOC-025",
+        "FOS Decision ID": "DRN-3848349",
+        "Insurer Name": "T&R Direct Ltd",
+        "FOS Decision Date": "10 Mar 2023",
+        "Claim Type": (
+            "Broker mis-sale complaint — unoccupied property owner's policy arranged "
+            "(non-advised, per the broker) for a property undergoing renovation; theft "
+            "of new kitchen appliances (still boxed, delivered but not yet installed) "
+            "declined because the policyholder had selected 'standard' cover "
+            "(fire/lightning/explosion/aircraft only) on the proposal form and had not "
+            "opted for the available theft extension"
+        ),
+        "Unoccupied Period / Circumstance": (
+            "Property unoccupied and undergoing renovation from around June 2021; theft "
+            "of appliances occurred December 2021 while the property remained empty "
+            "pending completion of works"
+        ),
+        "Property Type": "Residential property under renovation (unoccupied)",
+        "Dispute Type": "Broker Conduct Dispute",
+        "Coverage Decision": "Not Applicable",
+        "Rejection Reason": (
+            "Not applicable to a coverage decline by the insurer — the underlying theft "
+            "coverage decision was the subject of a separate complaint; this complaint "
+            "concerned only whether the broker's conduct in arranging the policy "
+            "amounted to a mis-sale"
+        ),
+        "Evidence Dispute": (
+            "Mr F: expected the new policy to match his previous (occupied) contents "
+            "cover; felt T&R had sent him a 'misleading and poorly structured' proposal "
+            "form and effectively directed him to take the policy without adequately "
+            "explaining that 'standard' cover excluded theft, a major exclusion; his own "
+            "insurance adviser considered a policy clause showed theft was included and "
+            "that T&R should have highlighted theft as a major exclusion. T&R: the "
+            "proposal form clearly defined 'standard' cover (fire/lightning/explosion/"
+            "aircraft only) and offered a separate theft extension Mr F did not select; "
+            "the policy was arranged on a non-advised basis — Mr F completed and signed "
+            "the form himself, and a recorded call showed he had actively turned his mind "
+            "to security, stating there was 'nothing of substantial value' left at the "
+            "property besides office equipment, furniture and books, locked in a "
+            "third-floor room. FOS: the policy itself was not inherently unsuitable — it "
+            "did provide unoccupied-property cover and a theft extension was available; "
+            "Mr F made clear, hand-written elections on the form for a new and different "
+            "type of policy; the word 'only' in the standard-cover definition "
+            "emphasised its limits; Mr F was capable and engaged (adding handwritten "
+            "comments, asking specific questions about excess and financial cover) but "
+            "did not ask about theft; the sale was non-advised since no cover-level "
+            "advice was given and the declaration/documentation did not indicate an "
+            "advised sale; it would have been better practice for T&R to flag at the "
+            "point of claim that theft cover hadn't been selected, but this did not "
+            "amount to mis-sale or attract compensation"
+        ),
+        "Outcome Category": "Not Upheld",
+        "Outcome": (
+            "Complaint not upheld — T&R didn't mis-sell the policy; it was arranged on a "
+            "non-advised basis, the proposal form clearly defined the standard cover "
+            "limits and offered a theft extension Mr F chose not to select, and Mr F's "
+            "own engagement with the form and call showed an informed choice"
+        ),
+        "Compensation Awarded (£)": 0,
+        "Is Core Case": "No — Broker Dispute",
+        "Key Policy Clause": (
+            "Where an unoccupied property owner's policy proposal form clearly defines "
+            "'standard' cover as limited to specific perils (e.g. 'fire, lightning, "
+            "explosion, aircraft only') and separately offers an optional theft "
+            "extension that the policyholder does not select, a broker arranging the "
+            "policy on a non-advised basis is not required to specifically flag that "
+            "theft is excluded from standard cover — the onus falls on the consumer to "
+            "review the cover options and select accordingly, particularly where the "
+            "policyholder's own recorded comments show they turned their mind to the "
+            "security of contents at the property; a sale is non-advised where the "
+            "broker does not recommend specific cover-level choices and the policyholder "
+            "independently completes and signs the proposal form; it would be good "
+            "practice, though not a mis-sale, for a broker to flag at the point of a "
+            "claim that a relevant extension wasn't selected, to manage the "
+            "policyholder's expectations before the insurer's claims decision"
+        ),
+        "Missing Evidence": (
+            "Clear evidence that Mr F specifically requested theft cover matching his "
+            "previous occupied-property policy — absent; his own recorded comments about "
+            "there being 'nothing of substantial value' at the property were, if "
+            "anything, evidence he had actively (if perhaps mistakenly) turned his mind "
+            "away from needing theft cover"
+        ),
+        "Ombudsman Reasoning": (
+            "Proposal form clearly defined standard cover (fire/lightning/explosion/"
+            "aircraft 'only') separately from an extended-cover option that included "
+            "theft, which Mr F did not tick; recorded call showed Mr F actively "
+            "considered and downplayed the value of contents left at the property; Mr F "
+            "engaged meaningfully with the form (handwritten comments, specific "
+            "questions on excess and financial cover level) but not on theft; sale was "
+            "non-advised — no cover-level recommendation from T&R, form completed and "
+            "signed by Mr F, declaration onus on him to check completeness/accuracy or "
+            "consult an adviser if in doubt; T&R could have done more at the claims "
+            "stage to flag the missing theft cover but this is a best-practice "
+            "observation, not a basis for compensation or a mis-sale finding"
+        ),
+        "Workflow Insight": (
+            "For non-advised sales of unoccupied property owner's policies, brokers "
+            "should still consider flagging, at the point a claim is first reported, "
+            "whether the relevant peril extension was selected on the original "
+            "proposal — this manages the policyholder's expectations and avoids "
+            "unnecessary distress even where it is not required to avoid a mis-sale "
+            "finding; a policyholder's own recorded statements about the value or "
+            "nature of contents at a property can be persuasive evidence that they made "
+            "an informed (if potentially mistaken) choice not to select an available "
+            "cover extension"
+        ),
+        "AI Rule Candidate": (
+            "IF proposal_form_clearly_defines_standard_cover_perils_and_separately_offers_an_optional_extension_covering_the_peril_later_claimed_for "
+            "AND policyholder_completed_and_signed_the_form_without_broker_recommendation_on_cover_level "
+            "THEN sale_is_non_advised_and_broker_is_not_liable_for_policyholder_not_selecting_the_extension; "
+            "policyholders_own_recorded_statements_about_the_value_of_contents_at_the_property_can_evidence_an_informed_choice_not_to_select_an_available_extension; "
+            "broker_failing_to_flag_at_claim_stage_that_a_relevant_extension_was_not_selected_is_a_best_practice_gap_not_a_mis_sale"
+        ),
+        "Source PDF": "DRN-3848349.pdf",
+    },
+    {
+        "Case ID": "UNOC-026",
+        "FOS Decision ID": "DRN-3999409",
+        "Insurer Name": "Affinity Insurance Solutions Limited",
+        "FOS Decision Date": "1 May 2023",
+        "Claim Type": (
+            "Broker mis-sale complaint — home insurance arranged by phone for an "
+            "inherited unoccupied property; escape of water declined by the underwriter "
+            "because the property had been unoccupied for more than 60 consecutive "
+            "days, which the policyholder said she wasn't warned about at the point of "
+            "sale"
+        ),
+        "Unoccupied Period / Circumstance": (
+            "Property inherited following a bereavement in April 2021; insured as "
+            "unoccupied from inception (June 2021), renewed July 2022; escape of water "
+            "discovered mid-December 2022 while the property remained unoccupied, "
+            "though visited regularly by the family for upkeep"
+        ),
+        "Property Type": "Residential property (inherited, unoccupied)",
+        "Dispute Type": "Broker Conduct Dispute",
+        "Coverage Decision": "Not Applicable",
+        "Rejection Reason": (
+            "Not applicable to a coverage decline by the underwriter directly — this "
+            "complaint concerned whether the broker adequately explained the 60-day "
+            "unoccupied-property escape-of-water exclusion at the point of sale, not the "
+            "underwriter's application of it"
+        ),
+        "Evidence Dispute": (
+            "Mrs K (via her husband, who arranged the policy on her behalf): wasn't made "
+            "aware an escape of water wouldn't be covered if the property was unoccupied "
+            "for more than 60 consecutive days; both she and her husband were vulnerable "
+            "at the time, dealing with bereavement, grief and ill health. Affinity: its "
+            "call handler told Mr K on at least two occasions during the sales call that "
+            "a restriction applied to cover where a property was unoccupied for more "
+            "than 60 consecutive days, and Mr K confirmed 'that's fine' and proceeded; "
+            "the subsequent 46-page policy booklet, sent by email, also clearly set out "
+            "the exclusion and advised the policyholder to check the cover was right for "
+            "her, consistent with a non-advised sale. FOS (having listened to the "
+            "recorded call): the restriction was clearly stated at least three times "
+            "during the call and Mr K confirmed acceptance each time; the policy "
+            "documentation was significantly more detailed than what was said on the "
+            "call (a 46-page booklet, not unusual) and clearly excluded EOW after 60 "
+            "days' unoccupancy — a common feature of unoccupied-property policies "
+            "generally; Mrs K had a cooling-off period to review and cancel if the cover "
+            "wasn't suitable; while sympathetic to the bereavement and ill health, there "
+            "wasn't enough evidence that the couple's circumstances precluded "
+            "understanding the clearly-stated restriction"
+        ),
+        "Outcome Category": "Not Upheld",
+        "Outcome": (
+            "Complaint not upheld — Affinity clearly explained the 60-day "
+            "unoccupied-property restriction on the recorded sales call (at least three "
+            "times) and in the subsequent policy documentation; the policy was not "
+            "mis-sold"
+        ),
+        "Compensation Awarded (£)": 0,
+        "Is Core Case": "No — Broker Dispute",
+        "Key Policy Clause": (
+            "Where a call recording shows an unoccupied-property time-limited exclusion "
+            "(e.g. 60 consecutive days for escape of water) was clearly stated multiple "
+            "times during a sales call and acknowledged by the person arranging the "
+            "policy, and the subsequent policy documentation also clearly sets out the "
+            "same restriction, a broker has discharged its duty to provide clear, fair "
+            "and not misleading information — this remains the case even where the "
+            "policy was arranged by a family member on behalf of a vulnerable consumer "
+            "affected by bereavement and ill health, provided there's no evidence the "
+            "vulnerability precluded understanding what was communicated at the time; a "
+            "cooling-off period during which the policyholder could review documentation "
+            "and cancel without penalty is a further opportunity for the consumer to "
+            "identify unsuitable terms, reducing the broker's residual responsibility"
+        ),
+        "Missing Evidence": (
+            "Evidence that Mr and Mrs K's vulnerability (grief, ill health) at the time "
+            "of the June 2021 sales call was so severe as to preclude understanding the "
+            "restriction that was repeated multiple times and expressly acknowledged — "
+            "absent"
+        ),
+        "Ombudsman Reasoning": (
+            "Recorded call (good quality, provided to Mrs K in the interests of candour) "
+            "showed the 60-day unoccupied restriction stated at least three times, with "
+            "Mr K responding 'that's fine' and confirming he was happy to proceed; "
+            "46-page policy booklet (not unusually long) and covering letter advising "
+            "the policyholder to check cover was 'right for you' were sent after "
+            "inception; this pattern is consistent with a non-advised sale where the "
+            "onus fell on Mrs K to review the documentation; while sympathetic to the "
+            "family's grief and Mr K's evident concern for his wife's wellbeing, there "
+            "was no evidence their circumstances prevented them from understanding a "
+            "restriction repeated multiple times on the call; not mis-sold"
+        ),
+        "Workflow Insight": (
+            "When a family member arranges an unoccupied-property policy on behalf of a "
+            "bereaved or vulnerable consumer, a broker's obligations are assessed "
+            "against what was communicated to the person actually on the call and in "
+            "subsequent documentation — repeating a material time-limited exclusion "
+            "multiple times during the call and echoing it in the policy booklet, "
+            "combined with a cooling-off period, is strong evidence of a fair sale even "
+            "in circumstances of bereavement, absent specific evidence that the "
+            "vulnerability itself impaired understanding of what was said at the time"
+        ),
+        "AI Rule Candidate": (
+            "IF recorded_sales_call_shows_time_limited_unoccupied_property_exclusion_stated_multiple_times_and_acknowledged_by_the_person_arranging_the_policy "
+            "AND subsequent_policy_documentation_also_clearly_sets_out_the_same_exclusion "
+            "THEN broker_has_provided_clear_fair_and_not_misleading_information_regardless_of_the_policyholders_bereavement_or_vulnerability_absent_specific_evidence_the_vulnerability_impaired_understanding_at_the_time; "
+            "cooling_off_period_availability_further_reduces_broker_residual_responsibility_for_a_clearly_disclosed_unoccupancy_restriction"
+        ),
+        "Source PDF": "DRN-3999409.pdf",
+    },
+    {
+        "Case ID": "UNOC-027",
+        "FOS Decision ID": "DRN4133004",
+        "Insurer Name": "St Andrew's Insurance Plc",
+        "FOS Decision Date": "16 Oct 2019",
+        "Claim Type": (
+            "Buildings insurance — escape of water discovered by policyholder's son "
+            "(holding power of attorney) during a maintenance visit; property had been "
+            "empty for around 18 months (owner in a care home) while being maintained/"
+            "decorated by family with a view to renting or selling; insurer declined "
+            "citing the 30-day unoccupied exclusion and separately cancelled/backdated "
+            "the policy to its one-year maximum unoccupied-cover period"
+        ),
+        "Unoccupied Period / Circumstance": (
+            "Owner entered a care home in August 2016; property unoccupied thereafter "
+            "for around 18 months by the time of the February 2018 loss, though visited "
+            "every other day by family for maintenance and decoration; property retained "
+            "essential living items (cooking appliances, sanitary fittings, beds)"
+        ),
+        "Property Type": "Residential property (owner in care home; family maintaining for future rental or sale)",
         "Dispute Type": "Endorsement / Exclusion Challenge",
         "Coverage Decision": "Declined — Full",
         "Rejection Reason": (
-            "UKI concluded the property had been unoccupied when the sewage escape "
-            "occurred and said P had breached obligations to notify of a change in "
-            "occupation, to inspect the unoccupied property every 14 days, and to take "
-            "reasonable precautions to prevent damage"
+            "Escape of water excluded as the property had been unoccupied (not lived in) "
+            "for more than 30 days; separately, St Andrew's said it would only have "
+            "insured an unoccupied property for a maximum of one year and so backdated "
+            "cancellation of the policy to August 2017, refunding premiums paid since "
+            "then"
         ),
         "Evidence Dispute": (
-            "P: unaware the property was unoccupied until notified by the local authority "
-            "in January 2016; had been accommodating the tenant's personal difficulties "
-            "over unpaid rent since February 2014 and only instructed solicitors in June "
-            "2015 over the rent arrears, not because it knew the property was empty; "
-            "director lived some distance away and had no reason to suspect external "
-            "signs of vacancy. UKI: tenant hadn't paid rent since February 2014; "
-            "neighbours reported the shop had been closed for a year or more; instructing "
-            "solicitors over unpaid rent in June 2015 should have prompted notification of "
-            "a change in risk. FOS: policy's notification obligation and 'unaffected by "
-            "act/omission of a tenant' proviso both require actual awareness of a change "
-            "in occupation before the obligation to notify arises; no evidence P knew the "
-            "property was unoccupied before January 2016; instructing solicitors over "
-            "unpaid rent is not equivalent to knowing a property is unoccupied; without "
-            "awareness, the 14-day inspection and general reasonable-precautions "
-            "obligations could not reasonably have been triggered either"
+            "Mr G (via his son/attorney): family visited every other day to maintain and "
+            "decorate the property with a view to letting or selling it, so it shouldn't "
+            "be classed as unoccupied; the broker (not St Andrew's) had been told about "
+            "the change in 2016 and hadn't passed this on or warned of the unoccupancy "
+            "consequences — a separate complaint. St Andrew's: to meet the policy's "
+            "'occupied' definition the property must be lived in by the owner or a "
+            "family member and contain essential living items; regular maintenance "
+            "visits, however frequent, are not the same as living there; had it known "
+            "the property was unoccupied, it would only have covered EOW-type damage if "
+            "additional risk-reduction steps had been taken (water turned off, regular "
+            "inspections recorded), and would in any event have limited cover to one "
+            "year from the start of unoccupancy, consistent with its underwriting "
+            "notes. FOS: property had the essential items for normal living (satisfying "
+            "that limb of the definition) but visiting to carry out maintenance, however "
+            "frequently, does not amount to 'living' there; the water hadn't been turned "
+            "off, so the breach of the unoccupied-property risk-reduction condition was "
+            "directly connected to the type of loss claimed (an EOW-prevention measure "
+            "not taken); backdating cancellation to August 2017 (one year from actual "
+            "unoccupancy) and refunding premiums paid thereafter was a fair reflection "
+            "of what St Andrew's would have done had it known the true position at the "
+            "time"
+        ),
+        "Outcome Category": "Not Upheld",
+        "Outcome": (
+            "Complaint not upheld — St Andrew's fairly declined the EOW claim under the "
+            "30-day unoccupied exclusion and fairly cancelled/backdated the policy to "
+            "its one-year unoccupied-cover maximum, refunding premiums paid after that "
+            "date"
+        ),
+        "Compensation Awarded (£)": 0,
+        "Is Core Case": "Yes",
+        "Key Policy Clause": (
+            "An 'occupied'/'lived in' definition requiring both (a) actual habitation by "
+            "the owner or an authorised family member and (b) the presence of essential "
+            "items for normal living (cooking appliances, sanitary fittings, beds) is a "
+            "conjunctive test — satisfying the furnishing limb alone does not meet the "
+            "definition if no one is actually living there; family members visiting "
+            "every other day to carry out maintenance or decoration, however frequently, "
+            "does not constitute 'living' in a property for this purpose; where an "
+            "insurer's maximum unoccupied-property cover period (e.g. one year) is a "
+            "documented underwriting practice, it is fair for the insurer to backdate a "
+            "cancellation to the actual date unoccupancy began (as established by the "
+            "evidence) once it discovers the true position, and to refund premiums paid "
+            "for the period it would not otherwise have covered; a breach of a "
+            "risk-reduction condition specific to unoccupied properties (e.g. failing to "
+            "turn off the water supply) is materially connected to, and can bar, a claim "
+            "for the very type of damage (escape of water) that the condition was "
+            "designed to prevent"
+        ),
+        "Missing Evidence": (
+            "Evidence that the water supply had been turned off, or an alternative "
+            "continuous-heating arrangement maintained, during the unoccupied period — "
+            "absent; this breach was directly connected to the escape of water loss"
+        ),
+        "Ombudsman Reasoning": (
+            "Property contained essential living items but was only visited, not lived "
+            "in, by family members carrying out maintenance and decoration over roughly "
+            "18 months; the 'occupied' definition requires both limbs to be met and "
+            "'living in' was not established by visits alone; had St Andrew's known of "
+            "the unoccupancy it would only have covered EOW-type losses subject to "
+            "additional conditions (water off, regular recorded inspections) which were "
+            "not met, and the failure to turn off the water was directly connected to "
+            "the loss claimed; St Andrew's underwriting notes confirmed a one-year "
+            "maximum unoccupied-cover policy, so backdating cancellation to August 2017 "
+            "(the true start of unoccupancy) and refunding premiums paid since was the "
+            "fair outcome reflecting what would have happened had it been told at the "
+            "time; broker's alleged failure to pass on notification was a separate "
+            "matter not attributable to St Andrew's"
+        ),
+        "Workflow Insight": (
+            "When assessing an 'occupied'/'lived in' definition requiring both "
+            "habitation and essential furnishing, confirm both limbs separately — a "
+            "well-furnished, well-maintained property is not thereby 'occupied' if no "
+            "one is actually residing there; regular family visits for maintenance or "
+            "decoration purposes should be distinguished from residence when assessing "
+            "unoccupancy thresholds; where an insurer discovers post-loss that a "
+            "property was unoccupied for longer than its maximum unoccupied-cover "
+            "period, backdating cancellation to the actual (not notified) start date of "
+            "unoccupancy and refunding the resulting unearned premium is a fair remedy, "
+            "provided supported by documented underwriting practice"
+        ),
+        "AI Rule Candidate": (
+            "IF policy_occupied_definition_requires_both_actual_habitation_AND_presence_of_essential_living_items "
+            "AND only_the_furnishing_limb_is_satisfied "
+            "THEN property_is_not_occupied_for_policy_purposes_regardless_of_frequency_of_maintenance_visits; "
+            "IF insurer_has_a_documented_maximum_unoccupied_cover_period "
+            "AND discovers_post_loss_that_property_exceeded_that_period "
+            "THEN backdating_cancellation_to_the_actual_start_of_unoccupancy_and_refunding_premiums_paid_thereafter_is_a_fair_remedy; "
+            "breach_of_an_unoccupied_property_risk_reduction_condition_directly_connected_to_the_type_of_loss_claimed_bars_the_claim"
+        ),
+        "Source PDF": "DRN4133004.pdf",
+    },
+    {
+        "Case ID": "UNOC-028",
+        "FOS Decision ID": "DRN-4195324",
+        "Insurer Name": "Accredited Insurance (Europe) Ltd",
+        "FOS Decision Date": "22 Aug 2023",
+        "Claim Type": (
+            "Home insurance — water leak claim; insurer investigated and concluded the "
+            "policyholder didn't actually live at the insured property (contrary to "
+            "what was declared as her main residence), avoided the policy for "
+            "deliberate/reckless misrepresentation, and separately suggested the claim "
+            "would also be excluded under an unoccupancy condition"
+        ),
+        "Unoccupied Period / Circumstance": (
+            "Insurer's investigator concluded the property wasn't the policyholder's "
+            "main residence and may have been used for business purposes or otherwise "
+            "unoccupied for a period before the water damage was discovered (evidenced, "
+            "it said, by mould growth and discrepancies over when the loss occurred) — "
+            "but the ombudsman found the insurer's occupancy investigation itself was "
+            "flawed and unproven"
+        ),
+        "Property Type": "Residential property (occupancy status disputed)",
+        "Dispute Type": "Coverage Dispute",
+        "Coverage Decision": "Declined — Full",
+        "Rejection Reason": (
+            "Accredited avoided the policy (treated it as if it never existed) on the "
+            "basis that Miss V had misrepresented that the property was her main "
+            "residence, which it said was a deliberate/reckless qualifying "
+            "misrepresentation entitling it to refuse all claims; it separately argued "
+            "that even if the policy were valid, the claim would be excluded under the "
+            "unoccupancy condition given delay in the damage being discovered"
+        ),
+        "Evidence Dispute": (
+            "Miss V: disputed the investigator's conclusions about where she lived and "
+            "the fairness/conduct of the investigation (including an allegation of "
+            "bullying during an interview). Accredited: its investigator compared her "
+            "circumstances to another property it believed she lived at, and relied on "
+            "a neighbour's account and inconsistencies it identified; said it wouldn't "
+            "have offered a household policy had it known the property wasn't her main "
+            "residence, and that even if cover existed, unoccupancy (evidenced by mould "
+            "growth and timeline discrepancies) would exclude the claim. FOS "
+            "(provisional and final): repeatedly asked Accredited to justify its "
+            "investigation methodology and to produce its underwriting criteria to show "
+            "the alleged misrepresentation was a 'qualifying' one under CIDRA (i.e., "
+            "that it would have changed whether or on what terms cover was offered); "
+            "Accredited initially said it couldn't access its underwriting information, "
+            "then supplied a document that turned out not to be the underwriting "
+            "criteria, and only after repeated requests produced its actual "
+            "underwriting guide and endorsements; that document's list of decline "
+            "reasons did not include unoccupancy, its general guidelines said it would "
+            "cover most non-standard risks including unoccupied properties, and none of "
+            "the unoccupied-property endorsements referenced said cover would be "
+            "declined outright (some referred to reduced cover and protective measures "
+            "only); Accredited therefore failed to show the alleged misrepresentation "
+            "was a qualifying one, and also failed to justify the reasonableness of its "
+            "occupancy investigation itself"
         ),
         "Outcome Category": "Upheld",
         "Outcome": (
-            "UKI required to accept the claim, reimburse any invoices already paid by P "
-            "directly with 8% simple interest from the date of payment to settlement, and "
-            "continue providing cover for the repair work"
+            "Accredited required to remove references to the policy avoidance from "
+            "internal and external databases, reinstate the policy, consider the claim, "
+            "and pay Miss V £200 compensation"
         ),
-        "Compensation Awarded (£)": 0,
+        "Compensation Awarded (£)": 200,
         "Is Core Case": "Yes",
         "Key Policy Clause": (
-            "A policy condition requiring notification of a change in occupation 'as soon "
-            "as they become aware' only bites once the insured has actual knowledge of the "
-            "change — a policy provision stating cover 'will not be prejudiced by any act "
-            "or omission unknown to or beyond the control of the Insured on the part of a "
-            "tenant' reinforces that unawareness of a tenant's own conduct (including "
-            "abandoning the property) does not constitute a breach; obligations to inspect "
-            "unoccupied premises at least every 14 days and take reasonable precautions "
-            "for unoccupied properties cannot fairly be relied upon by an insurer where "
-            "the policyholder did not know, and had no reasonable means of knowing, that "
-            "the property had become unoccupied; non-payment of rent alone, or "
-            "instructing solicitors to recover arrears, does not equate to knowledge that "
-            "a property is unoccupied"
+            "To avoid a policy for misrepresentation under CIDRA, an insurer must show "
+            "not only that the policyholder failed to take reasonable care in answering "
+            "a question (e.g. about main residence status) but also that the "
+            "misrepresentation was a 'qualifying' one — meaning the insurer would have "
+            "offered the policy on different terms, or not at all, had accurate "
+            "information been given; an insurer's unoccupancy-related underwriting "
+            "guidance that identifies reduced cover and protective measures (rather "
+            "than outright decline) for unoccupied or non-standard-occupancy properties "
+            "undermines a claim that a misrepresentation about occupancy/residence "
+            "status was 'qualifying' in the CIDRA sense; an insurer relying on avoidance "
+            "for misrepresentation bears the burden of promptly producing its actual "
+            "underwriting criteria to substantiate that claim — repeated failure or "
+            "delay in producing this evidence, or producing the wrong document, "
+            "undermines the insurer's position and supports a finding against it"
         ),
         "Missing Evidence": (
-            "Evidence that P had actual knowledge of the unoccupancy before the local "
-            "authority's January 2016 contact — absent; UKI relied only on inferences from "
-            "non-payment of rent and neighbour reports, not on anything shown to have "
-            "reached P"
+            "Accredited's genuine underwriting criteria — initially claimed "
+            "unavailable, then a non-underwriting document was supplied, and only after "
+            "repeated requests was the correct document produced; even then, it did not "
+            "support the claim that the alleged misrepresentation was a qualifying one"
         ),
         "Ombudsman Reasoning": (
-            "Tenant hadn't paid rent since Feb 2014, and neighbours suggested the shop had "
-            "been shut for a year or more, but P's director lived some distance away and "
-            "had no reason to suspect the property (as opposed to the tenant's rent "
-            "account) was actually vacant; solicitor instruction in June 2015 concerned "
-            "unpaid rent, not unoccupancy; policy's notification duty and the 'unknown to "
-            "or beyond control of the Insured' proviso both turn on actual awareness; "
-            "without awareness, the 14-day inspection and reasonable-precautions "
-            "conditions specific to vacant/disused locations could not reasonably apply "
-            "either; UKI could not rely on any of the three clauses to decline; claim "
-            "should be accepted with interest on any invoices already paid"
+            "Multiple issues identified with how Accredited investigated occupancy "
+            "(including the investigator personally following up a bullying allegation "
+            "raised against himself), and Accredited did not adequately justify the "
+            "conclusions reached; even setting aside the reasonable-care question, "
+            "Accredited failed — despite repeated requests and after supplying an "
+            "incorrect document — to show the misrepresentation was a qualifying one; "
+            "the underwriting guide's list of decline reasons did not include "
+            "unoccupancy, its general position was to cover most non-standard risks "
+            "including unoccupied properties, and none of the referenced "
+            "unoccupied-property endorsements provided for outright decline; therefore "
+            "avoidance and claim decline were not reasonable; a related, "
+            "not-yet-actioned suggestion that endorsements might have been applied for "
+            "unoccupancy was irrelevant since that action was never actually taken"
         ),
         "Workflow Insight": (
-            "When investigating suspected non-disclosure of unoccupancy, insurers must "
-            "establish that the policyholder had actual knowledge of the change in "
-            "occupation, not merely that objective indicators (unpaid rent, neighbour "
-            "reports of closure) existed which the insurer itself later uncovered — a "
-            "landlord's tolerance of a struggling tenant's rent arrears, or instructing "
-            "solicitors to recover unpaid rent, is not on its own evidence of knowledge "
-            "that the property has become physically unoccupied; distance between a "
-            "landlord's residence and the let property is a relevant factor in assessing "
-            "whether the landlord could reasonably have known of unoccupancy"
+            "When an insurer relies on misrepresentation to avoid a policy connected to "
+            "disputed occupancy or residence status, it must be prepared to promptly "
+            "produce its actual underwriting criteria to demonstrate the "
+            "misrepresentation was 'qualifying' — repeated failure to do so, or "
+            "supplying incorrect documents, will be treated as undermining the "
+            "insurer's position rather than neutral; underwriting guidance that "
+            "provides for reduced cover or protective conditions (rather than outright "
+            "decline) for unoccupied or non-standard-occupancy properties is strong "
+            "evidence against a claim that misrepresenting occupancy status was a "
+            "qualifying misrepresentation; claims investigations into disputed "
+            "occupancy should not be conducted or self-validated by the same "
+            "individual against whom a conduct complaint (e.g. bullying) has been "
+            "raised"
         ),
         "AI Rule Candidate": (
-            "IF policy_notification_duty_is_conditioned_on_insured_becoming_aware_of_change_in_occupation "
-            "AND insurer_cannot_show_actual_knowledge_by_policyholder_of_unoccupancy "
-            "THEN insurer_cannot_decline_claim_for_breach_of_notification_condition; "
-            "IF policyholder_lacked_actual_knowledge_of_unoccupancy "
-            "THEN inspection_and_reasonable_precautions_conditions_specific_to_unoccupied_properties_cannot_be_relied_upon_either; "
-            "non_payment_of_rent_or_solicitor_instruction_over_arrears_does_not_by_itself_establish_landlord_knowledge_that_property_is_unoccupied"
+            "IF insurer_avoids_policy_for_misrepresentation_about_occupancy_or_residence_status "
+            "AND insurer_cannot_promptly_produce_underwriting_criteria_showing_the_misrepresentation_would_have_changed_terms_or_offer "
+            "THEN avoidance_is_not_a_qualifying_misrepresentation_under_cidra_and_should_not_be_upheld; "
+            "IF underwriting_guidance_for_unoccupied_or_non_standard_occupancy_properties_provides_for_reduced_cover_or_protective_conditions_rather_than_outright_decline "
+            "THEN this_undermines_a_claim_that_misrepresenting_occupancy_status_was_a_qualifying_misrepresentation; "
+            "insurer_repeatedly_failing_to_produce_or_misidentifying_its_own_underwriting_document_when_requested_weighs_against_the_insurers_position"
         ),
-        "Source PDF": "DRN2912517.pdf",
+        "Source PDF": "DRN-4195324.pdf",
     },
     {
-        "Case ID": "UNOC-016",
-        "FOS Decision ID": "DRN-2973838",
-        "Insurer Name": "AmTrust Europe Limited",
-        "FOS Decision Date": "22 Oct 2021",
+        "Case ID": "UNOC-029",
+        "FOS Decision ID": "DRN4242877",
+        "Insurer Name": "Stride Limited",
+        "FOS Decision Date": "25 Oct 2018",
         "Claim Type": (
-            "Commercial buildings insurance (let flats) — theft of pipework and fixed "
-            "appliances during the void period following an accepted fire damage claim, "
-            "before reinstatement works began; insurer declined the theft claim under the "
-            "policy's unoccupancy exclusion, regardless of the reason for the unoccupancy"
+            "Broker mis-sale complaint — home insurance for an empty property; "
+            "vandalism damage claim (paint splashed from an incident targeting a "
+            "neighbour's car) attracted a £1,000 increased excess for unoccupied-"
+            "property risks (theft, vandalism, malicious damage, accidental damage) "
+            "under the policy; policyholders felt the policy had been mis-sold as "
+            "unsuitable for an unoccupied property, though the insurer reduced the "
+            "excess to £100 given the collateral nature of the damage and the small "
+            "claim (£300) was not pursued"
         ),
         "Unoccupied Period / Circumstance": (
-            "Property unoccupied following fire damage that forced tenants to move out; "
-            "unoccupancy exceeded the policy's 60-day threshold (defined as empty/"
-            "disused/unoccupied/unfurnished/untenanted for 60+ days) while awaiting claim "
-            "assessment and reinstatement; theft occurred during this period, before "
-            "repairs started"
+            "Property already unoccupied for some time when the policy was taken out in "
+            "November 2017, as recorded on the statement of fact"
         ),
-        "Property Type": "Residential let property, multiple self-contained flats",
-        "Dispute Type": "Endorsement / Exclusion Challenge",
-        "Coverage Decision": "Declined — Full",
-        "Rejection Reason": (
-            "Policy excluded theft where the buildings had become 'Unoccupied' (empty/"
-            "disused/unfurnished/untenanted for 60+ days) under Endorsement 011b and the "
-            "Change of Definition — Unoccupied clause; theft occurred after the 60-day "
-            "threshold had been passed while the property remained vacant pending "
-            "fire-claim reinstatement"
-        ),
-        "Evidence Dispute": (
-            "Mr R: unoccupancy only arose because of an insured peril (fire) which he "
-            "could not control, and was compounded by claim-handling delays; AmTrust "
-            "should not rely on the exclusion in these circumstances. AmTrust: "
-            "unoccupancy exclusion applies regardless of the underlying cause of the "
-            "unoccupancy; offered £100 compensation for acknowledged claim-handling "
-            "delays but maintained the theft exclusion applied. FOS: policy wording is "
-            "clear and contains no exception for unoccupancy caused by an insured peril; "
-            "even absent any avoidable delay, the loss adjuster estimated repairs would "
-            "take around four months — well beyond the 60-day threshold — so the property "
-            "would have remained unoccupied past the threshold regardless of AmTrust's "
-            "handling"
-        ),
-        "Outcome Category": "Not Upheld",
-        "Outcome": (
-            "Complaint not upheld — AmTrust correctly declined the theft claim under the "
-            "unoccupancy exclusion; £100 already offered for acknowledged claim-handling "
-            "delays stands but the theft claim itself is not payable, since even without "
-            "those delays the 60-day threshold would still have been exceeded given the "
-            "scale of the fire repairs"
-        ),
-        "Compensation Awarded (£)": 100,
-        "Is Core Case": "Yes",
-        "Key Policy Clause": (
-            "An unoccupancy exclusion tied to a fixed time threshold (e.g. 60 days empty/"
-            "disused/unfurnished/untenanted) applies regardless of the reason the property "
-            "became unoccupied — including where unoccupancy results from an earlier "
-            "insured peril (such as fire) that is entirely outside the policyholder's "
-            "control; there is no implied exception for unoccupancy caused by a covered "
-            "event unless the policy expressly provides for one; where an insurer has "
-            "caused some avoidable claim-handling delay, this will not assist the "
-            "policyholder in disputing an unoccupancy exclusion unless the delay can be "
-            "shown to have caused the property to cross the relevant unoccupancy "
-            "threshold that it would not otherwise have crossed"
-        ),
-        "Missing Evidence": (
-            "Evidence that, absent AmTrust's acknowledged handling delays, reinstatement "
-            "could have been completed and the property reoccupied within 60 days of the "
-            "fire — absent; the loss adjuster's own repair-time estimate (approximately "
-            "four months) showed the threshold would have been exceeded regardless"
-        ),
-        "Ombudsman Reasoning": (
-            "Policy and Endorsement 011b unambiguously excluded theft cover once the "
-            "property met the 60-day unoccupancy definition, with no carve-out based on "
-            "cause; property became unoccupied due to fire damage, an event outside "
-            "either party's control at the time of the theft; AmTrust's acknowledged "
-            "handling delays did not causally extend the unoccupancy period beyond what "
-            "the fire damage itself would have caused, since repairs were independently "
-            "estimated at around four months; £100 already offered for the delays was "
-            "proportionate and not increased since no material impact from the delay was "
-            "shown"
-        ),
-        "Workflow Insight": (
-            "Claims handlers should confirm whether a fixed-threshold unoccupancy "
-            "exclusion contains any carve-out for unoccupancy arising from a prior "
-            "insured peril before declining a subsequent claim on that ground — where no "
-            "such carve-out exists, the exclusion applies regardless of blamelessness; "
-            "where a policyholder alleges that insurer-caused delay extended the "
-            "unoccupancy period past the relevant threshold, handlers should obtain and "
-            "rely on independent repair-time estimates to assess whether the threshold "
-            "would have been crossed in any event"
-        ),
-        "AI Rule Candidate": (
-            "IF unoccupancy_exclusion_is_defined_by_a_fixed_time_threshold_with_no_cause_based_carve_out "
-            "THEN exclusion_applies_regardless_of_whether_unoccupancy_arose_from_a_separate_insured_peril; "
-            "IF policyholder_alleges_insurer_delay_caused_unoccupancy_threshold_to_be_exceeded "
-            "AND independent_repair_estimate_shows_threshold_would_have_been_exceeded_regardless_of_delay "
-            "THEN delay_argument_does_not_defeat_the_unoccupancy_exclusion"
-        ),
-        "Source PDF": "DRN-2973838.pdf",
-    },
-    {
-        "Case ID": "UNOC-017",
-        "FOS Decision ID": "DRN-3053282",
-        "Insurer Name": "Aviva Insurance Limited",
-        "FOS Decision Date": "29 Dec 2021",
-        "Claim Type": (
-            "Commercial Property Owners insurance — mid-term policy adjustment dispute "
-            "(not a declined claim); at renewal the insured disclosed the commercial "
-            "rental property was unoccupied, so Aviva applied an Unoccupied Premises "
-            "Cover Restriction (fire/lightning/explosion/earthquake only); when the "
-            "property became occupied again four months later, Aviva reinstated full "
-            "cover but also raised the escape of water and storm/flood excesses to "
-            "£2,500 (later reduced EOW excess back to £500 but kept storm/flood at "
-            "£2,500 due to an open prior storm claim); policyholder complained the "
-            "mid-term excess increase was unfair"
-        ),
-        "Unoccupied Period / Circumstance": (
-            "Commercial rental property unoccupied at the point of annual renewal; "
-            "became occupied again approximately four months into the policy year, at "
-            "which point full cover (subject to revised excesses) was reinstated"
-        ),
-        "Property Type": "Commercial rental property",
-        "Dispute Type": "Claim Recording / Administrative Dispute",
+        "Property Type": "Residential property, unoccupied",
+        "Dispute Type": "Broker Conduct Dispute",
         "Coverage Decision": "Not Applicable",
         "Rejection Reason": (
-            "Not applicable — no claim was declined; the dispute concerned whether a "
-            "mid-term increase to policy excesses, applied when cover was upgraded from "
-            "the Unoccupied Premises Cover Restriction back to full standard cover, was "
-            "permitted and fair under the policy's Alteration of Risk clause"
+            "Not applicable to a coverage decline — the underlying vandalism claim was "
+            "not declined (a reduced £100 excess was offered and the claim, worth £300, "
+            "was simply not pursued by the policyholders); the complaint concerned "
+            "whether the policy itself was mis-sold as unsuitable for an unoccupied "
+            "property"
         ),
         "Evidence Dispute": (
-            "Ms B: unoccupancy endorsement could simply have remained dormant and not "
-            "applied once the property became occupied again, without any excess "
-            "increase; combined with a separate £2,500 loss-of-rent excess, a storm claim "
-            "could cost her £5,000 in excesses; if the policy term permitted this, the "
-            "term itself was unfair. Aviva: at renewal, cover was restricted to fire/"
-            "lightning/explosion/earthquake only because the property was unoccupied, so "
-            "EOW and storm/flood risk (and any related claim history) hadn't been priced "
-            "in; when occupancy resumed, it reassessed the risk for those newly-"
-            "reinstated perils, taking into account an open prior storm claim, and set "
-            "higher excesses accordingly; reduced the EOW excess back to standard once it "
-            "recognised the open claim was for storm damage only. FOS: the policy's "
-            "Alteration of Risk clause expressly permits new terms and conditions "
-            "(including premium/excess changes) once notified of a change in risk; moving "
-            "from unoccupied to occupied is itself a notifiable change in risk that "
-            "engaged this clause; increasing the storm/flood excess for a fresh, "
-            "previously-unpriced risk in light of an open storm claim was a legitimate "
-            "commercial underwriting decision, not something FOS can second-guess on "
-            "quantum"
+            "Mr and Mrs H: believed the policy became entirely invalid after 45 days' "
+            "unoccupancy, and hadn't received the policy wording until after the claim, "
+            "making it an unsuitable/mis-sold policy. Stride: statement of facts and "
+            "policy schedule (with a link to the full policy wording) were emailed at "
+            "inception and referenced by Mr and Mrs H in their own correspondence, so "
+            "were likely received; the schedule itself stated cover for certain losses "
+            "(theft, vandalism, malicious damage, accidental damage) while unoccupied "
+            "for more than 45 days continued but with an increased £1,000 excess, not "
+            "that cover was withdrawn entirely; this was the most competitive policy "
+            "Stride could source for an unoccupied property. FOS: the policy schedule "
+            "made clear the property was insured as unoccupied and that certain risks "
+            "carried a higher excess (not exclusion) after 45 days — so the policy was "
+            "not invalid or unsuitable for an unoccupied property, contrary to Mr and "
+            "Mrs H's belief; even accepting they weren't specifically told about the "
+            "increased excess in advance, the increased excess and inspection/"
+            "drain-down conditions are common unoccupied-property policy terms, and it "
+            "was unlikely they'd have obtained materially better terms elsewhere at a "
+            "comparable price"
         ),
         "Outcome Category": "Not Upheld",
         "Outcome": (
-            "Complaint not upheld — Aviva was entitled under the policy's Alteration of "
-            "Risk clause to reassess and adjust excesses for perils newly reinstated when "
-            "the property became occupied again, and did so fairly by relying on the open "
-            "storm claim history"
+            "Complaint not upheld — the policy was a suitable, valid unoccupied-"
+            "property policy (not invalidated after 45 days, merely subject to an "
+            "increased excess for certain perils); no mis-sale established and no "
+            "refund or claim-record amendment required"
         ),
         "Compensation Awarded (£)": 0,
-        "Is Core Case": "No — Administrative",
+        "Is Core Case": "No — Broker Dispute",
         "Key Policy Clause": (
-            "An Alteration of Risk clause permitting new terms and conditions (including "
-            "premium and excess changes) upon notification of a change in risk extends to "
-            "a policyholder's notification that a previously unoccupied insured property "
-            "has become occupied again — because perils excluded during the Unoccupied "
-            "Premises Cover Restriction period (such as escape of water and storm/flood) "
-            "were never priced into the restricted-cover premium, the insurer is entitled "
-            "to reassess and reprice those specific perils, including by reference to "
-            "claims history, when reinstating full cover; FOS will not adjudicate on the "
-            "appropriateness of the excess amount itself, only on whether the policy "
-            "permitted the adjustment and whether the process was fair"
+            "An unoccupied-property home insurance policy that imposes an increased "
+            "excess (rather than a blanket exclusion) for certain perils such as theft, "
+            "vandalism, malicious damage and accidental damage once the property has "
+            "been unoccupied for more than a stated period (e.g. 45 days) remains a "
+            "valid and suitable policy for an unoccupied property — a policyholder's "
+            "mistaken belief that the policy became wholly invalid after that period "
+            "does not, without more, establish mis-sale; an increased excess and "
+            "standard unoccupied-property conditions (regular inspection, mains "
+            "drain-down over winter) are common industry terms, and a broker is not "
+            "required to show it could have sourced materially better terms at a "
+            "comparable price to defeat a suitability complaint"
         ),
         "Missing Evidence": (
-            "Not applicable — the material facts (unoccupancy at renewal, restricted "
-            "cover applied, subsequent notification of reoccupation, and an open prior "
-            "storm claim) were undisputed; the complaint turned on interpretation of the "
-            "Alteration of Risk clause rather than any factual gap"
+            "Clear evidence Mr and Mrs H did not in fact receive the statement of facts "
+            "and policy schedule (with link to policy wording) at inception — "
+            "undermined by their own correspondence referencing that document, and by "
+            "the absence of any record of them chasing Stride for a missing link to the "
+            "full wording"
         ),
         "Ombudsman Reasoning": (
-            "Policy renewed on the basis of unoccupancy with a restricted level of cover; "
-            "Alteration of Risk clause allows new terms/conditions upon notification of a "
-            "change in risk; occupancy resuming is a notifiable change; EOW and storm/"
-            "flood cover (and any pricing for prior claims) was not factored in while the "
-            "restriction applied, so it was reasonable for Aviva to reassess these "
-            "specific perils on reinstatement; EOW excess was corrected once Aviva "
-            "recognised the open claim was storm-only; storm/flood excess increase for a "
-            "peril newly brought back into scope, informed by claims history, was fair "
-            "and within Aviva's commercial discretion"
+            "Statement of facts and schedule sent by email at inception and referenced "
+            "by the policyholders themselves; schedule clearly stated the property was "
+            "unoccupied and that certain perils carried an increased £1,000 excess (not "
+            "exclusion) once unoccupied more than 45 days — this contradicted the "
+            "policyholders' belief that the policy became entirely invalid; even "
+            "assuming they weren't specifically warned of the increased excess in "
+            "advance, the terms were common for this type of policy and it was unlikely "
+            "a materially better-value alternative existed; the insurer's willingness to "
+            "reduce the excess to £100 given the collateral nature of the damage, and "
+            "the policyholders' own decision not to pursue the £300 claim, meant there "
+            "was no declined claim to remedy; no basis to require a premium refund or "
+            "claim-record amendment since the policy remained valid throughout"
         ),
         "Workflow Insight": (
-            "Underwriters restricting cover for an unoccupied property should record which "
-            "specific perils are excluded from pricing during the restriction so that, on "
-            "reinstatement following reoccupation, only the newly-reinstated perils are "
-            "subject to fresh risk assessment and excess adjustment — clear documentation "
-            "of this distinction (as Aviva ultimately demonstrated by correcting the EOW "
-            "excess once the storm-only nature of the open claim was recognised) helps "
-            "resolve excess disputes without recourse to FOS"
+            "When a policyholder alleges an unoccupied-property policy is invalid or "
+            "unsuitable because of a time-triggered condition, check whether that "
+            "condition is actually an exclusion (no cover at all) or merely an "
+            "increased excess/reduced-scope condition (cover continues, on different "
+            "terms) — many unoccupancy complaints stem from this misunderstanding "
+            "rather than an actual coverage gap; where a small claim is voluntarily not "
+            "pursued because a reduced excess still exceeds the claim value, this "
+            "should not be treated as an unresolved declined claim when assessing a "
+            "related mis-sale complaint"
         ),
         "AI Rule Candidate": (
-            "IF policyholder_notifies_insurer_that_previously_unoccupied_property_has_become_occupied_again "
-            "AND alteration_of_risk_clause_permits_new_terms_on_notified_change_in_risk "
-            "THEN insurer_may_reassess_and_reprice_perils_that_were_excluded_or_unpriced_during_the_unoccupied_restricted_cover_period; "
-            "excess_or_premium_adjustments_for_perils_newly_reinstated_on_reoccupation_informed_by_open_claims_history_are_not_unfair_merely_because_they_increase_cost_to_policyholder"
+            "IF unoccupied_property_policy_schedule_states_certain_perils_carry_an_increased_excess_rather_than_exclusion_after_a_stated_unoccupancy_period "
+            "THEN policy_remains_valid_and_suitable_for_an_unoccupied_property_and_is_not_thereby_mis_sold; "
+            "policyholder_mistaken_belief_that_a_time_triggered_excess_increase_equals_total_policy_invalidity_does_not_by_itself_establish_broker_mis_sale; "
+            "IF policyholder_voluntarily_declines_to_pursue_a_small_claim_because_the_reduced_excess_exceeds_the_claim_value "
+            "THEN this_is_not_a_declined_claim_requiring_remedy_in_a_related_mis_sale_complaint"
         ),
-        "Source PDF": "DRN-3053282.pdf",
+        "Source PDF": "DRN4242877.pdf",
     },
     {
-        "Case ID": "UNOC-018",
-        "FOS Decision ID": "DRN-3101941",
-        "Insurer Name": "AXA Insurance UK Plc",
-        "FOS Decision Date": "9 Nov 2021",
+        "Case ID": "UNOC-030",
+        "FOS Decision ID": "DRN-4660265",
+        "Insurer Name": "Amtrust Europe Limited",
+        "FOS Decision Date": "3 May 2024",
         "Claim Type": (
-            "Residential leasehold flat insurance — accidental damage claim for a "
-            "gable-end wall partially collapsing after the dormer roof of a long-"
-            "unoccupied, derelict neighbouring property caved in; council issued a "
-            "Dangerous Building Notice requiring residents to leave; AXA declined the "
-            "claim, attributing the wall collapse to gradual water ingress/general wear "
-            "rather than a one-off event, even though two of the other three flat owners "
-            "in the same building had the same damage accepted by their own insurers"
+            "Holiday homes property owners insurance — escape of water claim; insurer "
+            "asked the policyholder (a property business) to provide evidence of "
+            "compliance with the policy's unoccupied-property endorsement (including "
+            "that the water supply was turned off at the mains, or heating maintained) "
+            "before considering the claim further, since it believed the property may "
+            "not have been lived in throughout the run-up to the loss, spanning a "
+            "switch from an unoccupied property policy to a holiday home owners policy"
         ),
         "Unoccupied Period / Circumstance": (
-            "Not the insured's own property — the causative unoccupied property was a "
-            "neighbouring building that had stood empty and derelict for some years "
-            "(subject to two prior fires in 2013 and 2016, and long-standing local media "
-            "coverage of its disrepair) before its dormer roof caved in and caused the "
-            "shared gable-end wall to partially collapse"
+            "Property let to a company that appeared to intend renting it out via "
+            "Airbnb, under a lease/arrangement commencing before the November 2022 "
+            "policy switch; insurer's loss adjusters found evidence the property may "
+            "not have been lived in at any point between that arrangement starting and "
+            "the mid-December 2022 escape of water; policyholder argued the "
+            "30-consecutive-day unoccupancy clock should only start running from the "
+            "November 2022 policy inception date, not before"
         ),
-        "Property Type": (
-            "Residential leasehold flat (one of four units in a shared building; damage "
-            "caused by an adjoining unoccupied, derelict property)"
-        ),
-        "Dispute Type": "Causation Dispute",
-        "Coverage Decision": "Declined — Full",
-        "Rejection Reason": (
-            "AXA considered the wall damage was not a one-off accidental event but "
-            "resulted from water ingress accumulating over a number of years, softening "
-            "the brickwork and ultimately causing the wall to collapse — treated as "
-            "gradual/maintenance-related damage excluded under the policy"
-        ),
-        "Evidence Dispute": (
-            "Mr D and Mr R: two other flat owners in the same building, sharing the same "
-            "damage to the same gable-end wall from the same event (the neighbouring "
-            "dormer roof collapse), had their claims accepted by their own insurers, one "
-            "of whom used the same loss adjuster as AXA; inconsistent for AXA alone to "
-            "decline. AXA: maintained the damage was gradual water-ingress deterioration "
-            "excluded under the policy, and that other insurers' decisions did not bind "
-            "it. FOS (provisional, confirmed in final decision): the two properties were "
-            "immediately adjoining, so deterioration of the shared wall would likely not "
-            "have been visible until the dormer roof partially collapsed; no evidence of "
-            "any internal signs of damage beforehand; a June 2018 survey found the "
-            "chimney in fair condition; media reports confirmed the developer of the "
-            "derelict property withdrew after the collapse 'damaged neighbouring homes'; "
-            "all four flat owners share responsibility for, and are claiming for, the "
-            "identical damage to the identical wall arising from the identical event, so "
-            "it must be assessed identically; AXA's continued refusal despite two other "
-            "insurers (including one using AXA's own loss adjuster) accepting the same "
-            "damage as accidental was inconsistent and unfair"
-        ),
-        "Outcome Category": "Upheld",
-        "Outcome": (
-            "AXA required to accept and pay Mr D and Mr R's claim in line with the "
-            "settlements already made to the other flat owners for the same damage, "
-            "under the remaining terms of the policy"
-        ),
-        "Compensation Awarded (£)": 0,
-        "Is Core Case": "Yes",
-        "Key Policy Clause": (
-            "Where multiple co-owners in the same building each hold separate buildings "
-            "insurance policies and all are claiming for the identical damage arising "
-            "from the identical single event (here, the collapse of a neighbouring "
-            "long-unoccupied, derelict property's roof onto a shared structural wall), an "
-            "insurer that treats the damage as gradual/excluded while other insurers "
-            "covering the same wall and the same event have accepted the claim as "
-            "accidental is acting inconsistently; good industry practice and treating "
-            "customers fairly requires consistent treatment of identical damage from an "
-            "identical shared event across the different insurers involved, absent a "
-            "clear, insurer-specific reason for departing from that consistency; the fact "
-            "that a wall was hidden from view (and therefore its deteriorating condition "
-            "could not have been observed or maintained by the policyholder) prior to a "
-            "sudden triggering event supports treating the resulting damage as a one-off "
-            "accidental loss rather than gradual deterioration"
-        ),
-        "Missing Evidence": (
-            "AXA did not produce independent engineering or surveying evidence specific "
-            "to Mr D and Mr R's portion of the wall to justify treating their claim "
-            "differently from the two accepted claims for the same wall and the same "
-            "event; it relied solely on its own opinion that gradual water ingress caused "
-            "the wall's softening"
-        ),
-        "Ombudsman Reasoning": (
-            "Site adjacency meant the wall's deteriorating condition would not have been "
-            "visible until the neighbouring dormer roof partially collapsed; no internal "
-            "signs of damage were shown to exist beforehand; 2018 survey found the "
-            "chimney in fair condition; media reports confirmed a developer withdrew from "
-            "the derelict site citing damage to neighbouring homes from the collapse; two "
-            "of the four flat owners, including one sharing AXA's own loss adjuster, had "
-            "the identical damage accepted as accidental by their insurers; AXA "
-            "maintained its gradual-damage position without new evidence after the "
-            "provisional decision; fair and reasonable outcome required AXA to treat Mr D "
-            "and Mr R consistently with the other owners and pay the claim"
-        ),
-        "Workflow Insight": (
-            "Where damage originates from a long-unoccupied, derelict neighbouring "
-            "property affecting multiple co-owned or shared-structure units, claims "
-            "handlers should proactively check how other insurers covering the same "
-            "building or wall have treated equivalent claims for the same triggering "
-            "event before relying on a gradual-damage or wear-and-tear exclusion — "
-            "inconsistency across insurers assessing identical damage from an identical "
-            "cause is a strong indicator of an unfair declinature; adjacency and lack of "
-            "visibility of a shared structural element prior to a sudden triggering event "
-            "(e.g. a neighbouring roof collapse) should be weighed heavily in favour of "
-            "treating resulting damage as a one-off accidental event"
-        ),
-        "AI Rule Candidate": (
-            "IF multiple_co_owners_of_a_shared_structural_element_hold_separate_policies "
-            "AND all_are_claiming_for_identical_damage_from_an_identical_single_triggering_event "
-            "THEN insurer_declining_on_gradual_damage_grounds_while_other_insurers_covering_the_same_element_and_event_have_accepted_the_claim_is_likely_unfair_absent_specific_contrary_evidence; "
-            "IF damage_originates_from_a_long_unoccupied_derelict_neighbouring_property_and_shared_wall_condition_was_not_visible_or_inspectable_before_a_sudden_triggering_event "
-            "THEN resulting_damage_should_generally_be_treated_as_a_one_off_accidental_loss_rather_than_gradual_deterioration"
-        ),
-        "Source PDF": "DRN-3101941.pdf",
-    },
-    {
-        "Case ID": "UNOC-019",
-        "FOS Decision ID": "DRN-3113837",
-        "Insurer Name": "AXA Insurance UK Plc",
-        "FOS Decision Date": "16 Dec 2021",
-        "Claim Type": (
-            "Home insurance — policyholder notified insurer she was moving out (property "
-            "becoming unoccupied); call handler misadvised her that staying at the "
-            "property for a couple of nights every 60 days would reset the occupancy "
-            "requirement and preserve cover; insurer's underwriting department later "
-            "overturned this advice and cancelled the policy because the property was no "
-            "longer her permanent home"
-        ),
-        "Unoccupied Period / Circumstance": (
-            "Property became unoccupied as Mrs Y moved to live elsewhere on a permanent "
-            "basis; she visited for a 10-day period at one point, incurring travel costs, "
-            "believing (based on the misadvice) that periodic overnight stays preserved "
-            "her cover"
-        ),
-        "Property Type": "Residential property (owner relocating; no longer permanent home)",
-        "Dispute Type": "Claim Recording / Administrative Dispute",
+        "Property Type": "Holiday home / rental property (occupancy status disputed around a policy switch)",
+        "Dispute Type": "Endorsement / Exclusion Challenge",
         "Coverage Decision": "Not Applicable",
         "Rejection Reason": (
-            "Not applicable to a coverage decline — AXA's underwriting department "
-            "determined the policy did not meet its underwriting rules once it "
-            "understood Mrs Y did not intend to return to the property on a permanent "
-            "basis, and issued a cancellation notice rather than declining any specific "
-            "claim"
+            "Not applicable to a final coverage decline — Amtrust had not declined the "
+            "claim but was requesting evidence of compliance with the unoccupied-"
+            "property endorsement (or evidence the property had been lived in within "
+            "the 30 days before the loss) before resuming consideration of the claim"
         ),
         "Evidence Dispute": (
-            "Mrs Y: was told by a call handler that staying at the property for a couple "
-            "of nights every 60 days would preserve cover, then was shocked to later "
-            "receive a cancellation letter; sought reimbursement of travel costs incurred "
-            "visiting the property in reliance on the (incorrect) advice. AXA: accepted "
-            "the original advice was a mistake — the property no longer being Mrs Y's "
-            "permanent home did not meet its underwriting criteria regardless of periodic "
-            "overnight stays; confirmed cover remained in place and would have responded "
-            "to any claim up to the cancellation date; waived the cancellation fee, "
-            "refunded part of the premium, and (during the FOS process) offered £150 "
-            "compensation for failing to offer this when it first responded to the "
-            "complaint. FOS: AXA's initial advice was incorrect and it was reasonable for "
-            "the underwriting department to correct it once identified; Mrs Y did have "
-            "the benefit of cover throughout the period up to cancellation; travel costs "
-            "were not reimbursable since she had the benefit of the policy regardless of "
-            "whether she needed to claim, and could have chosen alternative arrangements; "
-            "£150 was reasonable redress for the misadvice and the inconvenience it caused"
-        ),
-        "Outcome Category": "Upheld in Part",
-        "Outcome": (
-            "AXA to pay Mrs Y the £150 compensation it offered, if she wishes to accept "
-            "it; no further redress (including travel costs) required"
-        ),
-        "Compensation Awarded (£)": 150,
-        "Is Core Case": "No — Administrative",
-        "Key Policy Clause": (
-            "Where a call handler gives incorrect advice about what preserves cover for a "
-            "property becoming unoccupied (e.g. a periodic-overnight-stay 'reset' of the "
-            "occupancy clock that does not reflect the insurer's actual underwriting "
-            "rules), the insurer's underwriting department correcting that advice and "
-            "issuing a cancellation notice is not itself unfair, provided the "
-            "policyholder had the benefit of cover (and any claims would have been "
-            "honoured) up to the cancellation date; compensation for the resulting "
-            "confusion and inconvenience is appropriate, but travel costs incurred by a "
-            "policyholder visiting a property in reliance on incorrect advice are not "
-            "recoverable where the policyholder had the benefit of the policy throughout "
-            "and had the option of alternative arrangements not requiring travel"
-        ),
-        "Missing Evidence": (
-            "Evidence that Mrs Y attempted to make, or was prevented from making, a claim "
-            "during the period cover remained in force under the misadvised terms — "
-            "absent; FOS therefore could not consider any substantive claim-handling "
-            "issue, only the misadvice and cancellation process itself"
-        ),
-        "Ombudsman Reasoning": (
-            "Call handler's advice about a 60-day overnight-stay reset did not reflect "
-            "AXA's actual underwriting position that the property needed to remain Mrs "
-            "Y's permanent home; underwriting department was entitled to correct this and "
-            "cancel once it understood her true circumstances; cover and claims-handling "
-            "remained available up to the cancellation date, so Mrs Y suffered no loss of "
-            "substantive cover; £150 (offered during the FOS process, after AXA accepted "
-            "it should have provided redress in its complaint response) was fair for the "
-            "confusion and inconvenience; travel costs not recoverable since the policy "
-            "benefit was received regardless of use, and alternative non-travel "
-            "arrangements existed"
-        ),
-        "Workflow Insight": (
-            "Call handlers giving advice about occupancy-preserving conditions (such as "
-            "periodic overnight stays resetting an unoccupancy clock) must ensure the "
-            "advice matches actual underwriting rules — incorrect advice of this kind "
-            "should be identified and corrected as early as possible, ideally before the "
-            "policyholder relies on it or incurs costs; when an insurer accepts it gave "
-            "incorrect advice, redress should be offered proactively at the complaint-"
-            "response stage rather than only once a case reaches the ombudsman service, "
-            "to avoid a second layer of complaint about the redress process itself"
-        ),
-        "AI Rule Candidate": (
-            "IF call_handler_advises_that_periodic_overnight_stays_reset_the_unoccupancy_clock "
-            "AND this_advice_does_not_reflect_actual_underwriting_rules "
-            "THEN advice_is_incorrect_and_insurer_correcting_it_via_underwriting_review_and_cancellation_is_not_unfair_provided_cover_remained_honoured_up_to_cancellation; "
-            "travel_costs_incurred_in_reliance_on_incorrect_occupancy_advice_are_not_recoverable_where_policyholder_had_uninterrupted_benefit_of_cover_throughout; "
-            "compensation_for_confusion_and_inconvenience_from_misadvice_should_be_offered_at_first_complaint_response_not_only_after_referral_to_fos"
-        ),
-        "Source PDF": "DRN-3113837.pdf",
-    },
-    {
-        "Case ID": "UNOC-020",
-        "FOS Decision ID": "DRN3273371",
-        "Insurer Name": "Lloyds Bank General Insurance Limited",
-        "FOS Decision Date": "28 Jul 2018",
-        "Claim Type": (
-            "Home contents insurance — theft claim declined after policyholder moved out "
-            "of the insured property (matrimonial separation) but continued visiting "
-            "daily/every other day to care for animals and remained on the council tax; "
-            "insurer applied the 30-day unoccupied exclusion; also cited lack of "
-            "reasonable care and a family member's deliberate act as alternative grounds"
-        ),
-        "Unoccupied Period / Circumstance": (
-            "Policyholder moved out in November 2016 and had not lived at the property "
-            "(in the sense of sleeping and washing there most of the week) for roughly "
-            "three months by the time of the theft, despite visiting on a daily or "
-            "every-other-day basis and remaining on the council tax; estranged family "
-            "member (Mr K) restricted her access to remove her belongings"
-        ),
-        "Property Type": "Residential home (matrimonial property, policyholder relocated but retained access/visiting rights)",
-        "Dispute Type": "Endorsement / Exclusion Challenge",
-        "Coverage Decision": "Declined — Full",
-        "Rejection Reason": (
-            "Policy excluded theft cover where the home had not been 'lived in' for more "
-            "than 30 days; Ms K had not lived in the property since November 2016, "
-            "roughly three months before the claim"
-        ),
-        "Evidence Dispute": (
-            "Ms K: visited the property at least every other day (evidenced by ongoing "
-            "care of animals kept there) and remained on the property's council tax, so "
-            "she did not consider it unoccupied; a court order did not require immediate "
-            "removal of all belongings; Mr K prevented her from accessing the property to "
-            "retrieve her belongings. Lloyds: three separate exclusions applied — the "
-            "30-day unoccupied exclusion, a lack-of-reasonable-care exclusion, and an "
-            "exclusion for theft caused by a deliberate act of a family member. FOS: the "
-            "relevant test is whether the policyholder was 'living' in the property — "
-            "i.e. sleeping and washing there most of the week — not merely visiting "
-            "regularly or remaining registered for council tax; on the evidence, Ms K was "
-            "living at another property and only visiting the insured property, which "
-            "does not defeat the unoccupied exclusion; since the unoccupied exclusion "
-            "alone was sufficient to justify declining the claim, the other two "
-            "exclusions did not need to be separately addressed"
+            "G (property business): it was unreasonable to require proof of compliance "
+            "with the unoccupied endorsement because the 30 consecutive unoccupied days "
+            "could only reasonably be counted from the date the holiday home owners "
+            "policy was taken out (30 November 2022), not from any earlier point under "
+            "the prior unoccupied property policy. Amtrust: the property may not have "
+            "been lived in at any point since the letting/Airbnb arrangement began, well "
+            "before the policy switch; the policy wording placed no restriction on when "
+            "the 30-day unoccupancy count could start, and requiring renewed occupation "
+            "evidence made sense given the risk the endorsement was designed to guard "
+            "against continued regardless of which policy was technically in force on a "
+            "given date. FOS: nothing in the policy wording supported G's argument that "
+            "the inception date reset the 30-day clock — the endorsement simply "
+            "requires compliance if the property 'isn't lived in for 30 days or more', "
+            "with no stated limitation on when that period can start; it would make no "
+            "sense from a risk-appetite perspective for the 30 days to only start at "
+            "policy inception, since the underlying risk (an unoccupied property) is "
+            "unaffected by a mid-run change of insurer or product; it was therefore "
+            "reasonable for Amtrust to ask G for evidence of occupation in the 30 days "
+            "before the loss, or compliance with the endorsement (e.g. mains water off, "
+            "or heating maintained), before resuming its consideration of the claim"
         ),
         "Outcome Category": "Not Upheld",
         "Outcome": (
-            "Complaint not upheld — Lloyds was entitled to rely on the 30-day unoccupied "
-            "exclusion to decline the contents theft claim"
+            "Complaint not upheld — Amtrust acted reasonably in requiring evidence of "
+            "occupation or endorsement compliance before resuming consideration of the "
+            "claim; the policy inception date does not reset the 30-day unoccupancy "
+            "clock"
         ),
         "Compensation Awarded (£)": 0,
         "Is Core Case": "Yes",
         "Key Policy Clause": (
-            "Where a policy's unoccupancy exclusion turns on whether the home has been "
-            "'lived in,' the relevant test is whether the policyholder was actually "
-            "sleeping and washing at the property most of the week — regular visits "
-            "(even daily or every-other-day) for a specific purpose such as caring for "
-            "animals, and remaining registered for council tax at the address, do not by "
-            "themselves establish that a policyholder was 'living' at the property if "
-            "their primary residence has genuinely moved elsewhere; where an unoccupied-"
-            "property exclusion alone is sufficient to justify declining a claim, the "
-            "ombudsman need not separately determine whether other exclusions relied upon "
-            "by the insurer (e.g. lack of reasonable care, deliberate act by a family "
-            "member) would also independently apply"
+            "Where a policy's unoccupied-property endorsement is triggered by the "
+            "property 'not being lived in for 30 days or more' with no wording limiting "
+            "when that period can start, the count is not reset by the inception date "
+            "of a new policy or a mid-term switch between policy types (e.g. from an "
+            "unoccupied property policy to a holiday home owners policy) — the risk the "
+            "endorsement addresses (an unoccupied property being more vulnerable to "
+            "loss) exists independently of which specific policy or insurer happens to "
+            "be on risk at a given moment, so an insurer is entitled to look at the full "
+            "run of consecutive unoccupied days, including periods before the current "
+            "policy's inception, when assessing endorsement compliance"
         ),
         "Missing Evidence": (
-            "Evidence that Ms K was sleeping and washing at the insured property for the "
-            "majority of the relevant period — absent; her evidence went only to "
-            "frequency of visits and council tax registration, neither of which "
-            "establishes 'living' at the property"
+            "Evidence, at the time of the ombudsman's decision, that the property had "
+            "been lived in at some point in the 30 days before the 16 December 2022 "
+            "loss, or that G had complied with the endorsement's requirements (e.g. "
+            "mains water turned off, or heating maintained at a steady level) — not yet "
+            "provided by G; the ombudsman noted Amtrust would be expected to resume "
+            "considering the claim if such evidence were subsequently produced"
         ),
         "Ombudsman Reasoning": (
-            "Ms K had not lived in the property since November 2016, roughly three months "
-            "before the theft; visiting daily or every other day to care for animals and "
-            "remaining on the council tax record are consistent with regular visits to a "
-            "property she no longer lived in, not with actually living there; the 'lived "
-            "in' test requires sleeping and washing there most of the week, which was not "
-            "met; unoccupied exclusion could reasonably be relied upon; no need to "
-            "consider the two further exclusions Lloyds also cited since the unoccupied "
-            "exclusion was sufficient on its own"
+            "Property let to a company that appeared to intend Airbnb-style rental from "
+            "before the November 2022 policy switch; Amtrust's loss adjusters found "
+            "evidence the property may not have been lived in at any point during that "
+            "arrangement; G's argument that the policy inception date restarts the "
+            "30-day unoccupancy clock is not supported by anything in the policy "
+            "wording, and makes no sense in terms of the insurer's risk appetite, since "
+            "the underlying unoccupancy risk is unaffected by which policy is "
+            "technically on risk on a given date; therefore reasonable for Amtrust to "
+            "ask for evidence of occupation or endorsement compliance (mains water off/"
+            "heating maintained) before resuming consideration of the claim; complaint "
+            "not upheld, but the claim itself remains open pending that evidence"
         ),
         "Workflow Insight": (
-            "When assessing whether a policyholder has 'lived in' a property for the "
-            "purposes of an unoccupancy exclusion, claims handlers should apply a "
-            "sleeping-and-washing-there test rather than treating regular visits, care of "
-            "pets/animals kept at the property, or continued council tax registration as "
-            "sufficient evidence of continued occupation; where multiple exclusions could "
-            "independently justify declining a claim, it is efficient (and sufficient for "
-            "a fair outcome) to establish that one applies without needing to separately "
-            "evidence the others"
+            "When a property changes insurer or policy type (e.g. switching from an "
+            "unoccupied property policy to a holiday home owners policy) without a "
+            "change in actual physical occupancy, claims handlers assessing a "
+            "subsequent unoccupancy-endorsement question should look at the full "
+            "continuous run of unoccupied days across the switch, not just days since "
+            "the current policy's inception — a policyholder cannot rely on a policy "
+            "switch to reset an unoccupancy clock where there was no actual change in "
+            "whether the property was being lived in; where a claim is not yet formally "
+            "declined but is paused pending evidence of a condition (such as "
+            "endorsement compliance), this should be recorded as an open evidentiary "
+            "request rather than a coverage decision"
         ),
         "AI Rule Candidate": (
-            "IF policyholder_visits_property_regularly_for_a_specific_purpose_such_as_animal_care_or_remains_registered_for_council_tax "
-            "BUT_sleeps_and_washes_primarily_at_another_address "
-            "THEN property_is_not_lived_in_by_that_policyholder_for_unoccupancy_exclusion_purposes; "
-            "IF one_policy_exclusion_is_independently_sufficient_to_justify_declining_a_claim "
-            "THEN fos_and_insurer_need_not_separately_establish_additional_exclusions_also_relied_upon"
+            "IF unoccupied_property_endorsement_is_triggered_by_property_not_being_lived_in_for_N_or_more_consecutive_days "
+            "AND policy_wording_places_no_limitation_on_when_that_period_can_start "
+            "THEN the_count_includes_days_before_the_current_policys_inception_and_is_not_reset_by_a_mid_run_policy_or_insurer_switch; "
+            "IF property_changes_insurer_or_product_type_without_any_actual_change_in_physical_occupancy "
+            "THEN insurer_may_require_evidence_of_occupation_or_endorsement_compliance_covering_the_full_continuous_unoccupied_period_not_just_the_period_since_the_current_policys_inception"
         ),
-        "Source PDF": "DRN3273371.pdf",
+        "Source PDF": "DRN-4660265.pdf",
     },
 ]
 
