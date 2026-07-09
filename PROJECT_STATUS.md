@@ -1,6 +1,6 @@
 # Insurance Claims AI — Project Status
 
-**Last updated:** 2026-06-26 (Theft Batch 1 complete — THEFT-001 to THEFT-010; 10 cases processed; 29 remaining)
+**Last updated:** 2026-07-09 (Theft complete — all 4 batches; 39 cases; database final)
 **Branch:** `master`
 **Repository:** https://github.com/shaniv914/insurance-claims-ai
 
@@ -8,15 +8,13 @@
 
 ## Current Focus
 
-Theft Batch 1 complete. Awaiting approval to begin Batch 2 (THEFT-011 to THEFT-020).
-
-Note: Batch 1 revealed that the Theft Claims folder contains a mix of product lines (motor, travel, gadget and commercial van insurance, in addition to home/contents). Only 3 of 10 Batch 1 cases are home/contents insurance (THEFT-002, THEFT-003, THEFT-004 — flagged `Is Core Case = Yes`). Remaining 7 are flagged `No — Commercial` or `No — Broker Dispute`.
+All five case databases are complete. Playbook authoring may begin.
 
 - EOW: 57 cases (EOW-001 to EOW-057) — **complete**
 - Storm: 38 cases (STORM-001 to STORM-038) — **complete**
 - Flood: 55 database rows (56 PDFs reviewed; FLOOD-031 excluded) — **complete**
 - Subsidence: 32 cases (SUBS-001 to SUBS-032) — **complete**
-- Theft: 10 of 39 cases processed (THEFT-001 to THEFT-010 — Batch 1 complete) — **Batch 2 pending approval**
+- Theft: 39 cases (THEFT-001 to THEFT-039) — **complete**
 
 Flood Playbook note written: `knowledge/playbooks/flood/flood-source-of-water-interpretation.md` (FLOOD-035 vs FLOOD-038 "such as" language analysis).
 
@@ -469,8 +467,8 @@ Subsidence playbook authoring may begin.
 **Path:** `knowledge/case-databases/Theft_Case_Database.xlsx`
 **Schema version:** v1 (21 columns — same schema as EOW v2 / Storm v1 / Flood v1 / Subsidence v1; column 6 renamed "Entry / Theft Method")
 **Total theft PDFs:** 39 (`knowledge/raw-cases/theft/`) — 41 source PDFs; 2 exact duplicates excluded
-**Total theft cases processed:** 10 (THEFT-001 to THEFT-010)
-**Remaining to process:** 29
+**Total theft cases processed:** 39 (THEFT-001 to THEFT-039)
+**Remaining to process:** 0 — all PDFs processed
 
 **Product line note:** The Theft Claims folder contains a mix of product lines. Batch 1 found 3 home/contents cases (THEFT-002, THEFT-003, THEFT-004) and 7 non-home cases (motor, travel, gadget, commercial van). All are retained and correctly flagged.
 
@@ -486,9 +484,9 @@ Subsidence playbook authoring may begin.
 | Batch | Case IDs | PDFs | Status |
 |---|---|---|---|
 | 1 | THEFT-001 – THEFT-010 | DRN0600921 → DRN2794102 | **Complete** |
-| 2 | THEFT-011 – THEFT-020 | DRN2801347 → DRN-3764842 | Pending approval |
-| 3 | THEFT-021 – THEFT-030 | DRN4331324 → DRN-5901721 | Pending |
-| 4 | THEFT-031 – THEFT-039 | DRN5939533 → DRN8838516 | Pending |
+| 2 | THEFT-011 – THEFT-020 | DRN2801347 → DRN-3764842 | **Complete** |
+| 3 | THEFT-021 – THEFT-030 | DRN4331324 → DRN-5901721 | **Complete** |
+| 4 | THEFT-031 – THEFT-039 | DRN5939533 → DRN8838516 | **Complete** |
 
 ### Full PDF List (39 files — sorted by DRN)
 
@@ -534,7 +532,14 @@ Subsidence playbook authoring may begin.
 | 38 | DRN8409372.pdf |
 | 39 | DRN8838516.pdf |
 
-### Cases Processed: THEFT-001 to THEFT-010 (Batch 1 complete)
+### Next Batch
+
+**None — all 39 PDFs have been processed.** The Theft case database is complete (39 database rows).
+Theft playbook authoring may begin.
+
+---
+
+### Cases Processed: THEFT-001 to THEFT-039 (Batches 1–4 complete — full record in Theft_Case_Database.xlsx)
 
 | Case ID | FOS ID | Insurer | Outcome Category | Is Core Case |
 |---|---|---|---|---|
