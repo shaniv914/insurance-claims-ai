@@ -1,6 +1,6 @@
 # Insurance Claims AI — Project Status
 
-**Last updated:** 2026-07-09 (Theft complete — all 4 batches; 39 cases; database final)
+**Last updated:** 2026-07-09 (Unoccupied Property peril added — 60 raw PDFs committed; case extraction pending)
 **Branch:** `master`
 **Repository:** https://github.com/shaniv914/insurance-claims-ai
 
@@ -8,13 +8,14 @@
 
 ## Current Focus
 
-All five case databases are complete. Playbook authoring may begin.
+Five case databases complete. Unoccupied Property PDF library added — case extraction pending Batch 1 approval.
 
 - EOW: 57 cases (EOW-001 to EOW-057) — **complete**
 - Storm: 38 cases (STORM-001 to STORM-038) — **complete**
 - Flood: 55 database rows (56 PDFs reviewed; FLOOD-031 excluded) — **complete**
 - Subsidence: 32 cases (SUBS-001 to SUBS-032) — **complete**
 - Theft: 39 cases (THEFT-001 to THEFT-039) — **complete**
+- Unoccupied Property: 0 of 60 cases processed — **Batch 1 pending approval**
 
 Flood Playbook note written: `knowledge/playbooks/flood/flood-source-of-water-interpretation.md` (FLOOD-035 vs FLOOD-038 "such as" language analysis).
 
@@ -600,11 +601,110 @@ When processing future PDFs, apply `Is Core Case = No` if **any** of the followi
 
 ---
 
+## Database: Unoccupied_Property_Case_Database.xlsx
+
+**Path:** `knowledge/case-databases/Unoccupied_Property_Case_Database.xlsx` *(not yet created)*
+**Schema version:** v1 (21 columns — same schema as EOW v2 / Storm v1 / Flood v1 / Subsidence v1 / Theft v1; column 6 to be named "Unoccupied Period / Circumstance")*
+**Source folder:** `G:\My Drive\Business Ideas\UK home insurance rejected claims\unoccupied-property`
+**Total source PDFs:** 60
+**Exact duplicates excluded:** 0
+**Total unoccupied property PDFs committed:** 60 (`knowledge/raw-cases/unoccupied-property/`)
+**Total cases processed:** 0
+**Remaining to process:** 60
+
+### Duplicate Exclusion Log
+
+None — all 60 source PDFs are unique (SHA256 verified).
+
+### Processing Schedule (batch size = 10)
+
+| Batch | Case IDs | PDFs | Status |
+|---|---|---|---|
+| 1 | UNOC-001 – UNOC-010 | TBD | Pending approval |
+| 2 | UNOC-011 – UNOC-020 | TBD | Pending |
+| 3 | UNOC-021 – UNOC-030 | TBD | Pending |
+| 4 | UNOC-031 – UNOC-040 | TBD | Pending |
+| 5 | UNOC-041 – UNOC-050 | TBD | Pending |
+| 6 | UNOC-051 – UNOC-060 | TBD | Pending |
+
+### Full PDF List (60 files — sorted by DRN)
+
+| # | Source PDF |
+|---|---|
+| 1 | DRN0145579.pdf |
+| 2 | DRN0191656.pdf |
+| 3 | DRN0204977.pdf |
+| 4 | DRN0413474.pdf |
+| 5 | DRN0594830.pdf |
+| 6 | DRN0755022.pdf |
+| 7 | DRN0803856.pdf |
+| 8 | DRN0865293.pdf |
+| 9 | DRN0966366.pdf |
+| 10 | DRN1400739.pdf |
+| 11 | DRN-1623377.pdf |
+| 12 | DRN-1719844.pdf |
+| 13 | DRN1874552.pdf |
+| 14 | DRN2281195.pdf |
+| 15 | DRN2912517.pdf |
+| 16 | DRN-2973838.pdf |
+| 17 | DRN-3053282.pdf |
+| 18 | DRN-3101941.pdf |
+| 19 | DRN-3113837.pdf |
+| 20 | DRN3273371.pdf |
+| 21 | DRN3308022.pdf |
+| 22 | DRN3390381.pdf |
+| 23 | DRN-3516774.pdf |
+| 24 | DRN3646077.pdf |
+| 25 | DRN-3848349.pdf |
+| 26 | DRN-3999409.pdf |
+| 27 | DRN4133004.pdf |
+| 28 | DRN-4195324.pdf |
+| 29 | DRN4242877.pdf |
+| 30 | DRN-4660265.pdf |
+| 31 | DRN-4825238.pdf |
+| 32 | DRN-4834556.pdf |
+| 33 | DRN-4891194.pdf |
+| 34 | DRN-4915511.pdf |
+| 35 | DRN-4962775.pdf |
+| 36 | DRN-4979244.pdf |
+| 37 | DRN-5010249.pdf |
+| 38 | DRN5130555.pdf |
+| 39 | DRN5197867.pdf |
+| 40 | DRN-5222573.pdf |
+| 41 | DRN5276115.pdf |
+| 42 | DRN-5338495.pdf |
+| 43 | DRN-5434926.pdf |
+| 44 | DRN5611706.pdf |
+| 45 | DRN-5849071.pdf |
+| 46 | DRN-5892113.pdf |
+| 47 | DRN5978513.pdf |
+| 48 | DRN-5990244.pdf |
+| 49 | DRN-6146897.pdf |
+| 50 | DRN6665775.pdf |
+| 51 | DRN7122779.pdf |
+| 52 | DRN7223290.pdf |
+| 53 | DRN7626527.pdf |
+| 54 | DRN7714548.pdf |
+| 55 | DRN7954504.pdf |
+| 56 | DRN8194702.pdf |
+| 57 | DRN8309060.pdf |
+| 58 | DRN8328581.pdf |
+| 59 | DRN8482133.pdf |
+| 60 | DRN9942137.pdf |
+
+### Cases Processed
+
+None — Batch 1 pending approval.
+
+---
+
 ## Recent Commits
 
 | Hash | Message |
 |---|---|
-| *(latest)* | Add THEFT-001 to THEFT-010 to Theft Case Database — Batch 1 complete |
+| *(latest)* | Add Unoccupied Property raw PDF library — 60 unique PDFs (knowledge/raw-cases/unoccupied-property/) |
+| `3823d5c` | Update PROJECT_STATUS.md — Theft database complete (39/39); all five databases final |
+| `ec18337` | Add Theft Batch 4 (THEFT-031 to THEFT-039) — Theft database complete at 39 rows |
 | `6d75f3b` | Add Theft raw PDF library — 39 unique PDFs (knowledge/raw-cases/theft/) |
 | `790486e` | Add SUBS-001 to SUBS-010 to Subsidence Case Database — Batch 1 complete |
 | `a0c11c0` | Update PROJECT_STATUS.md — Subsidence peril added, PDF library committed |
