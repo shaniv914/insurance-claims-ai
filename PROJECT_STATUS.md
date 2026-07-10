@@ -1,6 +1,6 @@
 # Insurance Claims AI — Project Status
 
-**Last updated:** 2026-07-10 (Unoccupied Property extraction complete — 60 of 60, UNOC-001 to UNOC-060)
+**Last updated:** 2026-07-10 (Roof Damage extraction complete — 59 of 59 unique cases, ROOF-001 to ROOF-059)
 **Branch:** `master`
 **Repository:** https://github.com/shaniv914/insurance-claims-ai
 
@@ -8,7 +8,7 @@
 
 ## Current Focus
 
-Six case databases complete. Unoccupied Property extraction finished (Batches 1-6, 60 of 60 cases) — playbook authoring may begin for this peril.
+Seven case databases complete. Roof Damage extraction finished (Batches 1-6, 59 of 59 unique cases) — playbook authoring may begin for this peril.
 
 - EOW: 57 cases (EOW-001 to EOW-057) — **complete**
 - Storm: 38 cases (STORM-001 to STORM-038) — **complete**
@@ -16,8 +16,138 @@ Six case databases complete. Unoccupied Property extraction finished (Batches 1-
 - Subsidence: 32 cases (SUBS-001 to SUBS-032) — **complete**
 - Theft: 39 cases (THEFT-001 to THEFT-039) — **complete**
 - Unoccupied Property: 60 cases (UNOC-001 to UNOC-060) — **complete**
+- Roof Damage: 59 cases (ROOF-001 to ROOF-059) — **complete**
 
 Flood Playbook note written: `knowledge/playbooks/flood/flood-source-of-water-interpretation.md` (FLOOD-035 vs FLOOD-038 "such as" language analysis).
+
+---
+
+## Database: Roof_Damage_Case_Database.xlsx
+
+**Path:** `knowledge/case-databases/Roof_Damage_Case_Database.xlsx`
+**Schema version:** v1 (21 columns — same schema as EOW v2 / Storm v1 / Flood v1 / Subsidence v1 / Theft v1 / Unoccupied Property v1; column 6 named "Damage Cause")
+**Source folder:** `G:\My Drive\Business Ideas\UK home insurance rejected claims\Roof Damage`
+**Total source PDFs:** 64
+**Exact duplicates excluded:** 5 (SHA256-verified — see log below)
+**Total unique/processable Roof Damage PDFs:** 59
+**Total cases processed:** 59 (ROOF-001 to ROOF-059) — **all 59 unique/processable PDFs processed**
+**Remaining to process:** 0 — extraction complete
+
+### Non-Roof-Peril / Non-Standard Cases Found in Source Folder
+
+Several cases (out of the 59 unique PDFs) are not standard home/buildings-insurance weather-vs-wear-and-tear roof disputes — apparently included in the source folder due to a "roof" keyword match. These are retained in the database (per extraction rules — no case is skipped) but flagged clearly in their row fields (`Is Core Case`, Claim Type, Damage Cause, Key Policy Clause, Workflow Insight, AI Rule Candidate) so they are easy to exclude from core roof-damage playbook rule derivation:
+
+| Case ID | FOS ID | Insurer | What it actually is |
+|---|---|---|---|
+| ROOF-013 | DRN-2411016 | One Insurance Limited | Legit home claim, but a settlement-*scope* dispute (accidental damage to an asbestos roof, already accepted) — not a coverage decision |
+| ROOF-021 | DRN3201063 | esure Insurance Limited | Motor total-loss valuation dispute — car roof dent |
+| ROOF-022 | DRN3283986 | U K Insurance Limited | Motor total-loss settlement — car roof damage during recovery |
+| ROOF-023 | DRN3481905 | Aviva Insurance Limited | Motor accident-causation dispute — convertible car folding roof |
+| ROOF-028 | DRN-3769600 | Aviva Insurance Limited | Motor recovery/repair custody dispute — car roof/fin antenna |
+| ROOF-038 | DRN-4613978 | Accelerant Insurance UK Limited | Legit home roof damage, but a contractor workmanship warranty (solar panel installer) claim, not standard home/buildings insurance |
+| ROOF-039 | DRN-4882014 | Admiral Insurance (Gibraltar) Limited | Motor accident-repair custody dispute — convertible car roof mechanism |
+| ROOF-042 | DRN-5142770 | West Bay Insurance Plc | Motor claim-handling responsibility dispute — car roof damaged by an AMC's recovery agent |
+| ROOF-043 | DRN-5207353 | esure Insurance Limited | Legit home policy, but the disputed element is window damage, not roof damage (roof decline undisputed) |
+| ROOF-049 | DRN-6120900 | Intact Insurance UK Limited | Legit home roof claim, but decided entirely on CIDRA non-disclosure/policy avoidance grounds (2016 subsidence), not weather causation |
+| ROOF-055 | DRN8751154 | Royal and Sun Alliance Insurance Plc | Investigated as a possible roof claim but no roof damage was found — true cause was a leaking radiator/heating pipe (escape of water, not roof peril) |
+| ROOF-056 | DRN8937043 | esure Insurance Limited | Motor accident-causation dispute — car bodywork roof damage from a motorway collision |
+
+### Duplicate Exclusion Log (SHA256-verified)
+
+| Excluded File | Reason |
+|---|---|
+| `DRN-1194089 (1).pdf` | Exact duplicate of `DRN-1194089.pdf` (SHA256 match) |
+| `DRN-1709955 (1).pdf` | Exact duplicate of `DRN-1709955.pdf` (SHA256 match) |
+| `DRN-1709955 (2).pdf` | Exact duplicate of `DRN-1709955.pdf` (SHA256 match) |
+| `DRN8937043 (1).pdf` | Exact duplicate of `DRN8937043.pdf` (SHA256 match) |
+| `DRN8937043 (2).pdf` | Exact duplicate of `DRN8937043.pdf` (SHA256 match) |
+
+### Processing Schedule (batch size = 10, sorted by numeric DRN)
+
+| Batch | Case IDs | PDFs | Status |
+|---|---|---|---|
+| 1 | ROOF-001 – ROOF-010 | DRN0228808 → DRN-2136010 | **Complete** |
+| 2 | ROOF-011 – ROOF-020 | DRN-2292612 → DRN-3200007 | **Complete** |
+| 3 | ROOF-021 – ROOF-030 | DRN3201063 → DRN-4063207 | **Complete** |
+| 4 | ROOF-031 – ROOF-040 | DRN-4066939 → DRN-4917804 | **Complete** |
+| 5 | ROOF-041 – ROOF-050 | DRN-5134105 → DRN6970541 | **Complete** |
+| 6 | ROOF-051 – ROOF-059 (9 cases) | DRN7600763 → DRN9797551 | **Complete** |
+
+### Next Batch
+
+**None — all 59 PDFs have been processed.** The Roof Damage case database is complete (59 database rows).
+Roof Damage playbook authoring may begin. Active script for any future corrections/additions: `scripts/append_roof_damage_v1.py`.
+
+### Cases Processed: ROOF-001 to ROOF-059 (Batches 1-6 complete — Roof Damage database final)
+
+| Case ID | FOS ID | Insurer | Outcome Category | Is Core Case |
+|---|---|---|---|---|
+| ROOF-001 | DRN0228808 | Elite Insurance Company Limited | Upheld | No — Commercial |
+| ROOF-002 | DRN-1096843 | Catlin Insurance Company UK Ltd | Not Upheld | Yes |
+| ROOF-003 | DRN-1194089 | UK Insurance Limited | Not Upheld | Yes |
+| ROOF-004 | DRN-1396354 | China Taiping Insurance Co (UK) Limited | Upheld in Part | Yes |
+| ROOF-005 | DRN-1695498 | China Taiping (UK) Insurance Co Limited | Upheld in Part | Yes |
+| ROOF-006 | DRN-1709955 | Esure Services Limited | Not Upheld | No — Administrative |
+| ROOF-007 | DRN-1787983 | China Taiping Insurance (UK) Co Ltd | Not Upheld | Yes |
+| ROOF-008 | DRN-2097489 | Aviva Insurance Limited | Not Upheld | Yes |
+| ROOF-009 | DRN-2127603 | QIC Europe Ltd | Upheld | Yes |
+| ROOF-010 | DRN-2136010 | Fairmead Insurance Limited | Upheld | Yes |
+| ROOF-011 | DRN-2292612 | Royal & Sun Alliance Insurance Plc | Not Upheld | Yes |
+| ROOF-012 | DRN-2301457 | Fairmead Insurance Limited | Not Upheld | Yes |
+| ROOF-013 | DRN-2411016 | One Insurance Limited | Upheld | Yes — **flagged: settlement-scope dispute, not a weather/wear-and-tear coverage decision** |
+| ROOF-014 | DRN-2534486 | Ageas Insurance Limited | Upheld in Part | Yes |
+| ROOF-015 | DRN-2728395 | Royal & Sun Alliance Insurance Plc | Not Upheld | Yes |
+| ROOF-016 | DRN-2907235 | Soteria Insurance Limited | Compensation Only | Yes |
+| ROOF-017 | DRN-3034235 | Society of Lloyd's | Not Upheld | Yes |
+| ROOF-018 | DRN-3158829 | Royal & Sun Alliance Insurance Limited | Not Upheld | Yes |
+| ROOF-019 | DRN-3198856 | Fairmead Insurance Limited | Not Upheld | Yes |
+| ROOF-020 | DRN-3200007 | Lloyds Bank General Insurance Limited | Not Upheld | Yes |
+| ROOF-021 | DRN3201063 | esure Insurance Limited | Upheld | No — Commercial — **flagged: motor claim (car roof), not home peril** |
+| ROOF-022 | DRN3283986 | U K Insurance Limited | Upheld | No — Commercial — **flagged: motor claim (car roof), not home peril** |
+| ROOF-023 | DRN3481905 | Aviva Insurance Limited | Not Upheld | No — Commercial — **flagged: motor claim (convertible car roof), not home peril** |
+| ROOF-024 | DRN-3567187 | Fairmead Insurance Limited | Upheld | Yes |
+| ROOF-025 | DRN-3589402 | Allianz Insurance Plc | Not Upheld | Yes |
+| ROOF-026 | DRN-3665219 | AXA Insurance UK Plc | Not Upheld | No — Commercial (landlords policy) |
+| ROOF-027 | DRN-3709822 | Royal & Sun Alliance Insurance Limited | Not Upheld | Yes |
+| ROOF-028 | DRN-3769600 | Aviva Insurance Limited | Not Upheld | No — Commercial — **flagged: motor claim (car roof/fin), not home peril** |
+| ROOF-029 | DRN-3890291 | QIC Europe Ltd | Upheld | Yes |
+| ROOF-030 | DRN-4063207 | QIC Europe Ltd | Upheld in Part | Yes |
+| ROOF-031 | DRN-4066939 | Fairmead Insurance Limited | Upheld | Yes |
+| ROOF-032 | DRN-4108222 | QIC Europe Limited | Upheld | Yes |
+| ROOF-033 | DRN-4200375 | AXIS Speciality Europe SE | Not Upheld | Yes |
+| ROOF-034 | DRN-4215334 | Fairmead Insurance Limited | Upheld in Part | Yes |
+| ROOF-035 | DRN-4275759 | QIC Europe Limited | Not Upheld | Yes |
+| ROOF-036 | DRN-4453275 | Fairmead Insurance Limited | Upheld | Yes |
+| ROOF-037 | DRN-4493574 | Accredited Insurance (Europe) Ltd | Not Upheld | Yes |
+| ROOF-038 | DRN-4613978 | Accelerant Insurance UK Limited | Upheld | Yes — **flagged: contractor workmanship warranty, not standard home insurance** |
+| ROOF-039 | DRN-4882014 | Admiral Insurance (Gibraltar) Limited | Not Upheld | No — Commercial — **flagged: motor claim (convertible car roof), not home peril** |
+| ROOF-040 | DRN-4917804 | Lloyds Bank General Insurance Limited | Upheld in Part | Yes |
+| ROOF-041 | DRN-5134105 | esure Insurance Limited | Upheld | Yes |
+| ROOF-042 | DRN-5142770 | West Bay Insurance Plc | Not Upheld | No — Commercial — **flagged: motor claim (car roof damaged by AMC agent), not home peril** |
+| ROOF-043 | DRN-5207353 | esure Insurance Limited | Upheld | Yes — **flagged: window damage dispute, roof decline undisputed** |
+| ROOF-044 | DRN-5590531 | Advantage Insurance Company Limited | Not Upheld | Yes |
+| ROOF-045 | DRN-5664540 | Lloyds Bank General Insurance Limited | Not Upheld | Yes |
+| ROOF-046 | DRN-5760471 | Zurich Insurance PLC | Upheld | Yes |
+| ROOF-047 | DRN-6032076 | Allied World Assurance Company (Europe) dac | Not Upheld | No — Commercial (landlord policy) |
+| ROOF-048 | DRN-6092506 | Zurich Insurance Company Ltd | Not Upheld | Yes |
+| ROOF-049 | DRN-6120900 | Intact Insurance UK Limited | Not Upheld | Yes — **flagged: CIDRA non-disclosure/policy avoidance, not weather causation** |
+| ROOF-050 | DRN6970541 | UK Insurance Limited | Not Upheld | Yes |
+| ROOF-051 | DRN7600763 | Millennium Insurance Company Limited | Upheld | Yes |
+| ROOF-052 | DRN8186649 | Elite Insurance Company Limited | Upheld in Part | Yes |
+| ROOF-053 | DRN8381346 | Royal Sun Alliance Insurance Plc | Not Upheld | Yes |
+| ROOF-054 | DRN8624847 | AXA Insurance UK Plc | Upheld in Part | Yes |
+| ROOF-055 | DRN8751154 | Royal and Sun Alliance Insurance Plc | Upheld | Yes — **flagged: not roof damage, resolved as a heating/plumbing pipe leak** |
+| ROOF-056 | DRN8937043 | esure Insurance Limited | Compensation Only | No — Commercial — **flagged: motor claim (car roof bodywork), not home peril** |
+| ROOF-057 | DRN9411289 | UK Insurance Limited | Upheld in Part | Yes |
+| ROOF-058 | DRN9726991 | Liverpool Victoria Insurance Company Limited | Not Upheld | Yes |
+| ROOF-059 | DRN9797551 | Ageas Insurance Limited | Upheld in Part | Yes |
+
+### Scripts
+
+| Script | Status | Purpose |
+|---|---|---|
+| `scripts/create_roof_damage_case_db.py` | Superseded — do not re-run | Created the empty Roof_Damage_Case_Database.xlsx header row; re-running will overwrite data |
+| `scripts/append_roof_damage_v1.py` | **Active — use this for Roof Damage** | Standard append for all Roof Damage batches (schema v1, 21 columns, column 6 = "Damage Cause") |
 
 ---
 
