@@ -1,6 +1,6 @@
 # Insurance Claims AI — Project Status
 
-**Last updated:** 2026-07-09 (Unoccupied Property peril added — 60 raw PDFs committed; case extraction pending)
+**Last updated:** 2026-07-10 (Unoccupied Property extraction complete — 60 of 60, UNOC-001 to UNOC-060)
 **Branch:** `master`
 **Repository:** https://github.com/shaniv914/insurance-claims-ai
 
@@ -8,14 +8,14 @@
 
 ## Current Focus
 
-Five case databases complete. Unoccupied Property PDF library added — case extraction pending Batch 1 approval.
+Six case databases complete. Unoccupied Property extraction finished (Batches 1-6, 60 of 60 cases) — playbook authoring may begin for this peril.
 
 - EOW: 57 cases (EOW-001 to EOW-057) — **complete**
 - Storm: 38 cases (STORM-001 to STORM-038) — **complete**
 - Flood: 55 database rows (56 PDFs reviewed; FLOOD-031 excluded) — **complete**
 - Subsidence: 32 cases (SUBS-001 to SUBS-032) — **complete**
 - Theft: 39 cases (THEFT-001 to THEFT-039) — **complete**
-- Unoccupied Property: 0 of 60 cases processed — **Batch 1 pending approval**
+- Unoccupied Property: 60 cases (UNOC-001 to UNOC-060) — **complete**
 
 Flood Playbook note written: `knowledge/playbooks/flood/flood-source-of-water-interpretation.md` (FLOOD-035 vs FLOOD-038 "such as" language analysis).
 
@@ -603,14 +603,14 @@ When processing future PDFs, apply `Is Core Case = No` if **any** of the followi
 
 ## Database: Unoccupied_Property_Case_Database.xlsx
 
-**Path:** `knowledge/case-databases/Unoccupied_Property_Case_Database.xlsx` *(not yet created)*
-**Schema version:** v1 (21 columns — same schema as EOW v2 / Storm v1 / Flood v1 / Subsidence v1 / Theft v1; column 6 to be named "Unoccupied Period / Circumstance")*
+**Path:** `knowledge/case-databases/Unoccupied_Property_Case_Database.xlsx`
+**Schema version:** v1 (21 columns — same schema as EOW v2 / Storm v1 / Flood v1 / Subsidence v1 / Theft v1; column 6 named "Unoccupied Period / Circumstance")
 **Source folder:** `G:\My Drive\Business Ideas\UK home insurance rejected claims\unoccupied-property`
 **Total source PDFs:** 60
 **Exact duplicates excluded:** 0
 **Total unoccupied property PDFs committed:** 60 (`knowledge/raw-cases/unoccupied-property/`)
-**Total cases processed:** 0
-**Remaining to process:** 60
+**Total cases processed:** 60 (UNOC-001 to UNOC-060)
+**Remaining to process:** 0 — all 60 PDFs processed
 
 ### Duplicate Exclusion Log
 
@@ -620,12 +620,17 @@ None — all 60 source PDFs are unique (SHA256 verified).
 
 | Batch | Case IDs | PDFs | Status |
 |---|---|---|---|
-| 1 | UNOC-001 – UNOC-010 | TBD | Pending approval |
-| 2 | UNOC-011 – UNOC-020 | TBD | Pending |
-| 3 | UNOC-021 – UNOC-030 | TBD | Pending |
-| 4 | UNOC-031 – UNOC-040 | TBD | Pending |
-| 5 | UNOC-041 – UNOC-050 | TBD | Pending |
-| 6 | UNOC-051 – UNOC-060 | TBD | Pending |
+| 1 | UNOC-001 – UNOC-010 | TBD | **Complete** |
+| 2 | UNOC-011 – UNOC-020 | TBD | **Complete** |
+| 3 | UNOC-021 – UNOC-030 | TBD | **Complete** |
+| 4 | UNOC-031 – UNOC-040 | DRN-4825238 → DRN-5222573 | **Complete** |
+| 5 | UNOC-041 – UNOC-050 | DRN5276115 → DRN6665775 | **Complete** |
+| 6 | UNOC-051 – UNOC-060 | DRN7122779 → DRN9942137 | **Complete** |
+
+### Next Batch
+
+**None — all 60 PDFs have been processed.** The Unoccupied Property case database is complete (60/60).
+Unoccupied Property playbook authoring may begin. Active script for any future corrections/additions: `scripts/append_unoccupied_property_v2.py` (supersedes v1, which is left untouched as the historical record of Batches 1-3).
 
 ### Full PDF List (60 files — sorted by DRN)
 
